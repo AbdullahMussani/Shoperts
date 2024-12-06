@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-Step Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .step {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="stepperForm">
+            <!-- Step 1 -->
+            <div class="step active" id="step1">
+                <h3>Step 1: Personal Information</h3>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <button type="button" class="btn btn-primary" id="next1">Next</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step" id="step2">
+                <h3>Step 2: Address Information</h3>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" required>
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" required>
+                </div>
+                <button type="button" class="btn btn-secondary" id="back2">Back</button>
+                <button type="button" class="btn btn-primary" id="next2">Next</button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step" id="step3">
+                <h3>Step 3: Payment Information</h3>
+                <div class="mb-3">
+                    <label for="cardNumber" class="form-label">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expiry" class="form-label">Expiry Date</label>
+                    <input type="text" class="form-control" id="expiry" required>
+                </div>
+                <button type="button" class="btn btn-secondary" id="back3">Back</button>
+                <button type="button" class="btn btn-primary" id="next3">Next</button>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step" id="step4">
+                <h3>Step 4: Review & Submit</h3>
+                <p>Please review your information and submit the form.</p>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-secondary" id="back4">Back</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentStep = 1;
+        
+        // Show the step based on the current step number
+        function showStep(step) {
+            document.querySelectorAll('.step').forEach((stepElement, index) => {
+                stepElement.classList.remove('active');
+                if (index + 1 === step) {
+                    stepElement.classList.add('active');
+                }
+            });
+        }
+
+        // Next step functionality
+        document.getElementById('next1').addEventListener('click', function() {
+            currentStep++;
+            showStep(currentStep);
+        });
+
+        document.getElementById('next2').addEventListener('click', function() {
+            currentStep++;
+            showStep(currentStep);
+        });
+
+        document.getElementById('next3').addEventListener('click', function() {
+            currentStep++;
+            showStep(currentStep);
+        });
+
+        // Back step functionality
+        document.getElementById('back2').addEventListener('click', function() {
+            currentStep--;
+            showStep(currentStep);
+        });
+
+        document.getElementById('back3').addEventListener('click', function() {
+            currentStep--;
+            showStep(currentStep);
+        });
+
+        document.getElementById('back4').addEventListener('click', function() {
+            currentStep--;
+            showStep(currentStep);
+        });
+
+        // Initialize by showing the first step
+        showStep(currentStep);
+    </script>
+</body>
+</html>

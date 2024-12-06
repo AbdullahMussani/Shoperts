@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>SHOPPER TS</title>
+
+
+
+    <meta name="author" content="themesflat.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- font -->
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="fonts/font-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="images/logo/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="images/logo/favicon.png">
+
+</head>
+
+<style>
+    .step {
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+
+    .box {
+        background-color: #f8f9fa;
+        /* Light grey background */
+        border: 1px solid #ddd;
+        /* Border for better visibility */
+        text-align: center;
+        /* Center content */
+        padding: 20px;
+        /* Padding inside each box */
+        border-radius: 5px;
+        /* Rounded corners */
+    }
+
+    .modal-body .row {
+        margin-top: 15px;
+    }
+
+
+    .nav-item.active button {
+        background-color: #007bff;
+        /* Highlighted color */
+        color: white;
+    }
+
+    .step {
+        display: none;
+        /* Hide steps by default */
+    }
+
+    .step.active {
+        display: block;
+        /* Show the active step */
+    }
+
+    input[type="radio"]:checked+.card-product-wrapper,
+    input[type="checkbox"]:checked+.card-product-wrapper {
+        border: 2px solid #007bff;
+        /* Blue border for selection */
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        /* Glow effect */
+        transform: scale(1.05);
+        /* Slight zoom effect */
+    }
+
+
+
+    /* Button Styling */
+    button {
+        padding: 10px 20px;
+        border: none;
+        background: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+<body class="preload-wrapper">
+    <!-- preload -->
+    <div class="preload preload-container">
+        <div class="preload-logo">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- /preload -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header" class="header-default header-style-3">
+            <div class="container-full px_15 lg-px_40">
+                <div class="row wrapper-header align-items-center">
+                    <div class="col-md-4 col-3 tf-lg-hidden">
+                        <a href="home-07.html#mobileMenu" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16"
+                                fill="none">
+                                <path
+                                    d="M2.00056 2.28571H16.8577C17.1608 2.28571 17.4515 2.16531 17.6658 1.95098C17.8802 1.73665 18.0006 1.44596 18.0006 1.14286C18.0006 0.839753 17.8802 0.549063 17.6658 0.334735C17.4515 0.120408 17.1608 0 16.8577 0H2.00056C1.69745 0 1.40676 0.120408 1.19244 0.334735C0.978109 0.549063 0.857702 0.839753 0.857702 1.14286C0.857702 1.44596 0.978109 1.73665 1.19244 1.95098C1.40676 2.16531 1.69745 2.28571 2.00056 2.28571ZM0.857702 8C0.857702 7.6969 0.978109 7.40621 1.19244 7.19188C1.40676 6.97755 1.69745 6.85714 2.00056 6.85714H22.572C22.8751 6.85714 23.1658 6.97755 23.3801 7.19188C23.5944 7.40621 23.7148 7.6969 23.7148 8C23.7148 8.30311 23.5944 8.59379 23.3801 8.80812C23.1658 9.02245 22.8751 9.14286 22.572 9.14286H2.00056C1.69745 9.14286 1.40676 9.02245 1.19244 8.80812C0.978109 8.59379 0.857702 8.30311 0.857702 8ZM0.857702 14.8571C0.857702 14.554 0.978109 14.2633 1.19244 14.049C1.40676 13.8347 1.69745 13.7143 2.00056 13.7143H12.2863C12.5894 13.7143 12.8801 13.8347 13.0944 14.049C13.3087 14.2633 13.4291 14.554 13.4291 14.8571C13.4291 15.1602 13.3087 15.4509 13.0944 15.6653C12.8801 15.8796 12.5894 16 12.2863 16H2.00056C1.69745 16 1.40676 15.8796 1.19244 15.6653C0.978109 15.4509 0.857702 15.1602 0.857702 14.8571Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-xl-9 col-md-4 col-6">
+                        <div class="wrap-header-left">
+                            <a href="index.html" class="logo-header">
+                                <img src="images/logo/logo.svg" alt="logo" class="logo">
+                            </a>
+
+                            <!-- NAV BAR SECTION -->
+
+                            <nav class="box-navigation text-center">
+                                <ul class="box-nav-ul d-flex align-items-center justify-content-center gap-30">
+                                    <li class="menu-item">
+                                        <a href="index.html" class="item-link">Home</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="ReadyMade.html" class="item-link">Ready
+                                            Made/Shop</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="home-07.html#" class="item-link">Customize
+                                            Order</i></a>
+                                    </li>
+
+                                    <li class="menu-item position-relative">
+                                        <a href="contact.html" class="item-link">ContactUs</a>
+                                    </li>
+
+                                    <li class="menu-item position-relative">
+                                        <a href="contact.html" class="item-link">Team</a>
+                                    </li>
+
+                                    <li class="menu-item position-relative">
+                                        <a href="contact.html" class="item-link">Services</a>
+                                    </li>
+
+                                    <li class="menu-item position-relative">
+                                        <a href="about-us.html" class="item-link">AboutUs</a>
+                                    </li>
+
+                                    <li class="menu-item position-relative">
+                                        <a href="home-07.html#" class="item-link">Blog</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-4 col-3">
+                        <ul class="nav-icon d-flex justify-content-end align-items-center gap-20">
+                            <li class="nav-search"><a href="home-07.html#canvasSearch" data-bs-toggle="offcanvas"
+                                    aria-controls="offcanvasLeft" class="nav-icon-item"><i
+                                        class="icon icon-search"></i></a></li>
+                            <li class="nav-account"><a href="home-07.html#login" data-bs-toggle="modal"
+                                    class="nav-icon-item"><i class="icon icon-account"></i></a></li>
+                            <li class="nav-wishlist"><a href="wishlist.html" class="nav-icon-item"><i
+                                        class="icon icon-heart"></i><span class="count-box">0</span></a></li>
+                            <li class="nav-cart"><a href="home-07.html#shoppingCart" data-bs-toggle="modal"
+                                    class="nav-icon-item"><i class="icon icon-bag"></i><span
+                                        class="count-box">0</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /Header -->
+
+        <div style="display: flex; justify-content: space-between; margin-top: 100px;  margin-bottom: 100px;">
+            <div class="col-lg-3" style="width: 25%; padding: 10px;">
+                <ul class="my-account-nav">
+                    <li><a href="my-account.html" class="my-account-nav-item">Dashboard</a></li>
+                    <li><span class="my-account-nav-item active"> New Orders</span></li>
+                    <li><a href="login.html" class="my-account-nav-item">Order History</a></li>
+                    <li><a href="my-account.html" class="my-account-nav-item">Profile</a></li>
+                    <li><span class="my-account-nav-item">Agent Message</span></li>
+                    <li><a href="login.html" class="my-account-nav-item">Notification</a></li>
+                </ul>
+            </div>
+
+            <div style="width: 75%; padding: 10px;">
+                <h3 style="text-align: center;" id="orderNameDisplay"></h3>
+                <p
+                    style="text-align: center;  background-color: black; color: white; width: 12%; margin-left: 870px; font-size: 10px;">
+                    24-nov-2024</p>
+
+                <div style="margin-bottom: 20px; margin-top: 40px;">
+                    <nav>
+                        <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; gap: 20px;">
+                            <li>
+                                <a href="javascript:void(0)" id="step1" class="nav-item">
+                                    <button class="tf-btn btn-fill animate-hover-btn rounded-0">Products</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" id="step2" class="nav-item">
+                                    <button class="tf-btn btn-fill animate-hover-btn rounded-0">Shipping</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" id="step3" class="nav-item">
+                                    <button class="tf-btn btn-fill animate-hover-btn rounded-0">Payment Details</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" id="step4" class="nav-item">
+                                    <button class="tf-btn btn-fill animate-hover-btn rounded-0">Reviews</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+
+                <div id="stepper" style="height: auto; border: 1px solid #ccc; padding: 20px; position: relative;">
+
+                    <!-- STEP 1 category -->
+
+                    <div class="step active" id="step1">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <!-- Left Side: Product Details -->
+                            <div
+                                style="width: 75%; display: flex; flex-direction: column; justify-content: space-between;">
+                                <!-- Product Info -->
+                                <div style="display: flex; align-items: center;">
+                                    <img src="images/product-image.png" alt="Product Image"
+                                        style="width: 50px; height: auto; margin-right: 10px;">
+                                    <div>
+                                        <h5 style="margin: 0; margin-bottom: 5px;">Product Name</h5>
+                                        <p style="margin: 0; margin-bottom: 15px;">$100.00</p>
+
+                                        <!-- Quantity Control -->
+                                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                            <button id="decreaseBtn" onclick="decreaseQuantity()"
+                                                style="padding: 5px 10px; background-color: #f0f0f0; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">-</button>
+                                            <input id="quantity" value="1" readonly
+                                                style="width: 60px; text-align: center; border: 1px solid #ddd; border-radius: 5px; margin: 0 5px; font-size: 12px; color: black;">
+                                            <button id="increaseBtn" onclick="increaseQuantity()"
+                                                style="padding: 5px 10px; background-color: #f0f0f0; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Add Product Button -->
+
+
+                                <!-- List Section -->
+                                <div style="margin-top: 30px;">
+                                    <div style="display: flex; justify-content: space-between; gap: 20px;">
+                                        <!-- Left Column -->
+                                        <div style="width: 48%;">
+                                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 1</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 2</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 3</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 4</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 5</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Right Column -->
+                                        <div style="width: 48%;">
+                                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 6</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 7</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 8</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 9</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                                <li
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <span>Item 10</span>
+                                                    <i class="arrow-icon"
+                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button
+                                    style="padding: 15px 30px; margin-top: 20px; border: none; background-color: #4CAF50; color: white; cursor: pointer; font-size: 18px; border-radius: 5px;"
+                                    data-bs-toggle="modal" data-bs-target="#categoryModal">
+                                    Add Product
+                                </button>
+                            </div>
+
+
+
+
+                            <!-- Price Summary -->
+                            <div
+                                style="width: 20%; height: 70%; border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; text-align: center;">
+                                <h5 style="margin: 0; margin-bottom: 10px; font-size: 16px; font-weight: bold;">Price
+                                    Summary</h5>
+                                <p style="margin: 0; font-size: 12px;">Subtotal: $100.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Tax: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold;">Total: $105.00</p>
+                            </div>
+                        </div>
+                        <!-- Navigation buttons (Back & Next) -->
+                        <div style="margin-top: 20px; display: flex; justify-content: flex-end; align-items:right;">
+
+                            <button type="button" id="next1" class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                style="padding: 10px 20px; font-size: 16px; cursor: pointer;  ">
+                                Next
+                            </button>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <!-- STEP 2 shipping -->
+
+                    <div class="step" id="step2">
+                        <h5>Shipping Details</h5>
+                        <p>Select your preferred production method and shipping address.</p>
+
+                        <!-- Content for Left and Right -->
+                        <div style="display: flex; justify-content: space-between; gap: 20px;">
+                            <div style="flex: 1;">
+                                <h6>Production Method</h6>
+                                <div>
+                                    <label
+                                        style="display: block; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                        <input type="radio" name="production_method" value="manual"> Manual Production
+                                    </label>
+                                    <label
+                                        style="display: block; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                        <input type="radio" name="production_method" value="automated"> Automated
+                                        Production
+                                    </label>
+                                </div>
+
+                                <div
+                                    style="border: 1px solid #ddd; padding: 15px; margin-top: 30px; border-radius: 5px; display: flex; flex-direction: column; align-items: flex-start;">
+                                    <h6 style="margin-bottom: 10px;">Shipping Details</h6>
+                                    <p style="margin-bottom: 10px;">Your shipping information will appear here...</p>
+
+                                    <!-- Button aligned to the right within the div -->
+                                    <div style="align-self: flex-end;">
+                                        <button class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                            onclick="openShippingModal()"
+                                            style="padding: 8px 15px;  border: none; border-radius: 5px;">
+                                            Add Shipping Info
+                                        </button>
+                                    </div>
+                                </div>
+
+
+
+                                <div
+                                    style="border: 1px solid #ddd; padding: 15px; margin-top: 30px; border-radius: 5px; display: flex; flex-direction: column; align-items: flex-start;">
+                                    <h6 style="margin-bottom: 10px;">Billing Details</h6>
+                                    <p style="margin-bottom: 10px;">Your Billing information will appear here...</p>
+
+                                    <!-- Button aligned to the right within the div -->
+                                    <div style="align-self: flex-end;">
+                                        <button class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                            onclick="openShippingModal()"
+                                            style="padding: 8px 15px;  border: none; border-radius: 5px;">
+                                            Add Billing Info
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price Summary -->
+                            <div
+                                style="width: 25%; border: 1px solid #ddd; padding: 15px; background-color: #f9f9f9; text-align: center;">
+                                <h5>Price Summary</h5>
+                                <p>Subtotal: $100.00</p>
+                                <p>Tax: $5.00</p>
+                                <p><strong>Total: $105.00</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Navigation buttons (Back & Next) -->
+                        <div
+                            style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                            <button type="button" id="back2" class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                style="padding: 10px 20px; font-size: 16px; cursor: pointer;   color: #6c757d;">
+                                Back
+                            </button>
+                            <button type="button" id="next2" class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                style="padding: 10px 20px; font-size: 16px; cursor: pointer;    ">
+                                Next
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Modal -->
+                    <!-- Modal Overlay -->
+                    <div id="shipping-modal-overlay"
+                        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000;"
+                        onclick="closeShippingModal()"></div>
+
+                    <!-- Modal Form -->
+                    <div id="shipping-modal-form"
+                        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 400px; background: white; padding: 20px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 1001;">
+                        <h6>Add Shipping Information</h6>
+                        <form id="shipping-info-form">
+                            <!-- Input Fields -->
+                            <div style="margin-bottom: 15px;">
+                                <input type="text" placeholder="Address" style="width: 100%; padding: 10px;">
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <input type="text" placeholder="City" style="width: 100%; padding: 10px;">
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <input type="text" placeholder="ZIP Code" style="width: 100%; padding: 10px;">
+                            </div>
+
+                            <!-- Done Button -->
+                            <div style="text-align: right; margin-top: 20px;">
+                                <button type="button" class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                    onclick="closeShippingModal()">Done</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+                    <!-- STEP 2 Shipping End -->
+
+
+                    <!-- STEP 3 Payment -->
+                    <div class="step" id="step3">
+                        <h5>Payment Details</h5>
+                        <p>Select your preferred production method and shipping address.</p>
+
+                        <!-- Container for Left and Right Content -->
+                        <div style="display: flex; justify-content: space-between; gap: 20px;">
+
+                            <!-- Left Side: Payment Form -->
+                            <div style="flex: 1;">
+
+                                <!-- Initial Deposit or Invoice Payment Section -->
+                                <div style="margin-top: 20px; display: flex; align-items: center; gap: 20px;">
+                                    <!-- Left: Initial Deposit or Invoice Payment -->
+                                    <div style="flex: 1;">
+                                        <p>Enter initial deposit or invoice payment</p>
+                                        <input type="number" placeholder="Enter amount"
+                                            style="padding: 10px; width: 100%; margin-bottom: 10px;">
+                                    </div>
+
+                                    <!-- Right: Pay in Full and Partial Payment Checkboxes -->
+                                    <div style="display: flex; gap: 20px;">
+                                        <div
+                                            style="display: flex; align-items: center; gap: 10px; padding: 10px; font-size: 13px;">
+                                            <label for="full-payment">Pay in Full</label>
+                                            <input type="checkbox" id="full-payment">
+                                        </div>
+
+                                        <div
+                                            style="display: flex; align-items: center; gap: 10px; padding: 10px; font-size: 13px;">
+                                            <label for="partial-payment">Partial Payment</label>
+                                            <input type="checkbox" id="partial-payment">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Select Payment Method Section -->
+                                <div style="margin-top: 20px;">
+                                    <h5>Select Payment Method</h5>
+
+                                    <!-- Payment Method Options -->
+                                    <div style="display: flex; gap: 20px; font-size: 12px; margin-top: 30px;">
+                                        <!-- Bank Transfer Option -->
+                                        <div
+                                            style="display: flex; align-items: center; gap: 10px; border: 1px solid gray; padding: 10px;">
+                                            <i class="fa fa-university" aria-hidden="true" style="font-size: 18px;"></i>
+                                            <!-- Bank Icon -->
+                                            <label for="bank-transfer">Bank Transfer</label>
+                                            <input type="radio" name="payment-method" id="bank-transfer">
+                                        </div>
+
+                                        <!-- Credit Card Option -->
+                                        <div
+                                            style="display: flex; align-items: center; gap: 10px; border: 1px solid gray; padding: 10px;">
+                                            <i class="fa fa-credit-card" aria-hidden="true"
+                                                style="font-size: 18px;"></i>
+                                            <!-- Credit Card Icon -->
+                                            <label for="credit-card">Credit Card</label>
+                                            <input type="radio" name="payment-method" id="credit-card"
+                                                onclick="openCreditCardModal()">
+                                        </div>
+                                    </div>
+
+                                    <!-- Modal for Credit Card Payment -->
+                                    <div id="creditCardModal"
+                                        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 500px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
+                                        <h6>Credit Card Payment</h6>
+                                        <form id="creditCardForm">
+                                            <!-- Card Number -->
+                                            <div style="margin-bottom: 10px;">
+                                                <label for="cardNumber">Card Number</label><br>
+                                                <input type="text" id="cardNumber" name="cardNumber"
+                                                    placeholder="Enter card number" style="width: 100%; padding: 10px;">
+                                            </div>
+
+                                            <!-- Expiry Date -->
+                                            <div style="margin-bottom: 10px;">
+                                                <label for="expiryDate">Expiry Date</label><br>
+                                                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY"
+                                                    style="width: 100%; padding: 10px;">
+                                            </div>
+
+                                            <!-- CVV -->
+                                            <div style="margin-bottom: 10px;">
+                                                <label for="cvv">CVV</label><br>
+                                                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV"
+                                                    style="width: 100%; padding: 10px;">
+                                            </div>
+
+                                            <!-- Submit Button -->
+                                            <div style="display: flex; justify-content: center; gap: 10px;">
+                                                <button type="button"
+                                                    class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                                    onclick="closeModal()"> Pay Now</button>
+                                                <button type="button"
+                                                    class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                                    onclick="closeModal()"> Close</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <!-- Modal Overlay -->
+                                    <div id="modal-overlay"
+                                        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;"
+                                        onclick="closeModal()"></div>
+
+                                </div>
+                            </div>
+
+                            <!-- Right Side: Price Summary -->
+                            <div
+                                style="width: 25%; border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; text-align: center;">
+                                <h5 style="margin: 0; margin-bottom: 10px; font-size: 16px; font-weight: bold;">
+                                    Price
+                                    Summary</h5>
+                                <p style="margin: 0; font-size: 12px;">Subtotal: $100.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Tax: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold;">Total: $105.00
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <!-- Navigation buttons (Back & Next) -->
+                        <div
+                            style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                            <button type="button" id="back3" class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                style="padding: 10px 20px; font-size: 16px; cursor: pointer;   color: #6c757d;">
+                                Back
+                            </button>
+                            <button type="button" id="next3" class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                style="padding: 10px 20px; font-size: 16px; cursor: pointer; ">
+                                Next
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- STEP 3 payment End -->
+
+                    <!-- STEP 4 Review -->
+
+                    <div class="step" id="step4">
+                        <h5>Order Review</h5>
+                        <p>Check Your Order Detaisls</p>
+
+                        <div style="display: flex; justify-content: space-between; gap: 20px;">
+                            <!-- Left Side: Tables Section -->
+                            <div style="flex: 0.75; display: flex; flex-direction: column; gap: 20px;">
+                                <!-- First Div with Table -->
+                                <div
+                                    style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9;">
+                                    <h5 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">
+                                        Products
+                                    </h5>
+                                    <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9;">
+                                        <thead>
+                                            <tr>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                    Product </th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                    Qunatity</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                    Iteam total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <img src="images/products/Men-1.png" alt="Product 1"
+                                                        style="width: 50px; height: auto;">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px;">1</td>
+                                                <td style="border: 1px solid #ddd; padding: 8px;">1</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div
+                                    style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9;">
+                                    <h5 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Design
+                                    </h5>
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <thead>
+                                            <tr>
+
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                    Product</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                    Design Completed</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <img src="images/products/Men-1.png" alt="Product 1"
+                                                        style="width: 50px; height: auto;">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <span style="font-size: 20px; color: green;">✔</span>
+                                                    <!-- Right mark icon -->
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Second Div with Table -->
+                                <div style="display: flex; gap: 20px;">
+                                    <!-- First Div -->
+                                    <div
+                                        style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; flex: 1;">
+                                        <h5 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">
+                                            Shippping
+                                            Details</h5>
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                        Shipping Adress</th>
+                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                        Billing Adress</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">Karachi
+                                                        Pakistan
+                                                        <br>00544
+                                                        <br>Sindh
+                                                    </td>
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">Karachi
+                                                        Pakistan
+                                                        <br>00544
+                                                        <br>Sindh
+                                                    </td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Second Div -->
+                                    <div
+                                        style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; flex: 1;">
+                                        <h5 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">
+                                            Payment
+                                            Method</h5>
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                        Production Method</th>
+                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                        Payment Method</th>
+                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                                                        Payment Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">Fast
+                                                        services
+                                                    </td>
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">Credit
+                                                        Card
+                                                    </td>
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">
+                                                        Paid
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Right Side: Price Summary Section -->
+                            <div
+                                style="flex: 0.25; border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; text-align: center;">
+                                <h5 style="margin: 0; margin-bottom: 10px; font-size: 16px; font-weight: bold;">
+                                    Price
+                                    Summary</h5>
+                                <p style="margin: 0; font-size: 12px;">Subtotal: $100.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Tax: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold;">Total: $105.00
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Navigation buttons (Back & Next) -->
+                        <div
+                            style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                            <button type="button" id="back4" class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                style="padding: 10px 20px; font-size: 16px; cursor: pointer;   color: #6c757d;">
+                                Back
+                            </button>
+                            <button type="button" class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                style="padding: 10px 20px; font-size: 16px; cursor: pointer; ">
+                                Submit
+                            </button>
+                        </div>
+
+                    </div> <!-- MODAL -->
+
+                    <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="categoryModalLabel">Select Category</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div
+                                        style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;">
+                                        <!-- Women's Category -->
+                                        <div class="Categories" style="flex: 1 1 calc(30% - 12px); max-width: 30%;">
+                                            <div class="card-product">
+                                                <div class="card-product-wrapper" style="text-align: center;">
+                                                    <img class="lazyload img-product"
+                                                        data-src="images/products/Women-1.png"
+                                                        src="images/products/Women-1.png" alt="image-product"
+                                                        style="width: 100%; height: auto; border-radius: 5px;">
+                                                    <div class="size-list">
+                                                        <span style="font-size: 12px; font-weight: bold;">Women's</span>
+                                                    </div>
+                                                    <div class="list-product-btn">
+                                                        <button class="box-icon bg_white quick-add tf-btn-loading"
+                                                            data-bs-toggle="modal" data-bs-target="#newproductModal1">
+                                                            <span class="icon icon-bag"></span>
+                                                            <span class="tooltip">View</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Kid's Category -->
+                                        <div class="Categories" style="flex: 1 1 calc(32% - 12px); max-width: 30%;">
+                                            <div class="card-product">
+                                                <div class="card-product-wrapper" style="text-align: center;">
+                                                    <img class="lazyload img-product"
+                                                        data-src="images/products/Kid-1.jfif"
+                                                        src="images/products/Kid-1.jfif" alt="image-product"
+                                                        style="width: 100%; height: auto; border-radius: 5px;">
+                                                    <div class="size-list">
+                                                        <span style="font-size: 12px; font-weight: bold;">Kid's</span>
+                                                    </div>
+                                                    <div class="list-product-btn">
+                                                        <button class="box-icon bg_white quick-add tf-btn-loading"
+                                                            data-bs-toggle="modal" data-bs-target="#newproductModal1">
+                                                            <span class="icon icon-bag"></span>
+                                                            <span class="tooltip">View</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Men's Category -->
+                                        <div class="Categories" style="flex: 1 1 calc(30% - 12px); max-width: 30%;">
+                                            <div class="card-product">
+                                                <div class="card-product-wrapper" style="text-align: center;">
+                                                    <img class="lazyload img-product"
+                                                        data-src="images/products/Men-1.png"
+                                                        src="images/products/Men-1.png" alt="image-product"
+                                                        style="width: 100%; height: auto; border-radius: 5px;">
+                                                    <div class="size-list">
+                                                        <span style="font-size: 12px; font-weight: bold;">Men's</span>
+                                                    </div>
+                                                    <div class="list-product-btn">
+                                                        <button class="box-icon bg_white quick-add tf-btn-loading"
+                                                            data-bs-toggle="modal" data-bs-target="#newproductModal1">
+                                                            <span class="icon icon-bag"></span>
+                                                            <span class="tooltip">View</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <!-- Products -->
+                    <div class="modal fade" id="newproductModal1" tabindex="-1" aria-labelledby="productModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="productModalLabel">Select Product</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Grid with 6 divs (2 rows, 3 columns) -->
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div id="p1" class="card-product"
+                                                    style="padding: 10px; max-width: 150px; margin: 0 auto;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <img class="lazyload img-hover"
+                                                            data-src="images/products/Women-2.png"
+                                                            src="images/products/Women-2.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <div class="size-list"
+                                                            style="text-align: center; margin-top: 5px;">
+                                                            <span
+                                                                style="font-size: 12px; font-weight: bold;">TEST</span>
+                                                        </div>
+                                                        <div class="list-product-btn"
+                                                            style="text-align: center; margin-top: 10px;">
+                                                            <a href="#"
+                                                                class="box-icon bg_white quick-add tf-btn-loading"
+                                                                style="display: inline-block; padding: 5px 10px; font-size: 12px; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;"
+                                                                onclick="openStepModal()">
+                                                                <span class="icon icon-bag"></span>
+                                                                <span class="tooltip">Select</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-4">
+                                                <div class="card-product"
+                                                    style="padding: 10px; max-width: 150px; margin: 0 auto;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <img class="lazyload img-hover"
+                                                            data-src="images/products/Women-2.png"
+                                                            src="images/products/Women-2.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <div class="size-list"
+                                                            style="text-align: center; margin-top: 5px;">
+                                                            <span
+                                                                style="font-size: 12px; font-weight: bold;">Women's</span>
+                                                        </div>
+                                                        <div class="list-product-btn"
+                                                            style="text-align: center; margin-top: 10px;">
+                                                            <a href="#"
+                                                                class="box-icon bg_white quick-add tf-btn-loading"
+                                                                style="display: inline-block; padding: 5px 10px; font-size: 12px; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;"
+                                                                onclick="openStepModal()">
+                                                                <span class="icon icon-bag"></span>
+                                                                <span class="tooltip">Select</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="card-product"
+                                                    style="padding: 10px; max-width: 150px; margin: 0 auto;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <img class="lazyload img-hover"
+                                                            data-src="images/products/Women-2.png"
+                                                            src="images/products/Women-2.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <div class="size-list"
+                                                            style="text-align: center; margin-top: 5px;">
+                                                            <span
+                                                                style="font-size: 12px; font-weight: bold;">Women's</span>
+                                                        </div>
+                                                        <div class="list-product-btn"
+                                                            style="text-align: center; margin-top: 10px;">
+                                                            <a href="#"
+                                                                class="box-icon bg_white quick-add tf-btn-loading"
+                                                                style="display: inline-block; padding: 5px 10px; font-size: 12px; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;"
+                                                                onclick="openStepModal()">
+                                                                <span class="icon icon-bag"></span>
+                                                                <span class="tooltip">Select</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-4">
+                                                <div class="card-product"
+                                                    style="padding: 10px; max-width: 150px; margin: 0 auto;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <img class="lazyload img-hover"
+                                                            data-src="images/products/Women-2.png"
+                                                            src="images/products/Women-2.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <div class="size-list"
+                                                            style="text-align: center; margin-top: 5px;">
+                                                            <span
+                                                                style="font-size: 12px; font-weight: bold;">Women's</span>
+                                                        </div>
+                                                        <div class="list-product-btn"
+                                                            style="text-align: center; margin-top: 10px;">
+                                                            <a href="#"
+                                                                class="box-icon bg_white quick-add tf-btn-loading"
+                                                                style="display: inline-block; padding: 5px 10px; font-size: 12px; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;"
+                                                                onclick="openStepModal()">
+                                                                <span class="icon icon-bag"></span>
+                                                                <span class="tooltip">Select</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="card-product"
+                                                    style="padding: 10px; max-width: 150px; margin: 0 auto;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <img class="lazyload img-hover"
+                                                            data-src="images/products/Women-2.png"
+                                                            src="images/products/Women-2.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <div class="size-list"
+                                                            style="text-align: center; margin-top: 5px;">
+                                                            <span
+                                                                style="font-size: 12px; font-weight: bold;">Women's</span>
+                                                        </div>
+                                                        <div class="list-product-btn"
+                                                            style="text-align: center; margin-top: 10px;">
+                                                            <a href="#"
+                                                                class="box-icon bg_white quick-add tf-btn-loading"
+                                                                style="display: inline-block; padding: 5px 10px; font-size: 12px; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;"
+                                                                onclick="openStepModal()">
+                                                                <span class="icon icon-bag"></span>
+                                                                <span class="tooltip">Select</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-4">
+                                                <div class="card-product"
+                                                    style="padding: 10px; max-width: 150px; margin: 0 auto;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <img class="lazyload img-hover"
+                                                            data-src="images/products/Women-2.png"
+                                                            src="images/products/Women-2.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                        <div class="size-list"
+                                                            style="text-align: center; margin-top: 5px;">
+                                                            <span
+                                                                style="font-size: 12px; font-weight: bold;">LAHENGA</span>
+                                                        </div>
+                                                        <div class="list-product-btn"
+                                                            style="text-align: center; margin-top: 10px;">
+                                                            <a href="#"
+                                                                class="box-icon bg_white quick-add tf-btn-loading"
+                                                                style="display: inline-block; padding: 5px 10px; font-size: 12px; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;"
+                                                                onclick="openStepModal()">
+                                                                <span class="icon icon-bag"></span>
+                                                                <span class="tooltip">Select</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PRODUCTS end modal -->
+
+
+
+
+
+
+
+                    <!-- DESIGN MODAL -->
+
+                    <div id="stepModal" class="modal fade" aria-labelledby="stepModalLabel" aria-hidden="true"
+                        style="width: 100%;">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header"
+                                    style="background-color: #f8f9fa; border-bottom: 1px solid #ddd;">
+                                    <h5 class="modal-title" id="stepModalLabel" style="color: #333; font-weight: bold;">
+                                        Design</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="container">
+                                    <!-- Heading "Occasion" -->
+                                    <div
+                                        style="background-color: #f5f5f5; padding: 10px 20px; border-radius: 8px; margin-top: 40px;">
+                                        <h5
+                                            style="font-family: 'Arial', sans-serif; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 5px;">
+                                            Occassion
+                                        </h5>
+
+                                    </div>
+                                    <div class="modal-body" style="padding: 30px;">
+
+                                        <div class="row align-items-center">
+
+
+
+
+                                            <!-- Radio Buttons -->
+                                            <div class="col">
+                                                <div class="d-flex justify-content-start">
+                                                    <!-- Radio Button 1 -->
+                                                    <div class="form-check mr-4" style="margin-left:20px; ">
+                                                        <input class=" form-check-input" type="radio" name="occasion"
+                                                            id="occasion1" value="Wedding">
+                                                        <label class="form-check-label" for="occasion1">
+                                                            Wedding
+                                                        </label>
+                                                    </div>
+                                                    <!-- Radio Button 2 -->
+                                                    <div class="form-check mr-4" style="margin-left:40px;">
+                                                        <input class=" form-check-input" type="radio" name="occasion"
+                                                            id="occasion2" value="Birthday">
+                                                        <label class="form-check-label" for="occasion2">
+                                                            Birthday
+                                                        </label>
+                                                    </div>
+                                                    <!-- Radio Button 3 -->
+                                                    <div class="form-check mr-4" style="margin-left:40px;">
+                                                        <input class=" form-check-input" type="radio" name="occasion"
+                                                            id="occasion3" value="Anniversary">
+                                                        <label class="form-check-label" for="occasion3">
+                                                            Anniversary
+                                                        </label>
+                                                    </div>
+                                                    <!-- Radio Button 4 -->
+                                                    <div class="form-check mr-4" style="margin-left:40px;">
+                                                        <input class="form-check-input" type="radio" name="occasion"
+                                                            id="occasion4" value="Party">
+                                                        <label class="form-check-label" for="occasion4">
+                                                            Party
+                                                        </label>
+                                                    </div>
+                                                    <!-- Radio Button 5 -->
+                                                    <div class="form-check mr-4" style="margin-left:40px;">
+                                                        <input class="form-check-input" type="radio" name="occasion"
+                                                            id="occasion5" value="Casual">
+                                                        <label class="form-check-label" for="occasion5">
+                                                            Casual
+                                                        </label>
+                                                    </div>
+                                                    <!-- Radio Button 6 -->
+                                                    <div class="form-check" style="margin-left:40px;">
+                                                        <input class="form-check-input" type="radio" name="occasion"
+                                                            id="occasion6" value="Formal">
+                                                        <label class="form-check-label" for="occasion6">
+                                                            Formal
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        style="background-color: #f5f5f5; padding: 10px 20px; border-radius: 8px; margin-top: 40px;">
+                                        <h5
+                                            style="font-family: 'Arial', sans-serif; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 5px;">
+                                            Style
+                                        </h5>
+                                        <p
+                                            style="font-size: 16px; color: #555; line-height: 1.6; font-family: 'Arial', sans-serif; margin: 0;">
+                                            Select/upload your design you want..
+                                        </p>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="row mt-3">
+                                            <!-- Card 1 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product1"
+                                                    style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
+                                                    <input type="checkbox" id="product1" name="product" value="product1"
+                                                        style="display: none;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <!-- Card 2 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product2"
+                                                    style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
+                                                    <input type="checkbox" id="product2" name="product" value="product2"
+                                                        style="display: none;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <!-- Card 3 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product3"
+                                                    style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
+                                                    <input type="checkbox" id="product3" name="product" value="product3"
+                                                        style="display: none;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <!-- Card 4 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product4"
+                                                    style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
+                                                    <input type="checkbox" id="product4" name="product" value="product4"
+                                                        style="display: none;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <!-- Card 5 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product5"
+                                                    style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
+                                                    <input type="checkbox" id="product5" name="product" value="product5"
+                                                        style="display: none;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <!-- Card 6 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product6"
+                                                    style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
+                                                    <input type="checkbox" id="product6" name="product" value="product6"
+                                                        style="display: none;">
+                                                    <div class="card-product-wrapper"
+                                                        style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
+                                                        <img class="lazyload img-product"
+                                                            data-src="images/products/Women-1.png"
+                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- STYLE SECTION -->
+                                    <div id="upload-section"
+                                        style="margin-bottom: 30px; border: 1px solid #ddd; padding: 20px; display: flex; align-items: center; border-radius: 8px; background-color: #fafafa;">
+                                        <!-- Placeholder Image -->
+                                        <img id="uploaded-image" src="images/products/Women-1.png" alt="Lahenga"
+                                            style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
+
+                                        <!-- Placeholder Text -->
+                                        <h6 id="uploaded-name"
+                                            style="margin: 0; color: #333; font-size: 18px; font-weight: 600;">
+                                            Lahenga
+                                        </h6>
+
+                                        <!-- Upload Button -->
+                                        <label for="image-upload"
+                                            style="display: inline-block; background-color: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: auto;">
+                                            Upload Images
+                                        </label>
+                                        <input type="file" id="image-upload" accept="image/*" style="display: none;"
+                                            onchange="updateImageAndName(event)">
+                                    </div>
+
+                                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                                        <!-- Left Side Inputs -->
+                                        <div style="width: 48%;">
+                                            <div style="margin-bottom: 15px;">
+                                                <label for="input1"
+                                                    style="display: block; font-weight: bold; margin-bottom: 5px;">Color
+                                                </label>
+                                                <input type="file" id="input1" name="input1"
+                                                    style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
+                                            </div>
+                                            <div style="margin-bottom: 15px;">
+                                                <label for="input2"
+                                                    style="display: block; font-weight: bold; margin-bottom: 5px;">Fabric
+                                                </label>
+                                                <input type="file" id="input2" name="input2"
+                                                    style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Right Side Inputs -->
+                                        <div style="width: 48%;">
+                                            <div style="margin-bottom: 15px;">
+                                                <label for="input4"
+                                                    style="display: block; font-weight: bold; margin-bottom: 5px;">Inspiration
+                                                </label>
+                                                <input type="file" id="input4" name="input4"
+                                                    style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
+                                            </div>
+                                            <div style="margin-bottom: 15px;">
+                                                <label for="dropdown"
+                                                    style="display: block; font-weight: bold; margin-bottom: 5px;">Sizes</label>
+                                                <select id="dropdown" name="dropdown"
+                                                    style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
+                                                    <option value="option1">Small</option>
+                                                    <option value="option2">Medium</option>
+                                                    <option value="option3">Large</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex;  margin-top: 20px;margin-left:-20px;">
+                                        <!-- Left Side Div (30% Width) -->
+                                        <div
+                                            style="width: 35%; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
+                                            <!-- Blouse Measurements Section -->
+                                            <div
+                                                style="background-color: #fafafa; width: 100%; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                                <h6
+                                                    style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
+                                                    Blouse Measurements
+                                                </h6>
+
+                                                <!-- Measurement Fields -->
+                                                <div style="display: flex; flex-direction: column; gap: 20px;">
+                                                    <!-- First Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="neckToShoulder"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Neck
+                                                                to Shoulder</label>
+                                                            <input type="text" id="neckToShoulder" name="neckToShoulder"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                        <div style="flex: 1;">
+                                                            <label for="blouseLength"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Blouse
+                                                                Length</label>
+                                                            <input type="text" id="blouseLength" name="blouseLength"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Second Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="sleeveLength"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Sleeve
+                                                                Length</label>
+                                                            <input type="text" id="sleeveLength" name="sleeveLength"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                        <div style="flex: 1;">
+                                                            <label for="chestCircumference"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Around
+                                                                Chest</label>
+                                                            <input type="text" id="chestCircumference"
+                                                                name="chestCircumference" placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Third Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="bottomCircumference"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Around
+                                                                Bottom of Blouse</label>
+                                                            <input type="text" id="bottomCircumference"
+                                                                name="bottomCircumference" placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                        <div style="flex: 1;">
+                                                            <label for="armHoleCircumference"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Arm
+                                                                Hole Circumference</label>
+                                                            <input type="text" id="armHoleCircumference"
+                                                                name="armHoleCircumference" placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+
+                                                    </div>
+
+                                                    <!-- Fourth Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="frontNeckDepth"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Front
+                                                                Neck Depth</label>
+                                                            <input type="text" id="frontNeckDepth" name="frontNeckDepth"
+                                                                placeholder="Enter value"
+                                                                style="width:80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+
+                                                        <div style="flex: 1;">
+                                                            <label for="backNeckDepth"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Back
+                                                                Neck Depth</label>
+                                                            <input type="text" id="backNeckDepth" name="backNeckDepth"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <!-- Fifth Row -->
+                                                    <div style="display: flex; gap: 20px;">
+
+                                                        <div style="flex: 1;">
+                                                            <label for="aroundArm"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Around
+                                                                Arm</label>
+                                                            <input type="text" id="aroundArm" name="aroundArm"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                        <div style="flex: 1;">
+                                                            <label for="shoulder"
+                                                                style="font-size:12px; font-weight: normal; color: #555;">Shoulder</label>
+                                                            <input type="text" id="shoulder" name="shoulder"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Lehnga Measurements Section -->
+                                            <div
+                                                style="background-color: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                                <h6
+                                                    style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
+                                                    Lehenga Measurements
+                                                </h6>
+
+                                                <!-- Measurement Fields -->
+                                                <div style="display: flex; flex-direction: column; gap: 20px;">
+                                                    <!-- First Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="neckToShoulder"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Neck
+                                                                to Shoulder</label>
+                                                            <input type="text" id="neckToShoulder" name="neckToShoulder"
+                                                                placeholder="Enter value" style="width: 80px; padding: 5px; font-size: 12px; border:
+                                                            1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                        <div style="flex: 1;">
+                                                            <label for="blouseLength"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Blouse
+                                                                Length</label>
+                                                            <input type="text" id="blouseLength" name="blouseLength"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Second Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="sleeveLength"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Sleeve
+                                                                Length</label>
+                                                            <input type="text" id="sleeveLength" name="sleeveLength"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                style="background-color: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                                <h6
+                                                    style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
+                                                    Height
+                                                </h6>
+
+                                                <!-- Measurement Fields -->
+                                                <div style="display: flex; gap: 20px; justify-content: space-between;">
+                                                    <!-- First Column: Neck to Shoulder -->
+                                                    <div style="flex: 1;">
+                                                        <label for="neckToShoulder"
+                                                            style="font-size: 12px; font-weight: normal; color: #555;">Neck
+                                                            to Shoulder</label>
+                                                        <input type="text" id="neckToShoulder" name="neckToShoulder"
+                                                            placeholder="Enter value"
+                                                            style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                    </div>
+
+                                                    <!-- Second Column: Blouse Length -->
+                                                    <div style="flex: 1;">
+                                                        <label for="blouseLength"
+                                                            style="font-size: 12px; font-weight: normal; color: #555;">Blouse
+                                                            Length</label>
+                                                        <input type="text" id="blouseLength" name="blouseLength"
+                                                            placeholder="Enter value"
+                                                            style="width: 80px; padding: 5px; font-size:12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                        <!-- Right Side Div (Containing Two Divs) -->
+                                        <div style="width: 55%; display: flex; flex-direction: column; gap: 20px;">
+                                            <!-- YouTube Video Embed -->
+                                            <div style="flex-grow: 1;">
+
+                                                <iframe width="100%" height="600"
+                                                    src="https://www.youtube.com/embed/yC00CujnJ_I?si=R1VuKHGKaeXpicIS"
+                                                    title="YouTube video player" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
+                                                    allowfullscreen></iframe>
+                                            </div>
+
+                                            <!-- Display Image (instead of upload input) -->
+                                            <div style="flex-grow: 1;height: 70%;">
+
+                                                <img src="images/products/measurment.png" alt="Image"
+                                                    style="width: 100%; height: 100%; object-fit: contain; border-radius: 5px;">
+                                                <!-- Increased height -->
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div style="margin-top: 20px;">
+                                        <label for="Text">Note For Agent</label>
+                                        <input type="text">
+                                    </div>
+
+                                    <div class="navigation"
+                                        style="margin-top: 40px; margin-bottom:20px; display: flex; justify-content:flex-end; ">
+                                        <div style="text-align: right; margin-top: 20px;">
+                                            <button id="Save" type="button"
+                                                class="tf-btn btn-fill animate-hover-btn rounded-0"
+                                                onclick="closeDesignModal()">Save</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- STEP 1 Add Product End -->
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer-wrap">
+            <div class="footer-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="footer-infor">
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="images/logo/logo.svg" alt="">
+                                    </a>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <p>Address: 1234 Fashion Street, Suite 567, <br> New York, NY
+                                            10001</p>
+                                    </li>
+                                    <li>
+                                        <p>Email: <a href="product-style-07.html#">info@fashionshop.com</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Phone: <a href="product-style-07.html#">(212) 555-1234</a>
+                                        </p>
+                                    </li>
+                                </ul>
+                                <a href="contact-1.html" class="tf-btn btn-line">Get direction<i
+                                        class="icon icon-arrow1-top-left"></i></a>
+                                <ul class="tf-social-icon d-flex gap-10">
+                                    <li><a href="product-style-07.html#"
+                                            class="box-icon w_34 round social-facebook border-line-black"><i
+                                                class="icon fs-14 icon-fb"></i></a></li>
+                                    <li><a href="product-style-07.html#"
+                                            class="box-icon w_34 round social-twiter border-line-black"><i
+                                                class="icon fs-12 icon-Icon-x"></i></a></li>
+                                    <li><a href="product-style-07.html#"
+                                            class="box-icon w_34 round social-instagram border-line-black"><i
+                                                class="icon fs-14 icon-instagram"></i></a></li>
+                                    <li><a href="product-style-07.html#"
+                                            class="box-icon w_34 round social-tiktok border-line-black"><i
+                                                class="icon fs-14 icon-tiktok"></i></a></li>
+                                    <li><a href="product-style-07.html#"
+                                            class="box-icon w_34 round social-pinterest border-line-black"><i
+                                                class="icon fs-14 icon-pinterest-1"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12 footer-col-block">
+                            <!-- <div class="footer-heading footer-heading-desktop">
+                            <h6>Help</h6>
+                        </div>
+                        <div class="footer-heading footer-heading-moblie">
+                            <h6>Help</h6>
+                        </div>
+                        <ul class="footer-menu-list tf-collapse-content">
+                            <li>
+                                <a href="privacy-policy.html" class="footer-menu_item">Privacy Policy</a>
+                            </li>
+                            <li> 
+                                <a href="delivery-return.html" class="footer-menu_item">  Returns + Exchanges </a>
+                            </li>
+                            <li> 
+                                <a href="shipping-delivery.html" class="footer-menu_item">Shipping</a>
+                            </li>
+                            <li> 
+                                <a href="terms-conditions.html" class="footer-menu_item">Terms &amp; Conditions</a>
+                            </li>
+                            <li> 
+                                <a href="faq-1.html" class="footer-menu_item">FAQ’s</a>
+                            </li>
+                            <li> 
+                                <a href="compare.html" class="footer-menu_item">Compare</a>
+                            </li>
+                            <li> 
+                                <a href="wishlist.html" class="footer-menu_item">My Wishlist</a>
+                            </li>
+                        </ul>
+                    </div> -->
+
+                            <div class="footer-heading footer-heading-desktop" style="margin-left: 100px;">
+                                <h6>About us</h6>
+                            </div>
+                            <div class="footer-heading footer-heading-moblie" style="margin-left: 100px;">
+                                <h6>About us</h6>
+                            </div>
+                            <ul class="footer-menu-list tf-collapse-content" style="margin-left: 100px;">
+                                <li>
+                                    <a href="about-us.html" class="footer-menu_item">Our Story</a>
+                                </li>
+                                <li>
+                                    <a href="our-store.html" class="footer-menu_item">Team</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html" class="footer-menu_item">Services</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html" class="footer-menu_item">ContactUs</a>
+                                </li>
+                                <li>
+                                    <a href="login.html" class="footer-menu_item">Blogs</a>
+                                </li>
+                                <li>
+                                    <a href="login.html" class="footer-menu_item">Account</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12 " style="justify-content:flex-end;">
+                            <div class="footer-newsletter footer-col-block" style="justify-content:flex-end;">
+                                <div class="footer-heading footer-heading-desktop" style="justify-content:flex-end;">
+                                    <h6>Sign Up for Email</h6>
+                                </div>
+                                <div class="footer-heading footer-heading-moblie" style="justify-content:flex-end;">
+                                    <h6>Sign Up for Email</h6>
+                                </div>
+                                <div class="tf-collapse-content" style="justify-content:flex-end;">
+                                    <div class="footer-menu_item">Sign up to get first dibs on new
+                                        arrivals,
+                                        sales,
+                                        exclusive content, events and more!</div>
+                                    <form class="form-newsletter" id="subscribe-form" action="product-style-07.html#"
+                                        method="post" accept-charset="utf-8" data-mailchimp="true">
+                                        <div id="subscribe-content">
+                                            <fieldset class="email">
+                                                <input type="email" name="email-form" id="subscribe-email"
+                                                    placeholder="Enter your email...." tabindex="0"
+                                                    aria-required="true">
+                                            </fieldset>
+                                            <div class="button-submit">
+                                                <button id="subscribe-button"
+                                                    class="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn"
+                                                    type="button">Subscribe<i
+                                                        class="icon icon-arrow1-top-left"></i></button>
+                                            </div>
+                                        </div>
+                                        <div id="subscribe-msg"></div>
+                                    </form>
+                                    <div class="tf-cur">
+                                        <div class="tf-currencies">
+                                            <select class="image-select center style-default type-currencies">
+                                                <option data-thumbnail="images/country/fr.svg">EUR
+                                                    <span>€ |
+                                                        France</span>
+                                                </option>
+                                                <option data-thumbnail="images/country/de.svg">EUR
+                                                    <span>€ |
+                                                        Germany</span>
+                                                </option>
+                                                <option selected data-thumbnail="images/country/us.svg">
+                                                    USD
+                                                    <span>$
+                                                        |
+                                                        United States</span>
+                                                </option>
+                                                <option data-thumbnail="images/country/vn.svg">VND
+                                                    <span>₫ |
+                                                        Vietnam</span>
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="tf-languages">
+                                            <select class="image-select center style-default type-languages">
+                                                <option>English</option>
+                                                <option>العربية</option>
+                                                <option>简体中文</option>
+                                                <option>اردو</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div
+                                class="footer-bottom-wrap d-flex gap-20 flex-wrap justify-content-between align-items-center">
+                                <div class="footer-menu_item">© 2024 Ecomus Store. All Rights Reserved
+                                </div>
+                                <div class="tf-payment">
+                                    <img src="images/payments/visa.png" alt="">
+                                    <img src="images/payments/img-1.png" alt="">
+                                    <img src="images/payments/img-2.png" alt="">
+                                    <img src="images/payments/img-3.png" alt="">
+                                    <img src="images/payments/img-4.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /footer -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        let currentStep = 1; // Current step counter
+
+        // Show the step based on the current step number
+        function showStep(step) {
+            document.querySelectorAll('.step').forEach((stepElement, index) => {
+                stepElement.classList.remove('active');
+                if (index + 1 === step) {
+                    stepElement.classList.add('active');
+                }
+            });
+        }
+
+        // Attach event listeners to Next and Back buttons
+        document.getElementById('next1')?.addEventListener('click', function () {
+            currentStep++;
+            showStep(currentStep);
+        });
+
+        document.getElementById('next2')?.addEventListener('click', function () {
+            currentStep++;
+            showStep(currentStep);
+        });
+
+        document.getElementById('next3')?.addEventListener('click', function () {
+            currentStep++;
+            showStep(currentStep);
+        });
+
+        document.getElementById('back2')?.addEventListener('click', function () {
+            currentStep--;
+            showStep(currentStep);
+        });
+
+        document.getElementById('back3')?.addEventListener('click', function () {
+            currentStep--;
+            showStep(currentStep);
+        });
+
+        document.getElementById('back4')?.addEventListener('click', function () {
+            currentStep--;
+            showStep(currentStep);
+        });
+
+        // Initialize by showing the first step
+        showStep(currentStep);
+
+        function closeDesignModal() {
+            // Modal element ko select karna
+            const modalElement = document.getElementById('stepModal');
+
+            // Bootstrap modal instance ko retrieve karna
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+
+            // Agar modal instance hai to modal ko hide karna
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+
+            // Backdrop element ko manually remove karna
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+
+            // Body se 'modal-open' class ko remove karna (jo scroll disable karti hai)
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+        }
+
+        // STEP 2
+        // Function to decrease the quantity
+        function decreaseQuantity() {
+            var quantityInput = document.getElementById('quantity');
+            var currentValue = parseInt(quantityInput.value);
+
+            // Ensure the value doesn't go below 1
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        }
+
+        // Function to increase the quantity
+        function increaseQuantity() {
+            var quantityInput = document.getElementById('quantity');
+            var currentValue = parseInt(quantityInput.value);
+
+            // Increase the value
+            quantityInput.value = currentValue + 1;
+        }
+        displayOrderName();
+
+        function updateImageAndName(event) {
+            const fileInput = event.target; // The file input element
+            const uploadedImage = document.getElementById('uploaded-image'); // The placeholder image element
+            const uploadedName = document.getElementById('uploaded-name'); // The placeholder text element
+
+            // Ensure files were uploaded
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+
+                // Update the image source to the uploaded file
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    uploadedImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+
+                // Update the name text to the uploaded file's name
+                uploadedName.textContent = file.name;
+            }
+        }
+
+
+        // SHIPPING MODAL FUNCTION
+
+
+        // Function to open the modal
+        function openShippingModal() {
+            const overlay = document.getElementById('shipping-modal-overlay');
+            const modal = document.getElementById('shipping-modal-form');
+
+            if (overlay && modal) {
+                overlay.style.display = 'block'; // Show the overlay
+                modal.style.display = 'block';  // Show the modal
+            } else {
+                console.error("Modal elements not found!");
+            }
+        }
+
+        function closeShippingModal() {
+            const overlay = document.getElementById('shipping-modal-overlay');
+            const modal = document.getElementById('shipping-modal-form');
+
+            if (overlay && modal) {
+                overlay.style.display = 'none'; // Hide the overlay
+                modal.style.display = 'none';  // Hide the modal
+            } else {
+                console.error("Modal elements not found!");
+            }
+        }
+
+
+        // Open the modal when "Credit Card" is selected
+        function openCreditCardModal() {
+            document.getElementById('creditCardModal').style.display = 'block';
+            document.getElementById('modal-overlay').style.display = 'block';
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById('creditCardModal').style.display = 'none';
+            document.getElementById('modal-overlay').style.display = 'none';
+        }
+
+        // Optionally, you can handle form submission for credit card information here.
+        document.getElementById('creditCardForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Credit Card Submitted!');
+            closeModal(); // Close the modal after form submission
+        });
+
+
+
+
+
+
+        // modal cehcking
+
+        // Function to open the Step Modal
+        function openStepModal() {
+            // Hide the product modal
+            $('#newproductModal1').modal('hide');
+
+            // Show the step modal
+            $('#stepModal').modal('show');
+        }
+
+
+        function highlightNav(stepId) {
+            // Remove 'active' class from all navigation items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Add 'active' class to the selected navigation item
+            const navItem = document.getElementById(stepId + '-nav');
+            if (navItem) {
+                navItem.classList.add('active');
+            }
+
+            // Hide all steps
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+
+            // Show the selected step
+            const stepContent = document.getElementById(stepId);
+            if (stepContent) {
+                stepContent.classList.add('active');
+            }
+        }
+
+        // Default step on page load
+        document.addEventListener("DOMContentLoaded", function () {
+            highlightNav('step1'); // Default step is step1
+        });
+
+
+    </script>
+
+    <!-- Javascript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="js/lazysize.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="js/count-down.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/multiple-modal.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
