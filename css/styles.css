@@ -2840,7 +2840,7 @@ header.header-bg {
 
 .widget-tab-4 {
   border-radius: 10px;
-  border: 1px solid var(--main);
+  border: 1px solid #E10A0A ;
   gap: 20px;
   padding: 20px 15px;
   display: flex;
