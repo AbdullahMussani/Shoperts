@@ -3598,8 +3598,8 @@ header.header-bg {
   color: var(--white);
 }
 .btn-outline-light:hover {
-  color: var(--primary);
-  border-color: var(--primary);
+  color: black;
+  border-color: black;
 }
 
 .fill-outline-light {
