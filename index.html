@@ -37,73 +37,106 @@
     <div id="wrapper">
         <!-- Header -->
         <header id="header" class="header-default header-style-3">
-            <div class="container-full px_15 lg-px_40">
+            <div class="container-fluid px-3 px-lg-5">
                 <div class="row wrapper-header align-items-center">
                     <!-- Logo Section -->
-                    <div class="col-xl-3 col-md-3 col-4">
-                        <div class="wrap-header-left d-flex align-items-center">
-                            <a href="index.html" class="logo-header">
-                                <img src="images/logo/shopperTsLogo.jpeg" alt="logo" class="logo" style="width: 180px;">
-                            </a>
-                        </div>
+                    <div class="col-6 col-md-3 d-flex align-items-center">
+                        <a href="index.html" class="logo-header">
+                            <img src="images/logo/shopperTsLogo.jpeg" alt="logo" class="logo img-fluid"
+                                style="width: 180px;">
+                        </a>
                     </div>
 
                     <!-- Navigation Section -->
-                    <div class="col-xl-6 col-md-6 col-4">
-                        <nav class="box-navigation d-flex justify-content-start" style="margin-left: 20px;">
-                            <ul class="box-nav-ul d-flex gap-30" style="font-size: 10px; white-space: nowrap;">
-                                <li class="menu-item">
-                                    <a href="index.html" class="item-link">Home</a>
+                    <div class="col-md-6 d-none d-md-block" style="margin-left: 70px;">
+                        <nav class="navbar navbar-expand-md justify-content-md-center">
+                            <ul class="navbar-nav gap-3" style="font-size: 14px; white-space: nowrap;">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link">Home</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="about-us.html" class="item-link">About Us</a>
+                                <li class="nav-item">
+                                    <a href="about-us.html" class="nav-link">About Us</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="home-07.html#" class="item-link">Customize Order</a>
+                                <li class="nav-item">
+                                    <a href="home-07.html#" class="nav-link">Customize Order</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="ReadyMade.html" class="item-link">Ready Made Order</a>
+                                <li class="nav-item">
+                                    <a href="ReadyMade.html" class="nav-link">Ready Made Order</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="contact.html" class="item-link">Services</a>
+                                <li class="nav-item">
+                                    <a href="contact.html" class="nav-link">Services</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="blog-list.html" class="item-link">Blog</a>
+                                <li class="nav-item">
+                                    <a href="blog-list.html" class="nav-link">Blog</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="home-07.html#" class="item-link">Career</a>
+                                <li class="nav-item">
+                                    <a href="home-07.html#" class="nav-link">Career</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="contact.html" class="item-link">Contact Us</a>
+                                <li class="nav-item">
+                                    <a href="contact.html" class="nav-link">Contact Us</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
 
                     <!-- Search and Login Icons -->
-                    <div class="col-xl-3 col-md-3 col-4">
-                        <ul class="nav-icon d-flex justify-content-end align-items-center gap-20">
-                            <li class="nav-search">
+                    <div class="col-2 col-md-2 d-flex justify-content-end align-items-center">
+                        <ul class="nav gap-3">
+                            <li class="nav-item">
                                 <a href="home-07.html#canvasSearch" data-bs-toggle="offcanvas"
-                                    aria-controls="offcanvasLeft" class="nav-icon-item">
+                                    aria-controls="offcanvasLeft" class="nav-link text-dark">
                                     <i class="icon icon-search"></i>
                                 </a>
                             </li>
-                            <li class="nav-account">
-                                <a href="home-07.html#login" data-bs-toggle="modal" class="nav-icon-item">
+                            <li class="nav-item">
+                                <a href="home-07.html#login" data-bs-toggle="modal" class="nav-link text-dark">
                                     <i class="icon icon-account"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Mobile Navigation Toggle -->
+                    <div class="col-6 d-md-none text-end">
+                        <button class="navbar-toggler text-dark border-0" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div class="collapse navbar-collapse d-md-none" id="mobileNav">
+                    <ul class="navbar-nav flex-column text-center">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link text-dark">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about-us.html" class="nav-link text-dark">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="home-07.html#" class="nav-link text-dark">Customize Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="ReadyMade.html" class="nav-link text-dark">Ready Made Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link text-dark">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog-list.html" class="nav-link text-dark">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="home-07.html#" class="nav-link text-dark">Career</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link text-dark">Contact Us</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </header>
-
-
-
-
-
         <!-- /Header -->
 
 
@@ -113,7 +146,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" lazy="true">
                         <div class="wrap-slider"
-                            style="display: flex; align-items: center; justify-content: space-between;">
+                            style="display: flex; align-items: center; justify-content: space-between;margin-left:70px;">
                             <!-- Left Side (Box) -->
                             <div class="box-content" style="flex: 1; padding: 20px;">
                                 <div class="card-box"
@@ -134,7 +167,7 @@
                             <div style="flex: 1; display: flex; justify-content: flex-end;">
                                 <img class="lazyload" data-src="images/slider/Slider 1.png"
                                     src="images/slider/Slider 1.png" alt="fashion-slideshow"
-                                    style="max-width: 40%; height: auto; object-fit: contain;">
+                                    style="max-width: 35%; height: auto; object-fit: contain;">
                             </div>
                         </div>
                     </div>
@@ -491,55 +524,55 @@
                             </div>
                         </li>
                         <li class="nav-tab-item" role="presentation">
-                            <div data-bs-target="#tops" class="nav-tab-link" data-bs-toggle="tab">
+                            <div data-bs-target="#KurtaSet" class="nav-tab-link" data-bs-toggle="tab">
                                 <span class="text">Kurta Sets<span class="count">14</span></span>
                                 <a href="#" class="icon icon-arrow1-top-left"></a>
                             </div>
                         </li>
                         <li class="nav-tab-item" role="presentation">
-                            <div data-bs-target="#shirtsBlouses" class="nav-tab-link" data-bs-toggle="tab">
+                            <div data-bs-target="#Gharara" class="nav-tab-link" data-bs-toggle="tab">
                                 <span class="text">Gharara<span class="count">31</span></span>
                                 <a href="#" class="icon icon-arrow1-top-left"></a>
                             </div>
                         </li>
                         <li class="nav-tab-item" role="presentation">
-                            <div data-bs-target="#pants" class="nav-tab-link" data-bs-toggle="tab">
+                            <div data-bs-target="#Jacket" class="nav-tab-link" data-bs-toggle="tab">
                                 <span class="text">Jacket<span class="count">9</span></span>
                                 <a href="#" class="icon icon-arrow1-top-left"></a>
                             </div>
                         </li>
                         <li class="nav-tab-item" role="presentation">
-                            <div data-bs-target="#cardigans" class="nav-tab-link" data-bs-toggle="tab">
+                            <div data-bs-target="#Gown" class="nav-tab-link" data-bs-toggle="tab">
                                 <span class="text">Gown<span class="count">23</span></span>
                                 <a href="#" class="icon icon-arrow1-top-left"></a>
                             </div>
                         </li>
                         <li class="nav-tab-item" role="presentation">
-                            <div data-bs-target="#blazers" class="nav-tab-link" data-bs-toggle="tab">
+                            <div data-bs-target="#Kaftan" class="nav-tab-link" data-bs-toggle="tab">
                                 <span class="text">Kaftan<span class="count">9</span></span>
                                 <a href="#" class="icon icon-arrow1-top-left"></a>
                             </div>
                         </li>
                         <li class="nav-tab-item" role="presentation">
-                            <div data-bs-target="#overalls" class="nav-tab-link" data-bs-toggle="tab">
+                            <div data-bs-target="#Angrakha" class="nav-tab-link" data-bs-toggle="tab">
                                 <span class="text">Angrakha<span class="count">23</span></span>
                                 <a href="#" class="icon icon-arrow1-top-left"></a>
                             </div>
                         </li>
                         <li class="nav-tab-item" role="presentation">
-                            <div data-bs-target="#overalls" class="nav-tab-link" data-bs-toggle="tab">
+                            <div data-bs-target="#Saree" class="nav-tab-link" data-bs-toggle="tab">
                                 <span class="text">Saree<span class="count">23</span></span>
                                 <a href="#" class="icon icon-arrow1-top-left"></a>
                             </div>
                         </li>
                         <li class="nav-tab-item" role="presentation">
-                            <div data-bs-target="#overalls" class="nav-tab-link" data-bs-toggle="tab">
+                            <div data-bs-target="#Kurti" class="nav-tab-link" data-bs-toggle="tab">
                                 <span class="text">Kurti<span class="count">23</span></span>
                                 <a href="#" class="icon icon-arrow1-top-left"></a>
                             </div>
                         </li>
                         <li class="nav-tab-item" role="presentation">
-                            <div data-bs-target="#overalls" class="nav-tab-link" data-bs-toggle="tab">
+                            <div data-bs-target="#Anarkali" class="nav-tab-link" data-bs-toggle="tab">
                                 <span class="text">Anarkali<span class="count">23</span></span>
                                 <a href="#" class="icon icon-arrow1-top-left"></a>
                             </div>
@@ -549,47 +582,73 @@
                         <div class="value-process"></div>
                     </div>
 
-                    <div class="tab-content">
+                    <div class="tab-content" style="margin-left: 200px;max-width: 65%;">
                         <div class="tab-pane active show" id="Trousers" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
                                 <img class="lazyload" data-src="images/collections/Trouser.jpg"
-                                    src="images/collections/Trouser.jpg" alt="image-shop">
+                                    src="images/collections/Trouser.jpg" alt="image-shop"
+                                    style="width: 100vh; height: 100%; object-fit: cover;">
                             </a>
                         </div>
-                        <div class="tab-pane" id="tops" role="tabpanel">
+                        <div class="tab-pane" id="KurtaSet" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/collection-50.jpg"
-                                    src="images/collections/collection-50.jpg" alt="image-shop">
+                                <img class="lazyload" data-src="images/collections/Kurta Set.jpg"
+                                    src="images/collections/Kurta Set.jpg" alt="image-shop"
+                                    style="width: 100vh; height: 100%; object-fit: cover;"> </a>
+                        </div>
+                        <div class="tab-pane" id="Gharara" role="tabpanel">
+                            <a href="#" class="fullwidth radius-10 o-hidden">
+                                <img class="lazyload" data-src="images/collections/Gharara.jpg"
+                                    src="images/collections/Gharara.jpg" alt="image-shop"
+                                    style="width: 100vh; height: 100%; object-fit: cover;">
                             </a>
                         </div>
-                        <div class="tab-pane" id="shirtsBlouses" role="tabpanel">
+                        <div class="tab-pane" id="Jacket" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/collection-51.jpg"
-                                    src="images/collections/collection-51.jpg" alt="image-shop">
+                                <img class="lazyload" data-src="images/collections/Jacket.jpg"
+                                    src="images/collections/Jacket.jpg" alt="image-shop">
                             </a>
                         </div>
-                        <div class="tab-pane" id="pants" role="tabpanel">
+                        <div class="tab-pane" id="Gown" role=" tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/collection-52.jpg"
-                                    src="images/collections/collection-52.jpg" alt="image-shop">
+                                <img class="lazyload" data-src="images/collections/Gown.jpg"
+                                    src="images/collections/Gown.jpg" alt="image-shop"
+                                    style="width: 100vh; height: 100%; object-fit: cover;">
                             </a>
                         </div>
-                        <div class="tab-pane" id="cardigans" role="tabpanel">
+                        <div class="tab-pane" id="Kaftan" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/collection-53.jpg"
-                                    src="images/collections/collection-53.jpg" alt="image-shop">
+                                <img class="lazyload" data-src="images/collections/Kaftan.jpg"
+                                    src="images/collections/Kaftan.jpg" alt="image-shop"
+                                    style="width: 100vh; height: 100%; object-fit: cover;">
                             </a>
                         </div>
-                        <div class="tab-pane" id="blazers" role="tabpanel">
+                        <div class="tab-pane" id="Angrakha" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/collection-54.jpg"
-                                    src="images/collections/collection-54.jpg" alt="image-shop">
+                                <img class="lazyload" data-src="images/collections/Angrakha.jpg"
+                                    src="images/collections/Angrakha.jpg" alt="image-shop"
+                                    style="width: 100vh; height: 100%; object-fit: cover;">
                             </a>
                         </div>
-                        <div class="tab-pane" id="overalls" role="tabpanel">
+                        <div class="tab-pane" id="Saree" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/collection-55.jpg"
-                                    src="images/collections/collection-55.jpg" alt="image-shop">
+                                <img class="lazyload" data-src="images/collections/Saree.jpg"
+                                    src="images/collections/Saree.jpg" alt="image-shop"
+                                    style="width: 100vh; height: 100%; object-fit: cover;overflow: hidden;">
+                            </a>
+                        </div>
+                        <div class="tab-pane" id="Kurti" role="tabpanel">
+                            <a href="#" class="fullwidth radius-10 o-hidden">
+                                <img class="lazyload" data-src="images/collections/Kurtii.jpg"
+                                    src="images/collections/Kurtii.jpg" alt="image-shop"
+                                    style="width: 100vh; height: 100%; object-fit: cover;">
+                            </a>
+                        </div>
+                        <div class="tab-pane" id="Anarkali" role="tabpanel">
+                            <a href="#" class="fullwidth radius-10 o-hidden">
+                                <img class="lazyload" data-src="images/collections/Anarkali.jpg"
+                                    src="images/collections/Anarkali.jpg" alt="image-shop"
+                                    style="width: 100vh; height: 100%; object-fit: cover;">
                             </a>
                         </div>
                     </div>
