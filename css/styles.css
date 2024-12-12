@@ -2996,7 +2996,8 @@ header.header-bg {
   z-index: 10;
   bottom: 57px;
   left: 0;
-  right: 0;
+  right: 600px;
+  margin-right:600px;
 }
 .tf-slideshow .sw-absolute-3 {
   right: 3%;
@@ -3004,7 +3005,7 @@ header.header-bg {
   width: auto;
 }
 .tf-slideshow .sw-absolute-3 .sw-dots {
-  flex-direction: column;
+  flex-direction: row;
 }
 .tf-slideshow .card-box {
   padding: 64px 48px 70px;

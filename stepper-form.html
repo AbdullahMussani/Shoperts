@@ -104,76 +104,110 @@
     <!-- /preload -->
     <div id="wrapper">
         <!-- Header -->
+        <!-- Header -->
         <header id="header" class="header-default header-style-3">
-            <div class="container-full px_15 lg-px_40">
+            <div class="container-fluid px-3 px-lg-5">
                 <div class="row wrapper-header align-items-center">
                     <!-- Logo Section -->
-                    <div class="col-xl-3 col-md-3 col-4">
-                        <div class="wrap-header-left d-flex align-items-center">
-                            <a href="index.html" class="logo-header">
-                                <img src="images/logo/shopperTsLogo.jpeg" alt="logo" class="logo" style="width: 180px;">
-                            </a>
-                        </div>
+                    <div class="col-6 col-md-3 d-flex align-items-center">
+                        <a href="index.html" class="logo-header">
+                            <img src="images/logo/shopperTsLogo.jpeg" alt="ShopperTS Logo" class="logo img-fluid"
+                                style="width: 180px;">
+                        </a>
                     </div>
 
+
                     <!-- Navigation Section -->
-                    <div class="col-xl-6 col-md-6 col-4">
-                        <nav class="box-navigation d-flex justify-content-start" style="margin-left: 20px;">
-                            <ul class="box-nav-ul d-flex gap-30" style="font-size: 10px; white-space: nowrap;">
-                                <li class="menu-item">
-                                    <a href="index.html" class="item-link">Home</a>
+                    <div class="col-md-6 d-none d-md-block" style="margin-left: 70px;">
+                        <nav class="navbar navbar-expand-md justify-content-md-center">
+                            <ul class="navbar-nav gap-3" style="font-size: 14px; white-space: nowrap;">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link">Home</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="about-us.html" class="item-link">About Us</a>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">About Us</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="home-07.html#" class="item-link">Customize Order</a>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Customize Order</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="ReadyMade.html" class="item-link">Ready Made Order</a>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Ready Made Order</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="contact.html" class="item-link">Services</a>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Services</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="blog-list.html" class="item-link">Blog</a>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Blog</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="home-07.html#" class="item-link">Career</a>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Career</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="contact.html" class="item-link">Contact Us</a>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Contact Us</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
 
                     <!-- Search and Login Icons -->
-                    <div class="col-xl-3 col-md-3 col-4">
-                        <ul class="nav-icon d-flex justify-content-end align-items-center gap-20">
-                            <li class="nav-search">
-                                <a href="home-07.html#canvasSearch" data-bs-toggle="offcanvas"
-                                    aria-controls="offcanvasLeft" class="nav-icon-item">
+                    <div class="col-2 col-md-2 d-flex justify-content-end align-items-center">
+                        <ul class="nav gap-3">
+                            <li class="nav-item">
+                                <a href="#" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft"
+                                    class="nav-link text-dark">
                                     <i class="icon icon-search"></i>
                                 </a>
                             </li>
-                            <li class="nav-account">
-                                <a href="home-07.html#login" data-bs-toggle="modal" class="nav-icon-item">
+                            <li class="nav-item">
+                                <a href="home-07.html#login" data-bs-toggle="modal" class="nav-link text-dark">
                                     <i class="icon icon-account"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Mobile Navigation Toggle -->
+                    <div class="col-6 d-md-none text-end">
+                        <button class="navbar-toggler text-dark border-0" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div class="collapse navbar-collapse d-md-none" id="mobileNav">
+                    <ul class="navbar-nav flex-column text-center">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link text-dark">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">Customize Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">Ready Made Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">Career</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">Contact Us</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </header>
-
-
-
-
-
         <!-- /Header -->
-
 
 
         <!-- page-title -->
@@ -189,7 +223,7 @@
                 <ul class="my-account-nav">
                     <li><a href="my-account.html" class="my-account-nav-item">Dashboard</a></li>
                     <li><span class="my-account-nav-item active"> New Orders</span></li>
-                    <li><a href="login.html" class="my-account-nav-item">Order History</a></li>
+                    <li><a href="my-account-orders.html" class="my-account-nav-item">Order History</a></li>
                     <li><a href="my-account.html" class="my-account-nav-item">Profile</a></li>
                     <li><span class="my-account-nav-item">Agent Message</span></li>
                     <li><a href="login.html" class="my-account-nav-item">Notification</a></li>
@@ -258,11 +292,11 @@
                                         <!-- Quantity Control -->
                                         <div style="display: flex; align-items: center; margin-bottom: 20px;">
                                             <button id="decreaseBtn" onclick="decreaseQuantity()"
-                                                style="padding: 5px 10px; background-color: #f0f0f0; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">-</button>
+                                                style="padding: 5px 10px; background-color: #0a0a0a; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">-</button>
                                             <input id="quantity" value="1" readonly
                                                 style="width: 60px; text-align: center; border: 1px solid #ddd; border-radius: 5px; margin: 0 5px; font-size: 12px; color: black;">
                                             <button id="increaseBtn" onclick="increaseQuantity()"
-                                                style="padding: 5px 10px; background-color: #f0f0f0; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">+</button>
+                                                style="padding: 5px 10px; background-color: #0a0a0a; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">+</button>
                                         </div>
                                     </div>
                                 </div>
@@ -363,7 +397,11 @@
                                     Summary</h5>
                                 <p style="margin: 0; font-size: 12px;">Subtotal: $100.00</p>
                                 <p style="margin: 10px 0 0; font-size: 12px;">Tax: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Shipping:Rush</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">rush Caharges: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Addon charges: $5.00</p>
                                 <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold;">Total: $105.00</p>
+
                             </div>
                         </div>
                         <!-- Navigation buttons (Back & Next) -->
@@ -394,12 +432,14 @@
                                 <div>
                                     <label
                                         style="display: block; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
-                                        <input type="radio" name="production_method" value="manual"> Manual Production
+                                        <input type="radio" name="production_method" value="manual"> Standard Production
+                                        <span>(3-4 weeks)</span>
+
                                     </label>
                                     <label
                                         style="display: block; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
-                                        <input type="radio" name="production_method" value="automated"> Automated
-                                        Production
+                                        <input type="radio" name="production_method" value="automated"> Rush
+                                        Production <span>(2 weeks)</sapn>
                                     </label>
                                 </div>
 
@@ -442,6 +482,9 @@
                                 <h5>Price Summary</h5>
                                 <p>Subtotal: $100.00</p>
                                 <p>Tax: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Shipping:Rush</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">rush Caharges: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Addon charges: $5.00</p>
                                 <p><strong>Total: $105.00</strong></p>
                             </div>
                         </div>
@@ -619,6 +662,9 @@
                                     Summary</h5>
                                 <p style="margin: 0; font-size: 12px;">Subtotal: $100.00</p>
                                 <p style="margin: 10px 0 0; font-size: 12px;">Tax: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Shipping:Rush</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">rush Caharges: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Addon charges: $5.00</p>
                                 <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold;">Total: $105.00
                                 </p>
                             </div>
@@ -793,6 +839,9 @@
                                     Summary</h5>
                                 <p style="margin: 0; font-size: 12px;">Subtotal: $100.00</p>
                                 <p style="margin: 10px 0 0; font-size: 12px;">Tax: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Shipping:Rush</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">rush Caharges: $5.00</p>
+                                <p style="margin: 10px 0 0; font-size: 12px;">Addon charges: $5.00</p>
                                 <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold;">Total: $105.00
                                 </p>
                             </div>
@@ -929,8 +978,8 @@
                                                         onclick="openStepModal()">
                                                         <!-- Main product image -->
                                                         <img class="lazyload img-product"
-                                                            data-src="images/products/Women-1.png"
-                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            data-src="images/collections/anarkali.jpg"
+                                                            src="images/collections/anarkali.jpg" alt="image-product"
                                                             style="width: 100%; height: auto;">
 
                                                         <!-- Hover product image -->
@@ -942,7 +991,7 @@
                                                         <div class="size-list"
                                                             style="text-align: center; margin-top: 5px;">
                                                             <span
-                                                                style="font-size: 12px; font-weight: bold;">TEST</span>
+                                                                style="font-size: 12px; font-weight: bold;">anarkali</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -970,7 +1019,7 @@
                                                         <div class="size-list"
                                                             style="text-align: center; margin-top: 5px;">
                                                             <span
-                                                                style="font-size: 12px; font-weight: bold;">TEST</span>
+                                                                style="font-size: 12px; font-weight: bold;">Lahenga</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -983,8 +1032,8 @@
                                                         onclick="openStepModal()">
                                                         <!-- Main product image -->
                                                         <img class="lazyload img-product"
-                                                            data-src="images/products/Women-1.png"
-                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            data-src="images/collections/Angrakha.jpg"
+                                                            src="images/collections/Angrakha.jpg" alt="image-product"
                                                             style="width: 100%; height: auto;">
 
                                                         <!-- Hover product image -->
@@ -996,7 +1045,7 @@
                                                         <div class="size-list"
                                                             style="text-align: center; margin-top: 5px;">
                                                             <span
-                                                                style="font-size: 12px; font-weight: bold;">TEST</span>
+                                                                style="font-size: 12px; font-weight: bold;">Angrakha</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1011,8 +1060,8 @@
                                                         onclick="openStepModal()">
                                                         <!-- Main product image -->
                                                         <img class="lazyload img-product"
-                                                            data-src="images/products/Women-1.png"
-                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            data-src="images/collections/Jacket.jpg"
+                                                            src="imagescollections/Jacket.jpg" alt="image-product"
                                                             style="width: 100%; height: auto;">
 
                                                         <!-- Hover product image -->
@@ -1024,7 +1073,7 @@
                                                         <div class="size-list"
                                                             style="text-align: center; margin-top: 5px;">
                                                             <span
-                                                                style="font-size: 12px; font-weight: bold;">TEST</span>
+                                                                style="font-size: 12px; font-weight: bold;">Jacket</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1037,8 +1086,8 @@
                                                         onclick="openStepModal()">
                                                         <!-- Main product image -->
                                                         <img class="lazyload img-product"
-                                                            data-src="images/products/Women-1.png"
-                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            data-src="images/collections/Trouser.jpg"
+                                                            src="images/collections/Trouser.jpg" alt="image-product"
                                                             style="width: 100%; height: auto;">
 
                                                         <!-- Hover product image -->
@@ -1050,7 +1099,7 @@
                                                         <div class="size-list"
                                                             style="text-align: center; margin-top: 5px;">
                                                             <span
-                                                                style="font-size: 12px; font-weight: bold;">TEST</span>
+                                                                style="font-size: 12px; font-weight: bold;">Trouser</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1064,8 +1113,8 @@
                                                         onclick="openStepModal()">
                                                         <!-- Main product image -->
                                                         <img class="lazyload img-product"
-                                                            data-src="images/products/Women-1.png"
-                                                            src="images/products/Women-1.png" alt="image-product"
+                                                            data-src="images/collections/Kurtii.jpg"
+                                                            src="images/collections/Kurtii.jpg" alt="image-product"
                                                             style="width: 100%; height: auto;">
 
                                                         <!-- Hover product image -->
@@ -1077,7 +1126,7 @@
                                                         <div class="size-list"
                                                             style="text-align: center; margin-top: 5px;">
                                                             <span
-                                                                style="font-size: 12px; font-weight: bold;">TEST</span>
+                                                                style="font-size: 12px; font-weight: bold;">Kurtii</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1293,256 +1342,95 @@
                                                                 src="images/products/Women-1.png" alt="image-product"
                                                                 style="width: 100%; height: auto;">
                                                         </div>
-                                                    </div>
-                                                    </label>
                                                 </div>
+                                                </label>
                                             </div>
                                         </div>
+                                    
 
 
-                                        <!-- STYLE SECTION -->
-                                        <div id="upload-section"
-                                            style="margin-bottom: 30px; border: 1px solid #ddd; padding: 20px; display: flex; align-items: center; border-radius: 8px; background-color: #fafafa; margin-top: 10px;">
-                                            <!-- Placeholder Image -->
-                                            <img id="uploaded-image" src="images/products/Women-1.png" alt="Lahenga"
-                                                style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
+                                    <!-- STYLE SECTION -->
+                                    <div id="upload-section"
+                                        style="margin-bottom: 30px; border: 1px solid #ddd; padding: 20px; display: flex; align-items: center; border-radius: 8px; background-color: #fafafa; margin-top: 10px;">
+                                        <!-- Placeholder Image -->
+                                        <img id="uploaded-image" src="images/products/Women-1.png" alt="Lahenga"
+                                            style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
 
-                                            <!-- Placeholder Text -->
-                                            <h6 id="uploaded-name"
-                                                style="margin: 0; color: #333; font-size: 18px; font-weight: 600;">
-                                                Lahenga
-                                            </h6>
+                                        <!-- Placeholder Text -->
+                                        <h6 id="uploaded-name"
+                                            style="margin: 0; color: #333; font-size: 18px; font-weight: 600;">
+                                            Lahenga
+                                        </h6>
 
-                                            <!-- Upload Button -->
-                                            <label for="image-upload"
-                                                style="display: inline-block; background-color: #E10A0A; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: auto;">
-                                                Upload Images
-                                            </label>
-                                            <input type="file" id="image-upload" accept="image/*" style="display: none;"
-                                                onchange="updateImageAndName(event)">
-                                        </div>
+                                        <!-- Upload Button -->
+                                        <label for="image-upload"
+                                            style="display: inline-block; background-color: #E10A0A; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: auto;">
+                                            Upload Images
+                                        </label>
+                                        <input type="file" id="image-upload" accept="image/*" style="display: none;"
+                                            onchange="updateImageAndName(event)">
+                                    </div>
+                                </div>
 
-                                        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-                                            <!-- Left Side Inputs -->
-                                            <div style="width: 48%;">
-                                                <div style="margin-bottom: 15px;">
-                                                    <label for="input1"
-                                                        style="display: block; font-weight: bold; margin-bottom: 5px;">Color
-                                                    </label>
-                                                    <input type="file" id="input1" name="input1"
-                                                        style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
-                                                </div>
-                                                <div style="margin-bottom: 15px;">
-                                                    <label for="input2"
-                                                        style="display: block; font-weight: bold; margin-bottom: 5px;">Fabric
-                                                    </label>
-                                                    <input type="file" id="input2" name="input2"
-                                                        style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
-                                                </div>
-
+                                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                                        <!-- Left Side Inputs -->
+                                        <div style="width: 48%;">
+                                            <div style="margin-bottom: 15px;">
+                                                <label for="input1"
+                                                    style="display: block; font-weight: bold; margin-bottom: 5px;">Color
+                                                </label>
+                                                <input type="file" id="input1" name="input1"
+                                                    style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
+                                            </div>
+                                            <div style="margin-bottom: 15px;">
+                                                <label for="input2"
+                                                    style="display: block; font-weight: bold; margin-bottom: 5px;">Fabric
+                                                </label>
+                                                <input type="file" id="input2" name="input2"
+                                                    style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
                                             </div>
 
-                                            <!-- Right Side Inputs -->
-                                            <div style="width: 48%;">
-                                                <div style="margin-bottom: 15px;">
-                                                    <label for="input4"
-                                                        style="display: block; font-weight: bold; margin-bottom: 5px;">Inspiration
-                                                    </label>
-                                                    <input type="file" id="input4" name="input4"
-                                                        style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
-                                                </div>
-                                                <div style="margin-bottom: 15px;">
-                                                    <label for="dropdown"
-                                                        style="display: block; font-weight: bold; margin-bottom: 5px;">Sizes</label>
-                                                    <select id="dropdown" name="dropdown"
-                                                        style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
-                                                        <option value="option1">Small</option>
-                                                        <option value="option2">Medium</option>
-                                                        <option value="option3">Large</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
                                         </div>
 
-                                        <div style="display: flex;  margin-top: 20px;margin-left:-20px;">
-                                            <!-- Left Side Div (30% Width) -->
+                                        <!-- Right Side Inputs -->
+                                        <div style="width: 48%;">
+                                            <div style="margin-bottom: 15px;">
+                                                <label for="input4"
+                                                    style="display: block; font-weight: bold; margin-bottom: 5px;">Inspiration
+                                                </label>
+                                                <input type="file" id="input4" name="input4"
+                                                    style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
+                                            </div>
+                                            <div style="margin-bottom: 15px;">
+                                                <label for="dropdown"
+                                                    style="display: block; font-weight: bold; margin-bottom: 5px;">Sizes</label>
+                                                <select id="dropdown" name="dropdown"
+                                                    style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
+                                                    <option value="option1">Small</option>
+                                                    <option value="option2">Medium</option>
+                                                    <option value="option3">Large</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex;  margin-top: 20px;margin-left:-20px;">
+                                        <!-- Left Side Div (30% Width) -->
+                                        <div
+                                            style="width: 35%; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
+                                            <!-- Blouse Measurements Section -->
                                             <div
-                                                style="width: 35%; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
-                                                <!-- Blouse Measurements Section -->
-                                                <div
-                                                    style="background-color: #fafafa; width: 100%; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                                                    <h6
-                                                        style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
-                                                        Blouse Measurements
-                                                    </h6>
+                                                style="background-color: #fafafa; width: 100%; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                                <h6
+                                                    style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
+                                                    Blouse Measurements
+                                                </h6>
 
-                                                    <!-- Measurement Fields -->
-                                                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                                                        <!-- First Row -->
-                                                        <div style="display: flex; gap: 20px;">
-                                                            <div style="flex: 1;">
-                                                                <label for="neckToShoulder"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Neck
-                                                                    to Shoulder</label>
-                                                                <input type="text" id="neckToShoulder"
-                                                                    name="neckToShoulder" placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-                                                            <div style="flex: 1;">
-                                                                <label for="blouseLength"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Blouse
-                                                                    Length</label>
-                                                                <input type="text" id="blouseLength" name="blouseLength"
-                                                                    placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- Second Row -->
-                                                        <div style="display: flex; gap: 20px;">
-                                                            <div style="flex: 1;">
-                                                                <label for="sleeveLength"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Sleeve
-                                                                    Length</label>
-                                                                <input type="text" id="sleeveLength" name="sleeveLength"
-                                                                    placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-                                                            <div style="flex: 1;">
-                                                                <label for="chestCircumference"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Around
-                                                                    Chest</label>
-                                                                <input type="text" id="chestCircumference"
-                                                                    name="chestCircumference" placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- Third Row -->
-                                                        <div style="display: flex; gap: 20px;">
-                                                            <div style="flex: 1;">
-                                                                <label for="bottomCircumference"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Around
-                                                                    Bottom of Blouse</label>
-                                                                <input type="text" id="bottomCircumference"
-                                                                    name="bottomCircumference" placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-                                                            <div style="flex: 1;">
-                                                                <label for="armHoleCircumference"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Arm
-                                                                    Hole Circumference</label>
-                                                                <input type="text" id="armHoleCircumference"
-                                                                    name="armHoleCircumference"
-                                                                    placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-
-                                                        </div>
-
-                                                        <!-- Fourth Row -->
-                                                        <div style="display: flex; gap: 20px;">
-                                                            <div style="flex: 1;">
-                                                                <label for="frontNeckDepth"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Front
-                                                                    Neck Depth</label>
-                                                                <input type="text" id="frontNeckDepth"
-                                                                    name="frontNeckDepth" placeholder="Enter value"
-                                                                    style="width:80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-
-                                                            <div style="flex: 1;">
-                                                                <label for="backNeckDepth"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Back
-                                                                    Neck Depth</label>
-                                                                <input type="text" id="backNeckDepth"
-                                                                    name="backNeckDepth" placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-
-
-                                                        </div>
-
-                                                        <!-- Fifth Row -->
-                                                        <div style="display: flex; gap: 20px;">
-
-                                                            <div style="flex: 1;">
-                                                                <label for="aroundArm"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Around
-                                                                    Arm</label>
-                                                                <input type="text" id="aroundArm" name="aroundArm"
-                                                                    placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-                                                            <div style="flex: 1;">
-                                                                <label for="shoulder"
-                                                                    style="font-size:12px; font-weight: normal; color: #555;">Shoulder</label>
-                                                                <input type="text" id="shoulder" name="shoulder"
-                                                                    placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Lehnga Measurements Section -->
-                                                <div
-                                                    style="background-color: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                                                    <h6
-                                                        style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
-                                                        Lehenga Measurements
-                                                    </h6>
-
-                                                    <!-- Measurement Fields -->
-                                                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                                                        <!-- First Row -->
-                                                        <div style="display: flex; gap: 20px;">
-                                                            <div style="flex: 1;">
-                                                                <label for="neckToShoulder"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Neck
-                                                                    to Shoulder</label>
-                                                                <input type="text" id="neckToShoulder"
-                                                                    name="neckToShoulder" placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border:
-                                                            1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-                                                            <div style="flex: 1;">
-                                                                <label for="blouseLength"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Blouse
-                                                                    Length</label>
-                                                                <input type="text" id="blouseLength" name="blouseLength"
-                                                                    placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- Second Row -->
-                                                        <div style="display: flex; gap: 20px;">
-                                                            <div style="flex: 1;">
-                                                                <label for="sleeveLength"
-                                                                    style="font-size: 12px; font-weight: normal; color: #555;">Sleeve
-                                                                    Length</label>
-                                                                <input type="text" id="sleeveLength" name="sleeveLength"
-                                                                    placeholder="Enter value"
-                                                                    style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div
-                                                    style="background-color: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                                                    <h6
-                                                        style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
-                                                        Height
-                                                    </h6>
-
-                                                    <!-- Measurement Fields -->
-                                                    <div
-                                                        style="display: flex; gap: 20px; justify-content: space-between;">
-                                                        <!-- First Column: Neck to Shoulder -->
+                                                <!-- Measurement Fields -->
+                                                <div style="display: flex; flex-direction: column; gap: 20px;">
+                                                    <!-- First Row -->
+                                                    <div style="display: flex; gap: 20px;">
                                                         <div style="flex: 1;">
                                                             <label for="neckToShoulder"
                                                                 style="font-size: 12px; font-weight: normal; color: #555;">Neck
@@ -1551,217 +1439,368 @@
                                                                 placeholder="Enter value"
                                                                 style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
                                                         </div>
-
-                                                        <!-- Second Column: Blouse Length -->
                                                         <div style="flex: 1;">
                                                             <label for="blouseLength"
                                                                 style="font-size: 12px; font-weight: normal; color: #555;">Blouse
                                                                 Length</label>
                                                             <input type="text" id="blouseLength" name="blouseLength"
                                                                 placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size:12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Second Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="sleeveLength"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Sleeve
+                                                                Length</label>
+                                                            <input type="text" id="sleeveLength" name="sleeveLength"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                        <div style="flex: 1;">
+                                                            <label for="chestCircumference"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Around
+                                                                Chest</label>
+                                                            <input type="text" id="chestCircumference"
+                                                                name="chestCircumference" placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Third Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="bottomCircumference"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Around
+                                                                Bottom of Blouse</label>
+                                                            <input type="text" id="bottomCircumference"
+                                                                name="bottomCircumference" placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                        <div style="flex: 1;">
+                                                            <label for="armHoleCircumference"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Arm
+                                                                Hole Circumference</label>
+                                                            <input type="text" id="armHoleCircumference"
+                                                                name="armHoleCircumference" placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+
+                                                    </div>
+
+                                                    <!-- Fourth Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="frontNeckDepth"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Front
+                                                                Neck Depth</label>
+                                                            <input type="text" id="frontNeckDepth" name="frontNeckDepth"
+                                                                placeholder="Enter value"
+                                                                style="width:80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+
+                                                        <div style="flex: 1;">
+                                                            <label for="backNeckDepth"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Back
+                                                                Neck Depth</label>
+                                                            <input type="text" id="backNeckDepth" name="backNeckDepth"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <!-- Fifth Row -->
+                                                    <div style="display: flex; gap: 20px;">
+
+                                                        <div style="flex: 1;">
+                                                            <label for="aroundArm"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Around
+                                                                Arm</label>
+                                                            <input type="text" id="aroundArm" name="aroundArm"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                        <div style="flex: 1;">
+                                                            <label for="shoulder"
+                                                                style="font-size:12px; font-weight: normal; color: #555;">Shoulder</label>
+                                                            <input type="text" id="shoulder" name="shoulder"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Lehnga Measurements Section -->
+                                            <div
+                                                style="background-color: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                                <h6
+                                                    style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
+                                                    Lehenga Measurements
+                                                </h6>
+
+                                                <!-- Measurement Fields -->
+                                                <div style="display: flex; flex-direction: column; gap: 20px;">
+                                                    <!-- First Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="neckToShoulder"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Neck
+                                                                to Shoulder</label>
+                                                            <input type="text" id="neckToShoulder" name="neckToShoulder"
+                                                                placeholder="Enter value" style="width: 80px; padding: 5px; font-size: 12px; border:
+                                                            1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                        <div style="flex: 1;">
+                                                            <label for="blouseLength"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Blouse
+                                                                Length</label>
+                                                            <input type="text" id="blouseLength" name="blouseLength"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Second Row -->
+                                                    <div style="display: flex; gap: 20px;">
+                                                        <div style="flex: 1;">
+                                                            <label for="sleeveLength"
+                                                                style="font-size: 12px; font-weight: normal; color: #555;">Sleeve
+                                                                Length</label>
+                                                            <input type="text" id="sleeveLength" name="sleeveLength"
+                                                                placeholder="Enter value"
+                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
 
+                                            <div
+                                                style="background-color: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                                <h6
+                                                    style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
+                                                    Height
+                                                </h6>
 
+                                                <!-- Measurement Fields -->
+                                                <div style="display: flex; gap: 20px; justify-content: space-between;">
+                                                    <!-- First Column: Neck to Shoulder -->
+                                                    <div style="flex: 1;">
+                                                        <label for="neckToShoulder"
+                                                            style="font-size: 12px; font-weight: normal; color: #555;">Neck
+                                                            to Shoulder</label>
+                                                        <input type="text" id="neckToShoulder" name="neckToShoulder"
+                                                            placeholder="Enter value"
+                                                            style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                    </div>
 
-
-
-                                            <!-- Right Side Div (Containing Two Divs) -->
-                                            <div style="width: 55%; display: flex; flex-direction: column; gap: 20px;">
-                                                <!-- YouTube Video Embed -->
-                                                <div style="flex-grow: 1;">
-
-                                                    <iframe width="100%" height="600"
-                                                        src="https://www.youtube.com/embed/yC00CujnJ_I?si=R1VuKHGKaeXpicIS"
-                                                        title="YouTube video player" frameborder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                        referrerpolicy="strict-origin-when-cross-origin"
-                                                        allowfullscreen></iframe>
+                                                    <!-- Second Column: Blouse Length -->
+                                                    <div style="flex: 1;">
+                                                        <label for="blouseLength"
+                                                            style="font-size: 12px; font-weight: normal; color: #555;">Blouse
+                                                            Length</label>
+                                                        <input type="text" id="blouseLength" name="blouseLength"
+                                                            placeholder="Enter value"
+                                                            style="width: 80px; padding: 5px; font-size:12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                                    </div>
                                                 </div>
-
-                                                <!-- Display Image (instead of upload input) -->
-                                                <div style="flex-grow: 1;height: 70%;">
-
-                                                    <img src="images/products/measurment.png" alt="Image"
-                                                        style="width: 100%; height: 100%; object-fit: contain; border-radius: 5px;">
-                                                    <!-- Increased height -->
-                                                </div>
                                             </div>
 
-
                                         </div>
 
-                                        <div style="margin-top: 20px;">
-                                            <label for="Text">Note For Agent</label>
-                                            <input type="text">
-                                        </div>
 
-                                        <div class="navigation"
-                                            style="margin-top: 40px; margin-bottom:20px; display: flex; justify-content:flex-end; ">
-                                            <div style="text-align: right; margin-top: 20px;">
-                                                <button style="background-color: #E10A0A;border-color: transparent;"
-                                                    id="Save" type="button"
-                                                    class="tf-btn btn-fill animate-hover-btn rounded-0">Save</button>
+
+
+
+                                        <!-- Right Side Div (Containing Two Divs) -->
+                                        <div style="width: 55%; display: flex; flex-direction: column; gap: 20px;">
+                                            <!-- YouTube Video Embed -->
+                                            <div style="flex-grow: 1;">
+
+                                                <iframe width="100%" height="600"
+                                                    src="https://www.youtube.com/embed/yC00CujnJ_I?si=R1VuKHGKaeXpicIS"
+                                                    title="YouTube video player" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
+                                                    allowfullscreen></iframe>
+                                            </div>
+
+                                            <!-- Display Image (instead of upload input) -->
+                                            <div style="flex-grow: 1;height: 70%;">
+
+                                                <img src="images/products/measurment.png" alt="Image"
+                                                    style="width: 100%; height: 100%; object-fit: contain; border-radius: 5px;">
+                                                <!-- Increased height -->
                                             </div>
                                         </div>
+
 
                                     </div>
+
+                                    <div style="margin-top: 20px;">
+                                        <label for="Text">Note For Agent</label>
+                                        <input type="text">
+                                    </div>
+
+                                    <div class="navigation"
+                                        style="margin-top: 40px; margin-bottom:20px; display: flex; justify-content:flex-end; ">
+                                        <div style="text-align: right; margin-top: 20px;">
+                                            <button style="background-color: #E10A0A;border-color: transparent;"
+                                                id="Save" type="button"
+                                                class="tf-btn btn-fill animate-hover-btn rounded-0">Save</button>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
-
-                    <!-- STEP 1 Add Product End -->
-
-
-
-
-
-
-
-
-
-
-
                 </div>
 
+                <!-- STEP 1 Add Product End -->
+
+
+
+
+
+
+
+
+
+
+
             </div>
+
         </div>
+    </div>
 
 
 
-        <!-- footer -->
-        <footer id="footer" class="footer">
-            <div class="footer-wrap">
-                <div class="footer-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 col-12">
-                                <div class="footer-infor">
-                                    <div class="footer-logo">
-                                        <a href="index.html">
-                                            <img src="images/logo/shopperTsLogo.jpeg" alt="">
-                                        </a>
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            <p>Address: 1234 Fashion Street, Suite 567, <br> New York, NY 10001</p>
-                                        </li>
-                                        <li>
-                                            <p>Email: <a href="product-style-07.html#">info@fashionshop.com</a></p>
-                                        </li>
-                                        <li>
-                                            <p>Phone: <a href="product-style-07.html#">(212) 555-1234</a></p>
-                                        </li>
-                                    </ul>
-                                    <a href="contact-1.html" class="tf-btn btn-line">Get direction<i
-                                            class="icon icon-arrow1-top-left"></i></a>
-                                    <ul class="tf-social-icon d-flex gap-10">
-                                        <li><a href="product-style-07.html#"
-                                                class="box-icon w_34 round social-facebook border-line-black"><i
-                                                    class="icon fs-14 icon-fb"></i></a></li>
-                                        <li><a href="product-style-07.html#"
-                                                class="box-icon w_34 round social-twiter border-line-black"><i
-                                                    class="icon fs-12 icon-Icon-x"></i></a></li>
-                                        <li><a href="product-style-07.html#"
-                                                class="box-icon w_34 round social-instagram border-line-black"><i
-                                                    class="icon fs-14 icon-instagram"></i></a></li>
-                                        <li><a href="product-style-07.html#"
-                                                class="box-icon w_34 round social-tiktok border-line-black"><i
-                                                    class="icon fs-14 icon-tiktok"></i></a></li>
-                                        <li><a href="product-style-07.html#"
-                                                class="box-icon w_34 round social-pinterest border-line-black"><i
-                                                    class="icon fs-14 icon-pinterest-1"></i></a></li>
-                                    </ul>
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer-wrap">
+            <div class="footer-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="footer-infor">
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="images/logo/shopperTsLogo.jpeg" alt="">
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 col-12 footer-col-block">
-
-
-                                <div class="footer-heading footer-heading-desktop" style="margin-left: 100px;">
-                                    <h6>About us</h6>
-                                </div>
-                                <div class="footer-heading footer-heading-moblie" style="margin-left: 100px;">
-                                    <h6>About us</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content" style="margin-left: 100px;">
+                                <ul>
                                     <li>
-                                        <a href="about-us.html" class="footer-menu_item">Our Story</a>
+                                        <p>Address: 1234 Fashion Street, Suite 567, <br> New York, NY 10001</p>
                                     </li>
                                     <li>
-                                        <a href="our-store.html" class="footer-menu_item">Team</a>
+                                        <p>Email: <a href="product-style-07.html#">info@fashionshop.com</a></p>
                                     </li>
                                     <li>
-                                        <a href="contact.html" class="footer-menu_item">Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html" class="footer-menu_item">ContactUs</a>
-                                    </li>
-                                    <li>
-                                        <a href="login.html" class="footer-menu_item">Blogs</a>
-                                    </li>
-                                    <li>
-                                        <a href="login.html" class="footer-menu_item">Account</a>
+                                        <p>Phone: <a href="product-style-07.html#">(212) 555-1234</a></p>
                                     </li>
                                 </ul>
+                                <a href="#" class="tf-btn btn-line">Get direction<i
+                                        class="icon icon-arrow1-top-left"></i></a>
+                                <ul class="tf-social-icon d-flex gap-10">
+                                    <li><a href="#" class="box-icon w_34 round social-facebook border-line-black"><i
+                                                class="icon fs-14 icon-fb"></i></a></li>
+                                    <li><a href="#" class="box-icon w_34 round social-twiter border-line-black"><i
+                                                class="icon fs-12 icon-Icon-x"></i></a></li>
+                                    <li><a href="#" class="box-icon w_34 round social-instagram border-line-black"><i
+                                                class="icon fs-14 icon-instagram"></i></a></li>
+                                    <li><a href="#" class="box-icon w_34 round social-tiktok border-line-black"><i
+                                                class="icon fs-14 icon-tiktok"></i></a></li>
+                                    <li><a href="#" class="box-icon w_34 round social-pinterest border-line-black"><i
+                                                class="icon fs-14 icon-pinterest-1"></i></a></li>
+                                </ul>
                             </div>
-                            <div class="col-xl-3 col-md-6 col-12 " style="justify-content:flex-end;">
-                                <div class="footer-newsletter footer-col-block" style="justify-content:flex-end;">
-                                    <div class="footer-heading footer-heading-desktop"
-                                        style="justify-content:flex-end;">
-                                        <h6>Sign Up for Email</h6>
-                                    </div>
-                                    <div class="footer-heading footer-heading-moblie" style="justify-content:flex-end;">
-                                        <h6>Sign Up for Email</h6>
-                                    </div>
-                                    <div class="tf-collapse-content" style="justify-content:flex-end;">
-                                        <div class="footer-menu_item">Sign up to get first dibs on new arrivals, sales,
-                                            exclusive content, events and more!</div>
-                                        <form class="form-newsletter" id="subscribe-form"
-                                            action="product-style-07.html#" method="post" accept-charset="utf-8"
-                                            data-mailchimp="true">
-                                            <div id="subscribe-content">
-                                                <fieldset class="email">
-                                                    <input type="email" name="email-form" id="subscribe-email"
-                                                        placeholder="Enter your email...." tabindex="0"
-                                                        aria-required="true">
-                                                </fieldset>
-                                                <div class="button-submit">
-                                                    <button id="subscribe-button"
-                                                        class="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn"
-                                                        style="background-color:#E10A0A;color:white; border-color: transparent;"
-                                                        type="button">Subscribe<i
-                                                            class="icon icon-arrow1-top-left"></i></button>
-                                                </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12 footer-col-block">
+
+
+                            <div class="footer-heading footer-heading-desktop" style="margin-left: 100px;">
+                                <h6>About us</h6>
+                            </div>
+                            <div class="footer-heading footer-heading-moblie" style="margin-left: 100px;">
+                                <h6>About us</h6>
+                            </div>
+                            <ul class="footer-menu-list tf-collapse-content" style="margin-left: 100px;">
+                                <li>
+                                    <a href="#" class="footer-menu_item">Our Story</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-menu_item">Team</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-menu_item">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-menu_item">ContactUs</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-menu_item">Blogs</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="footer-menu_item">Account</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12 " style="justify-content:flex-end;">
+                            <div class="footer-newsletter footer-col-block" style="justify-content:flex-end;">
+                                <div class="footer-heading footer-heading-desktop" style="justify-content:flex-end;">
+                                    <h6>Sign Up for Email</h6>
+                                </div>
+                                <div class="footer-heading footer-heading-moblie" style="justify-content:flex-end;">
+                                    <h6>Sign Up for Email</h6>
+                                </div>
+                                <div class="tf-collapse-content" style="justify-content:flex-end;">
+                                    <div class="footer-menu_item">Sign up to get first dibs on new arrivals, sales,
+                                        exclusive content, events and more!</div>
+                                    <form class="form-newsletter" id="subscribe-form" action="product-style-07.html#"
+                                        method="post" accept-charset="utf-8" data-mailchimp="true">
+                                        <div id="subscribe-content">
+                                            <fieldset class="email">
+                                                <input type="email" name="email-form" id="subscribe-email"
+                                                    placeholder="Enter your email...." tabindex="0"
+                                                    aria-required="true">
+                                            </fieldset>
+                                            <div class="button-submit">
+                                                <button id="subscribe-button"
+                                                    class="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn"
+                                                    style="background-color:#E10A0A;color:white; border-color: transparent;"
+                                                    type="button">Subscribe<i
+                                                        class="icon icon-arrow1-top-left"></i></button>
                                             </div>
-                                            <div id="subscribe-msg"></div>
-                                        </form>
-                                        <div class="tf-cur">
-                                            <div class="tf-currencies">
-                                                <select class="image-select center style-default type-currencies">
-                                                    <option data-thumbnail="images/country/fr.svg">EUR <span>€ |
-                                                            France</span></option>
-                                                    <option data-thumbnail="images/country/de.svg">EUR <span>€ |
-                                                            Germany</span></option>
-                                                    <option selected data-thumbnail="images/country/us.svg">USD <span>$
-                                                            | United States</span></option>
-                                                    <option data-thumbnail="images/country/vn.svg">VND <span>₫ |
-                                                            Vietnam</span></option>
-                                                </select>
-                                            </div>
-                                            <div class="tf-languages">
-                                                <select class="image-select center style-default type-languages">
-                                                    <option>English</option>
-                                                    <option>العربية</option>
-                                                    <option>简体中文</option>
-                                                    <option>اردو</option>
-                                                </select>
-                                            </div>
+                                        </div>
+                                        <div id="subscribe-msg"></div>
+                                    </form>
+                                    <div class="tf-cur">
+                                        <div class="tf-currencies">
+                                            <select class="image-select center style-default type-currencies">
+                                                <option data-thumbnail="images/country/fr.svg">EUR <span>€ |
+                                                        France</span></option>
+                                                <option data-thumbnail="images/country/de.svg">EUR <span>€ |
+                                                        Germany</span></option>
+                                                <option selected data-thumbnail="images/country/us.svg">USD <span>$
+                                                        | United States</span></option>
+                                                <option data-thumbnail="images/country/vn.svg">VND <span>₫ |
+                                                        Vietnam</span></option>
+                                            </select>
+                                        </div>
+                                        <div class="tf-languages">
+                                            <select class="image-select center style-default type-languages">
+                                                <option>English</option>
+                                                <option>العربية</option>
+                                                <option>简体中文</option>
+                                                <option>اردو</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -1769,260 +1808,260 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div
-                                    class="footer-bottom-wrap d-flex gap-20 flex-wrap justify-content-between align-items-center">
-                                    <div class="footer-menu_item">© 2024 Ecomus Store. All Rights Reserved</div>
-                                    <div class="tf-payment">
-                                        <img src="images/payments/visa.png" alt="">
-                                        <img src="images/payments/img-1.png" alt="">
-                                        <img src="images/payments/img-2.png" alt="">
-                                        <img src="images/payments/img-3.png" alt="">
-                                        <img src="images/payments/img-4.png" alt="">
-                                    </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div
+                                class="footer-bottom-wrap d-flex gap-20 flex-wrap justify-content-between align-items-center">
+                                <div class="footer-menu_item">© 2024 ShopperTs. All Rights Reserved</div>
+                                <div class="tf-payment">
+                                    <img src="images/payments/visa.png" alt="">
+                                    <img src="images/payments/img-1.png" alt="">
+                                    <img src="images/payments/img-2.png" alt="">
+                                    <img src="images/payments/img-3.png" alt="">
+                                    <img src="images/payments/img-4.png" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- /footer -->
+        </div>
+    </footer>
+    <!-- /footer -->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
+        let currentStep = 1; // Current step counter
 
-            let currentStep = 1; // Current step counter
-
-            // Show the step based on the current step number
-            function showStep(step) {
-                document.querySelectorAll('.step').forEach((stepElement, index) => {
-                    stepElement.classList.remove('active');
-                    if (index + 1 === step) {
-                        stepElement.classList.add('active');
-                    }
-                });
-            }
-
-            // Attach event listeners to Next and Back buttons
-            document.getElementById('next1')?.addEventListener('click', function () {
-                currentStep++;
-                showStep(currentStep);
+        // Show the step based on the current step number
+        function showStep(step) {
+            document.querySelectorAll('.step').forEach((stepElement, index) => {
+                stepElement.classList.remove('active');
+                if (index + 1 === step) {
+                    stepElement.classList.add('active');
+                }
             });
+        }
 
-            document.getElementById('next2')?.addEventListener('click', function () {
-                currentStep++;
-                showStep(currentStep);
-            });
-
-            document.getElementById('next3')?.addEventListener('click', function () {
-                currentStep++;
-                showStep(currentStep);
-            });
-
-            document.getElementById('back2')?.addEventListener('click', function () {
-                currentStep--;
-                showStep(currentStep);
-            });
-
-            document.getElementById('back3')?.addEventListener('click', function () {
-                currentStep--;
-                showStep(currentStep);
-            });
-
-            document.getElementById('back4')?.addEventListener('click', function () {
-                currentStep--;
-                showStep(currentStep);
-            });
-
-            // Initialize by showing the first step
+        // Attach event listeners to Next and Back buttons
+        document.getElementById('next1')?.addEventListener('click', function () {
+            currentStep++;
             showStep(currentStep);
+        });
 
-            function closeDesignModal() {
-                // Modal element ko select karna
-                const modalElement = document.getElementById('stepModal');
+        document.getElementById('next2')?.addEventListener('click', function () {
+            currentStep++;
+            showStep(currentStep);
+        });
 
-                // Bootstrap modal instance ko retrieve karna
-                const modalInstance = bootstrap.Modal.getInstance(modalElement);
+        document.getElementById('next3')?.addEventListener('click', function () {
+            currentStep++;
+            showStep(currentStep);
+        });
 
-                // Agar modal instance hai to modal ko hide karna
-                if (modalInstance) {
-                    modalInstance.hide();
-                }
+        document.getElementById('back2')?.addEventListener('click', function () {
+            currentStep--;
+            showStep(currentStep);
+        });
 
-                // Backdrop element ko manually remove karna
-                const backdrop = document.querySelector('.modal-backdrop');
-                if (backdrop) {
-                    backdrop.remove();
-                }
+        document.getElementById('back3')?.addEventListener('click', function () {
+            currentStep--;
+            showStep(currentStep);
+        });
 
-                // Body se 'modal-open' class ko remove karna (jo scroll disable karti hai)
-                document.body.classList.remove('modal-open');
-                document.body.style.overflow = '';
+        document.getElementById('back4')?.addEventListener('click', function () {
+            currentStep--;
+            showStep(currentStep);
+        });
+
+        // Initialize by showing the first step
+        showStep(currentStep);
+
+        function closeDesignModal() {
+            // Modal element ko select karna
+            const modalElement = document.getElementById('stepModal');
+
+            // Bootstrap modal instance ko retrieve karna
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+
+            // Agar modal instance hai to modal ko hide karna
+            if (modalInstance) {
+                modalInstance.hide();
             }
 
-            document.getElementById('Save').addEventListener('click', function () {
-                location.reload(); // Page ko refresh karein
+            // Backdrop element ko manually remove karna
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+
+            // Body se 'modal-open' class ko remove karna (jo scroll disable karti hai)
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('Save').addEventListener('click', function () {
+            location.reload(); // Page ko refresh karein
+        });
+        // STEP 2
+        // Function to decrease the quantity
+        function decreaseQuantity() {
+            var quantityInput = document.getElementById('quantity');
+            var currentValue = parseInt(quantityInput.value);
+
+            // Ensure the value doesn't go below 1
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        }
+
+        // Function to increase the quantity
+        function increaseQuantity() {
+            var quantityInput = document.getElementById('quantity');
+            var currentValue = parseInt(quantityInput.value);
+
+            // Increase the value
+            quantityInput.value = currentValue + 1;
+        }
+        displayOrderName();
+
+        function updateImageAndName(event) {
+            const fileInput = event.target; // The file input element
+            const uploadedImage = document.getElementById('uploaded-image'); // The placeholder image element
+            const uploadedName = document.getElementById('uploaded-name'); // The placeholder text element
+
+            // Ensure files were uploaded
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+
+                // Update the image source to the uploaded file
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    uploadedImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+
+                // Update the name text to the uploaded file's name
+                uploadedName.textContent = file.name;
+            }
+        }
+
+
+        // SHIPPING MODAL FUNCTION
+
+
+        // Function to open the modal
+        function openShippingModal() {
+            const overlay = document.getElementById('shipping-modal-overlay');
+            const modal = document.getElementById('shipping-modal-form');
+
+            if (overlay && modal) {
+                overlay.style.display = 'block'; // Show the overlay
+                modal.style.display = 'block';  // Show the modal
+            } else {
+                console.error("Modal elements not found!");
+            }
+        }
+
+        function closeShippingModal() {
+            const overlay = document.getElementById('shipping-modal-overlay');
+            const modal = document.getElementById('shipping-modal-form');
+
+            if (overlay && modal) {
+                overlay.style.display = 'none'; // Hide the overlay
+                modal.style.display = 'none';  // Hide the modal
+            } else {
+                console.error("Modal elements not found!");
+            }
+        }
+
+
+        // Open the modal when "Credit Card" is selected
+        function openCreditCardModal() {
+            document.getElementById('creditCardModal').style.display = 'block';
+            document.getElementById('modal-overlay').style.display = 'block';
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById('creditCardModal').style.display = 'none';
+            document.getElementById('modal-overlay').style.display = 'none';
+        }
+
+        // Optionally, you can handle form submission for credit card information here.
+        document.getElementById('creditCardForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Credit Card Submitted!');
+            closeModal(); // Close the modal after form submission
+        });
+
+
+
+
+
+
+        // modal cehcking
+
+        // Function to open the Step Modal
+        function openStepModal() {
+            // Hide the product modal
+            $('#newproductModal1').modal('hide');
+
+            // Show the step modal
+            $('#stepModal').modal('show');
+        }
+
+
+        function highlightNav(stepId) {
+            // Remove 'active' class from all navigation items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
             });
-            // STEP 2
-            // Function to decrease the quantity
-            function decreaseQuantity() {
-                var quantityInput = document.getElementById('quantity');
-                var currentValue = parseInt(quantityInput.value);
 
-                // Ensure the value doesn't go below 1
-                if (currentValue > 1) {
-                    quantityInput.value = currentValue - 1;
-                }
+            // Add 'active' class to the selected navigation item
+            const navItem = document.getElementById(stepId + '-nav');
+            if (navItem) {
+                navItem.classList.add('active');
             }
 
-            // Function to increase the quantity
-            function increaseQuantity() {
-                var quantityInput = document.getElementById('quantity');
-                var currentValue = parseInt(quantityInput.value);
-
-                // Increase the value
-                quantityInput.value = currentValue + 1;
-            }
-            displayOrderName();
-
-            function updateImageAndName(event) {
-                const fileInput = event.target; // The file input element
-                const uploadedImage = document.getElementById('uploaded-image'); // The placeholder image element
-                const uploadedName = document.getElementById('uploaded-name'); // The placeholder text element
-
-                // Ensure files were uploaded
-                if (fileInput.files && fileInput.files[0]) {
-                    const file = fileInput.files[0];
-
-                    // Update the image source to the uploaded file
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        uploadedImage.src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-
-                    // Update the name text to the uploaded file's name
-                    uploadedName.textContent = file.name;
-                }
-            }
-
-
-            // SHIPPING MODAL FUNCTION
-
-
-            // Function to open the modal
-            function openShippingModal() {
-                const overlay = document.getElementById('shipping-modal-overlay');
-                const modal = document.getElementById('shipping-modal-form');
-
-                if (overlay && modal) {
-                    overlay.style.display = 'block'; // Show the overlay
-                    modal.style.display = 'block';  // Show the modal
-                } else {
-                    console.error("Modal elements not found!");
-                }
-            }
-
-            function closeShippingModal() {
-                const overlay = document.getElementById('shipping-modal-overlay');
-                const modal = document.getElementById('shipping-modal-form');
-
-                if (overlay && modal) {
-                    overlay.style.display = 'none'; // Hide the overlay
-                    modal.style.display = 'none';  // Hide the modal
-                } else {
-                    console.error("Modal elements not found!");
-                }
-            }
-
-
-            // Open the modal when "Credit Card" is selected
-            function openCreditCardModal() {
-                document.getElementById('creditCardModal').style.display = 'block';
-                document.getElementById('modal-overlay').style.display = 'block';
-            }
-
-            // Close the modal
-            function closeModal() {
-                document.getElementById('creditCardModal').style.display = 'none';
-                document.getElementById('modal-overlay').style.display = 'none';
-            }
-
-            // Optionally, you can handle form submission for credit card information here.
-            document.getElementById('creditCardForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-                alert('Credit Card Submitted!');
-                closeModal(); // Close the modal after form submission
+            // Hide all steps
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
             });
 
-
-
-
-
-
-            // modal cehcking
-
-            // Function to open the Step Modal
-            function openStepModal() {
-                // Hide the product modal
-                $('#newproductModal1').modal('hide');
-
-                // Show the step modal
-                $('#stepModal').modal('show');
+            // Show the selected step
+            const stepContent = document.getElementById(stepId);
+            if (stepContent) {
+                stepContent.classList.add('active');
             }
+        }
+
+        // Default step on page load
+        document.addEventListener("DOMContentLoaded", function () {
+            highlightNav('step1'); // Default step is step1
+        });
 
 
-            function highlightNav(stepId) {
-                // Remove 'active' class from all navigation items
-                document.querySelectorAll('.nav-item').forEach(item => {
-                    item.classList.remove('active');
-                });
+    </script>
 
-                // Add 'active' class to the selected navigation item
-                const navItem = document.getElementById(stepId + '-nav');
-                if (navItem) {
-                    navItem.classList.add('active');
-                }
+    <!-- Javascript -->
 
-                // Hide all steps
-                document.querySelectorAll('.step').forEach(step => {
-                    step.classList.remove('active');
-                });
-
-                // Show the selected step
-                const stepContent = document.getElementById(stepId);
-                if (stepContent) {
-                    stepContent.classList.add('active');
-                }
-            }
-
-            // Default step on page load
-            document.addEventListener("DOMContentLoaded", function () {
-                highlightNav('step1'); // Default step is step1
-            });
-
-
-        </script>
-
-        <!-- Javascript -->
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
-        <script type="text/javascript" src="js/carousel.js"></script>
-        <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-        <script type="text/javascript" src="js/lazysize.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-        <script type="text/javascript" src="js/count-down.js"></script>
-        <script type="text/javascript" src="js/wow.min.js"></script>
-        <script type="text/javascript" src="js/multiple-modal.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="js/lazysize.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="js/count-down.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/multiple-modal.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
