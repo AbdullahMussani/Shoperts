@@ -518,13 +518,13 @@
                         <form id="shipping-info-form">
                             <!-- Input Fields -->
                             <div style="margin-bottom: 15px;">
-                                <input type="text" placeholder="Address" style="width: 100%; padding: 10px;">
+                                <input type="text" placeholder="Address" required style="width: 100%; padding: 10px;">
                             </div>
                             <div style="margin-bottom: 15px;">
-                                <input type="text" placeholder="City" style="width: 100%; padding: 10px;">
+                                <input type="text" placeholder="City" required style="width: 100%; padding: 10px;">
                             </div>
                             <div style="margin-bottom: 15px;">
-                                <input type="text" placeholder="ZIP Code" style="width: 100%; padding: 10px;">
+                                <input type="text" placeholder="ZIP Code" required style="width: 100%; padding: 10px;">
                             </div>
 
                             <!-- Done Button -->
@@ -619,14 +619,14 @@
                                             <!-- Expiry Date -->
                                             <div style="margin-bottom: 10px;">
                                                 <label for="expiryDate">Expiry Date</label><br>
-                                                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY"
-                                                    style="width: 100%; padding: 10px;">
+                                                <input type="text" id="expiryDate" name="expiryDate" required
+                                                    placeholder="MM/YY" style="width: 100%; padding: 10px;">
                                             </div>
 
                                             <!-- CVV -->
                                             <div style="margin-bottom: 10px;">
                                                 <label for="cvv">CVV</label><br>
-                                                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV"
+                                                <input type="text" id="cvv" name="cvv" required placeholder="Enter CVV"
                                                     style="width: 100%; padding: 10px;">
                                             </div>
 
@@ -1346,31 +1346,31 @@
                                                 </label>
                                             </div>
                                         </div>
-                                    
 
 
-                                    <!-- STYLE SECTION -->
-                                    <div id="upload-section"
-                                        style="margin-bottom: 30px; border: 1px solid #ddd; padding: 20px; display: flex; align-items: center; border-radius: 8px; background-color: #fafafa; margin-top: 10px;">
-                                        <!-- Placeholder Image -->
-                                        <img id="uploaded-image" src="images/products/Women-1.png" alt="Lahenga"
-                                            style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
 
-                                        <!-- Placeholder Text -->
-                                        <h6 id="uploaded-name"
-                                            style="margin: 0; color: #333; font-size: 18px; font-weight: 600;">
-                                            Lahenga
-                                        </h6>
+                                        <!-- STYLE SECTION -->
+                                        <div id="upload-section"
+                                            style="margin-bottom: 30px; border: 1px solid #ddd; padding: 20px; display: flex; align-items: center; border-radius: 8px; background-color: #fafafa; margin-top: 10px;">
+                                            <!-- Placeholder Image -->
+                                            <img id="uploaded-image" src="images/products/Women-1.png" alt="Lahenga"
+                                                style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
 
-                                        <!-- Upload Button -->
-                                        <label for="image-upload"
-                                            style="display: inline-block; background-color: #E10A0A; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: auto;">
-                                            Upload Images
-                                        </label>
-                                        <input type="file" id="image-upload" accept="image/*" style="display: none;"
-                                            onchange="updateImageAndName(event)">
+                                            <!-- Placeholder Text -->
+                                            <h6 id="uploaded-name"
+                                                style="margin: 0; color: #333; font-size: 18px; font-weight: 600;">
+                                                Lahenga
+                                            </h6>
+
+                                            <!-- Upload Button -->
+                                            <label for="image-upload"
+                                                style="display: inline-block; background-color: #E10A0A; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: auto;">
+                                                Upload Images
+                                            </label>
+                                            <input type="file" id="image-upload" accept="image/*" style="display: none;"
+                                                onchange="updateImageAndName(event)">
+                                        </div>
                                     </div>
-                                </div>
 
                                     <div style="display: flex; justify-content: space-between; margin-top: 20px;">
                                         <!-- Left Side Inputs -->
