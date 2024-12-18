@@ -95,6 +95,27 @@
     
   };
 
+  // Wait for the DOM to load
+  document.addEventListener('DOMContentLoaded', function () {
+    var popup = document.getElementById('popup'); // Popup container
+    var closeBtn = document.getElementById('popup-close'); // Close button
+
+    // Show the popup when the page loads
+    popup.style.display = 'flex';
+
+    // Close the popup when the close button is clicked
+    closeBtn.onclick = function () {
+        popup.style.display = 'none';
+    };
+
+    // Close the popup if the user clicks outside the popup content
+    window.onclick = function (event) {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    };
+});
+
   /* Scroll process
   -------------------------------------------------------------------------------------*/
   var scrollProgress = function () {
