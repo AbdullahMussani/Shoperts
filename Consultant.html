@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Shopperts</title>
+    <title>SHOPERTS</title>
 
     <meta name="author" content="themesflat.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,7 +22,7 @@
     <!-- Favicon and Touch Icons  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="path-to-auxicon.css" rel="stylesheet">
-    <link rel="shortcut icon" href="images/logo/favicon.png">
+    <link rel="shortcut icon" href="images/logo/logo.png">
     <link rel="apple-touch-icon-precomposed" href="images/logo/favicon.png">
 
 </head>
@@ -39,19 +39,18 @@
         <!-- Header -->
         <header id="header" class="header-default header-style-3">
             <div class="container-fluid px-3 px-lg-5">
-                <div class="row wrapper-header align-items-center">
+                <div class="row align-items-center">
                     <!-- Logo Section -->
                     <div class="col-6 col-md-3 d-flex align-items-center">
                         <a href="index.html" class="logo-header">
-                            <img src="images/logo/shopperTsLogo.jpeg" alt="ShopperTS Logo" class="logo img-fluid"
-                                style="width: 180px;">
+                            <img src="images/logo/logo.png" alt="ShopperTS Logo" class="logo img-fluid"
+                                style="width: 100px;">
                         </a>
                     </div>
 
-
-                    <!-- Navigation Section -->
-                    <div class="col-md-6 d-none d-md-block" style="margin-left: 70px;">
-                        <nav class="navbar navbar-expand-md justify-content-md-center">
+                    <!-- Desktop Navigation Section -->
+                    <div class="d-none d-lg-block col-lg-6">
+                        <nav class="navbar navbar-expand-lg justify-content-center">
                             <ul class="navbar-nav gap-3" style="font-size: 14px; white-space: nowrap;">
                                 <li class="nav-item">
                                     <a href="index.html" class="nav-link">Home</a>
@@ -63,20 +62,18 @@
                                     <a href="career.html" class="nav-link">Careers</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Contact Us</a>
+                                    <a href="contact.html" class="nav-link">Contact Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="about-us.html" class="nav-link">About Us</a>
                                 </li>
-
                             </ul>
                         </nav>
                     </div>
 
                     <!-- Search and Login Icons -->
-                    <div class="col-2 col-md-2 d-flex justify-content-end align-items-center">
+                    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-end align-items-center">
                         <ul class="nav gap-3">
-
                             <li class="nav-item">
                                 <a href="home-07.html#login" data-bs-toggle="modal" class="nav-link text-dark">
                                     <i class="icon icon-account"></i>
@@ -86,44 +83,36 @@
                     </div>
 
                     <!-- Mobile Navigation Toggle -->
-                    <!-- <div class="col-6 d-md-none text-end">
-                        <button class="navbar-toggler text-dark border-0" type="button" data-bs-toggle="collapse"
+                    <div class="col-6 d-lg-none text-end">
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                             data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            aria-label="Toggle navigation" style="background-color: black;">
+                            <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);"></span>
                         </button>
                     </div>
-                </div> -->
+
+
 
                     <!-- Mobile Navigation -->
-                    <!-- <div class="collapse navbar-collapse d-md-none" id="mobileNav">
-                    <ul class="navbar-nav flex-column text-center">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link text-dark">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Customize Order</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Ready Made Order</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Career</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Contact Us</a>
-                        </li>
-                    </ul>
-                </div> -->
+                    <div class="collapse navbar-collapse d-lg-none" id="mobileNav">
+                        <ul class="navbar-nav flex-column text-center">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Services.html" class="nav-link">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="career.html" class="nav-link">Careers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about-us.html" class="nav-link">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
         </header>
         <!-- /Header -->
@@ -145,208 +134,163 @@
         <!-- /page-title -->
 
         <!-- SECTION -->
-       
+
         <section style="padding: 20px; background-color: #f5f5f5;">
-            <div style="max-width: 1200px; margin: 0 auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <div
+                style="max-width: 1200px; margin: 0 auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                 <!-- Heading 1 with Paragraph -->
                 <div style="margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; color: #E10A0A; margin-bottom: 10px;">Know your consultant:</h2>
-                    <p style="font-size: 16px; color: #333;">At Shoperts, we believe that personalized service is key. That's why we've assembled a team of dedicated fashion consultants in both Canada and Pakistan to guide you through your shopping journey.
-                        Your Canadian Fashion Consultant is your local expert, providing personalized advice and ensuring a seamless shopping experience. They'll help you navigate our website to place an order, answer your questions, and assist with any concerns.
-                        Your Pakistani Fashion Consultant Your Pakistani consultant is your direct link to the vibrant world of Pakistani fashion. They work closely with local artisans and designers to curate the best products and ensure they meet your exact specifications.
+                    <h2 style="font-size: 24px; color: #9E1915; margin-bottom: 10px;">Know your consultant:</h2>
+                    <p style="font-size: 16px; color: #333;">At Shoperts, we believe that personalized service is key.
+                        That's why we've assembled a team of dedicated fashion consultants in both Canada and Pakistan
+                        to guide you through your shopping journey.
+                        Your Canadian Fashion Consultant is your local expert, providing personalized advice and
+                        ensuring a seamless shopping experience. They'll help you navigate our website to place an
+                        order, answer your questions, and assist with any concerns.
+                        Your Pakistani Fashion Consultant Your Pakistani consultant is your direct link to the vibrant
+                        world of Pakistani fashion. They work closely with local artisans and designers to curate the
+                        best products and ensure they meet your exact specifications.
                         Together, our team of fashion consultants will provide you with: <br> <br>
-                        •	Expert Guidance: Personalized shopping advice tailored to your style and needs. <br> <br>
-                        •	Direct Market Access: Access to a wide range of Pakistani fashion products at competitive prices. <br> <br>
-                        •	Quality Assurance: Meticulous inspection of every order to ensure quality and quantity. <br><br>
-                        •	Convenient Bulk Ordering: Easy bulk ordering and delivery to your location in Canada making tracking easy and reducing shipment cost! <br><br>
-                        
-                        </p>
+                        • Expert Guidance: Personalized shopping advice tailored to your style and needs. <br> <br>
+                        • Direct Market Access: Access to a wide range of Pakistani fashion products at competitive
+                        prices. <br> <br>
+                        • Quality Assurance: Meticulous inspection of every order to ensure quality and quantity.
+                        <br><br>
+                        • Convenient Bulk Ordering: Easy bulk ordering and delivery to your location in Canada making
+                        tracking easy and reducing shipment cost! <br><br>
+
+                    </p>
                 </div>
-                
-                
-                
-                
+
+
+
+
             </div>
         </section>
-        
 
 
-         <!-- /SECTION -->
+
+        <!-- /SECTION -->
 
 
         <!-- footer -->
-        <footer id="footer" class="footer">
+        <footer id="footer" class="footer bg-light">
             <div class="footer-wrap">
-                <div class="footer-body">
+                <div class="footer-body py-5">
                     <div class="container">
-                        <div class="row">
+                        <div class="row gy-4">
+                            <!-- Footer Info -->
                             <div class="col-xl-3 col-md-6 col-12">
                                 <div class="footer-infor">
-                                    <div class="footer-logo">
+                                    <div class="footer-logo mb-3">
                                         <a href="index.html">
-                                            <img src="images/logo/shopperTsLogo.jpeg" alt="">
+                                            <img src="images/logo/logo.png" alt="ShopperTS Logo" class="img-fluid"
+                                                style="width: 150px;">
                                         </a>
                                     </div>
-                                    <ul>
-
+                                    <ul class="list-unstyled mb-4">
                                         <li>
                                             <p>Email: <a
                                                     href="mailto:info@shopperts.ca?subject=Hello&body=I%20want%20to%20contact%20you">
                                                     info@shopperts.ca
-                                                </a></p>
+                                                </a>
+                                            </p>
                                         </li>
                                         <li>
-                                            <p>Phone: <a href="https://wa.me/#" target="_blank">
-                                                    Phone Number
-                                                </a></p>
+                                            <p>Phone: <a href="https://wa.me/#" target="_blank">Phone Number</a></p>
                                         </li>
                                     </ul>
-
-                                    <ul class="tf-social-icon d-flex gap-10">
-                                        <li><a href="#" class="box-icon w_34 round social-facebook border-line-black"><i
-                                                    class="icon fs-14 icon-fb"></i></a></li>
-
-                                        <li><a href="#"
-                                                class="box-icon w_34 round social-instagram border-line-black"><i
-                                                    class="icon fs-14 icon-instagram"></i></a></li>
-                                        <li><a href="#" class="box-icon w_34 round social-tiktok border-line-black"><i
-                                                    class="icon fs-14 icon-tiktok"></i></a></li>
-
+                                    <ul class="tf-social-icon d-flex gap-2">
+                                        <li>
+                                            <a href="#" class="text-dark"><i class="bi bi-facebook fs-4"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-dark"><i class="bi bi-instagram fs-4"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-dark"><i class="bi bi-tiktok fs-4"></i></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-xl-2 col-md-4 col-4 footer-col-block">
 
-                                <div class="footer-heading footer-heading-desktop" style="margin-left: 40px;">
-                                    <h6>Our Stories</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content" style="margin-left: 40px;">
-                                    <li>
-                                        <a href="Ourstory.html" class="footer-menu_item">Our Story</a>
-                                    </li>
-                                    <li>
-                                        <a href="Consultant.html" class="footer-menu_item">Know your consultant</a>
-                                    </li>
-                                    <!-- <li>
-                                        <a href="#" class="footer-menu_item">Ovur Vision</a>
-                                    </li> -->
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Teams</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-list.html" class="footer-menu_item">blogs</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="col-xl-2 col-md-4 col-8 footer-col-block">
-
-
-                                <div class="footer-heading footer-heading-desktop" style="">
-                                    <h6>Policies</h6>
-                                </div>
-                                <div class="footer-heading footer-heading-moblie" style="">
-                                    <h6>Policies</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content" style="">
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Term of Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Privacy Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Shipping Policy</a>
-                                    </li>
-
+                            <!-- Our Stories Section -->
+                            <div class="col-xl-2 col-md-4 col-6">
+                                <h6 class="footer-heading">Our Stories</h6>
+                                <ul class="list-unstyled">
+                                    <li><a href="Ourstory.html" class="text-dark">Our Story</a></li>
+                                    <li><a href="Consultant.html" class="text-dark">Know Your Consultant</a></li>
+                                    <li><a href="#" class="text-dark">Teams</a></li>
+                                    <li><a href="blog-list.html" class="text-dark">Blogs</a></li>
                                 </ul>
                             </div>
 
-                            <div class="col-xl-2 col-md-4 col-8 footer-col-block">
-
-
-                                <div class="footer-heading footer-heading-desktop" style="">
-                                    <h6>Help Center</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content" style="">
-                                    <li>
-                                        <a href="#" class="footer-menu_item">FAQs</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">How To order guide</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Size Chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Tracking Order</a>
-                                    </li>
-
+                            <!-- Policies Section -->
+                            <div class="col-xl-2 col-md-4 col-6">
+                                <h6 class="footer-heading">Policies</h6>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-dark">Terms of Policy</a></li>
+                                    <li><a href="#" class="text-dark">Privacy Policy</a></li>
+                                    <li><a href="#" class="text-dark">Shipping Policy</a></li>
                                 </ul>
                             </div>
 
-                            <div class="col-xl-3 col-md-4 col-10 " style="justify-content:flex-end;">
-                                <div class="footer-newsletter footer-col-block" style="justify-content:flex-end;">
-                                    <div class="footer-heading footer-heading-desktop"
-                                        style="justify-content:flex-end;">
-                                        <h6>Sign Up for Email</h6>
-                                    </div>
-                                    <div class="footer-heading footer-heading-moblie" style="justify-content:flex-end;">
-                                        <h6>Sign Up for Email</h6>
-                                    </div>
-                                    <div class="tf-collapse-content" style="justify-content:flex-end;">
-                                        <div class="footer-menu_item">Sign up to get first dibs on new arrivals, sales,
-                                            exclusive content, events and more!</div>
-                                        <form class="form-newsletter" id="subscribe-form"
-                                            action="product-style-07.html#" method="post" accept-charset="utf-8"
-                                            data-mailchimp="true">
-                                            <div id="subscribe-content">
-                                                <fieldset class="email">
-                                                    <input type="email" name="email-form" id="subscribe-email"
-                                                        placeholder="Enter your email...." tabindex="0"
-                                                        aria-required="true">
-                                                </fieldset>
-                                                <div class="button-submit">
-                                                    <button id="subscribe-button"
-                                                        class="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn"
-                                                        style="background-color:#E10A0A;color:white; border-color: transparent;"
-                                                        type="button">Subscribe<i
-                                                            class="icon icon-arrow1-top-left"></i></button>
-                                                </div>
-                                            </div>
-                                            <div id="subscribe-msg"></div>
-                                        </form>
+                            <!-- Help Center Section -->
+                            <div class="col-xl-2 col-md-4 col-6">
+                                <h6 class="footer-heading">Help Center</h6>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-dark">FAQs</a></li>
+                                    <li><a href="#" class="text-dark">How to Order Guide</a></li>
+                                    <li><a href="#" class="text-dark">Size Chart</a></li>
+                                    <li><a href="#" class="text-dark">Tracking Order</a></li>
+                                </ul>
+                            </div>
 
-
+                            <!-- Newsletter Section -->
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <h6 class="footer-heading">Sign Up for Email</h6>
+                                <p>Sign up to get first dibs on new arrivals, sales, exclusive content, events, and
+                                    more!</p>
+                                <form class="form-newsletter">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" placeholder="Enter your email..."
+                                            aria-label="Email">
+                                        <button class="btn btn-danger text-white" type="submit">Subscribe</button>
                                     </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom py-3">
+                    <div class="container">
+                        <div class="row text-center text-md-start align-items-center">
+                            <div class="col-md-6 text-black mb-2 mb-md-0">
+                                © 2024 ShoperTS. All Rights Reserved.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex justify-content-center justify-content-md-end gap-2">
+                                    <img src="images/payments/visa.png" alt="Visa" class="img-fluid"
+                                        style="height: 30px;">
+                                    <img src="images/payments/img-1.png" alt="Payment 1" class="img-fluid"
+                                        style="height: 30px;">
+                                    <img src="images/payments/img-2.png" alt="Payment 2" class="img-fluid"
+                                        style="height: 30px;">
+                                    <img src="images/payments/img-3.png" alt="Payment 3" class="img-fluid"
+                                        style="height: 30px;">
+                                    <img src="images/payments/img-4.png" alt="Payment 4" class="img-fluid"
+                                        style="height: 30px;">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div
-                                class="footer-bottom-wrap d-flex gap-20 flex-wrap justify-content-between align-items-center">
-                                <div class="footer-menu_item">© 2024 ShopperTs. All Rights Reserved</div>
-                                <div class="tf-payment">
-                                    <img src="images/payments/visa.png" alt="">
-                                    <img src="images/payments/img-1.png" alt="">
-                                    <img src="images/payments/img-2.png" alt="">
-                                    <img src="images/payments/img-3.png" alt="">
-                                    <img src="images/payments/img-4.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    </footer>
-    <!-- /footer -->
+        </footer>
+
+        <!-- /footer -->
 
     </div>
 
@@ -360,8 +304,8 @@
     </div>
     <!-- /gotop -->
 
-    
-    
+
+
     <!-- mobile menu -->
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
         <span class="icon-close icon-close-popup" data-bs-dismiss="offcanvas" aria-label="Close"></span>
@@ -482,9 +426,9 @@
 
 
 
-    
 
-   
+
+
 
     <!-- modal login -->
     <div class="modal modalCentered fade form-sign-in modal-part-content" id="login">
@@ -603,14 +547,14 @@
     </div>
     <!-- /modal login -->
 
-   
 
-    
 
-   
-    
 
-    
+
+
+
+
+
 
     <!-- Javascript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>

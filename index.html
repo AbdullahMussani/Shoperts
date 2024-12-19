@@ -22,10 +22,64 @@
 
 
     <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="images/logo/shopperTsLogo.jpeg">
+    <link rel="shortcut icon" href="images/logo/logo.png">
     <link rel="apple-touch-icon-precomposed" href="images/logo/favicon.png">
 
     <style>
+        @media (max-width: 768px) {
+            .wrap-iconbox {
+                grid-template-columns: repeat(1, 1fr);
+                /* Stack in one column for small screens */
+            }
+        }
+
+        /* Base Text Adjustments */
+        .text_black-2 {
+            font-size: 12xpx;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Icon and Title Centering */
+        .tf-icon-box {
+            margin: 10px 0;
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            .wrap-iconbox.lg {
+                grid-template-columns: 1fr;
+                /* Single column on mobile */
+                gap: 15px;
+                /* Adjust spacing */
+            }
+
+            .sub-title {
+                font-size: 14px;
+            }
+
+            .title {
+                font-size: 16px;
+            }
+
+            .icon i {
+                font-size: 20px;
+            }
+
+            .text_black-2 {
+                font-size: 12px;
+            }
+        }
+
+
+        .navbar-toggler {
+            right: 10px;
+            /* Adjust as needed for padding */
+            top: 50%;
+            /* Center vertically if necessary */
+            transform: translateY(-50%);
+        }
+
         /* Popup Container */
         .popup {
             display: none;
@@ -68,7 +122,7 @@
         }
 
         .popup-close:hover {
-            color: #e10a0a;
+            color: #9E1915;
             /* Highlight color */
         }
 
@@ -103,13 +157,13 @@
 
         .form-newsletter input[type="email"]:focus {
             outline: none;
-            border-color: #e10a0a;
+            border-color: #9E1915;
             box-shadow: 0px 0px 8px rgba(225, 10, 10, 0.3);
         }
 
         /* Subscribe Button */
         .button-submited button {
-            background-color: #e10a0a;
+            background-color: #9E1915;
             color: #ffffff;
             border: none;
             padding: 12px 20px;
@@ -184,19 +238,18 @@
         <!-- Header -->
         <header id="header" class="header-default header-style-3">
             <div class="container-fluid px-3 px-lg-5">
-                <div class="row wrapper-header align-items-center">
+                <div class="row align-items-center">
                     <!-- Logo Section -->
                     <div class="col-6 col-md-3 d-flex align-items-center">
                         <a href="index.html" class="logo-header">
-                            <img src="images/logo/shopperTsLogo.jpeg" alt="ShopperTS Logo" class="logo img-fluid"
+                            <img src="images/logo/logo.png" alt="ShopperTS Logo" class="logo img-fluid"
                                 style="width: 180px;">
                         </a>
                     </div>
 
-
-                    <!-- Navigation Section -->
-                    <div class="col-md-6 d-none d-md-block" style="margin-left: 70px;">
-                        <nav class="navbar navbar-expand-md justify-content-md-center">
+                    <!-- Desktop Navigation Section -->
+                    <div class="d-none d-lg-block col-lg-6">
+                        <nav class="navbar navbar-expand-lg justify-content-center">
                             <ul class="navbar-nav gap-3" style="font-size: 14px; white-space: nowrap;">
                                 <li class="nav-item">
                                     <a href="index.html" class="nav-link">Home</a>
@@ -213,66 +266,55 @@
                                 <li class="nav-item">
                                     <a href="about-us.html" class="nav-link">About Us</a>
                                 </li>
-
                             </ul>
                         </nav>
                     </div>
 
                     <!-- Search and Login Icons -->
-                    <div class="col-2 col-md-2 d-flex justify-content-end align-items-center">
+                    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-end align-items-center">
                         <ul class="nav gap-3">
-
                             <li class="nav-item">
                                 <a href="home-07.html#login" data-bs-toggle="modal" class="nav-link text-dark">
-                                    <i class="icon icon-account"></i>
-                                </a>
+                                    <span> <i class="icon icon-account"></i></span> </a>
                             </li>
                         </ul>
                     </div>
 
+
                     <!-- Mobile Navigation Toggle -->
-                    <!-- <div class="col-6 d-md-none text-end">
-                        <button class="navbar-toggler text-dark border-0" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                    <div class="col-6 d-lg-none text-end position-relative">
+                        <button class="navbar-toggler border-0 position-absolute end-0" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav"
+                            aria-expanded="false" aria-label="Toggle navigation" style="background-color: black;">
+                            <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);"></span>
                         </button>
                     </div>
-                </div> -->
+
+
 
                     <!-- Mobile Navigation -->
-                    <!-- <div class="collapse navbar-collapse d-md-none" id="mobileNav">
-                    <ul class="navbar-nav flex-column text-center">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link text-dark">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Customize Order</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Ready Made Order</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Career</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Contact Us</a>
-                        </li>
-                    </ul>
-                </div> -->
+                    <div class="collapse navbar-collapse d-lg-none" id="mobileNav">
+                        <ul class="navbar-nav flex-column text-center">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Services.html" class="nav-link">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="career.html" class="nav-link">Careers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about-us.html" class="nav-link">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
         </header>
         <!-- /Header -->
-
 
         <div class="tf-slideshow slider-home-4 slider-effect-fade position-relative">
             <div class="swiper tf-sw-slideshow" data-preview="1" data-tablet="1" data-mobile="1" data-centered="false"
@@ -284,7 +326,7 @@
                             style="display: flex; align-items: center; justify-content: space-between;margin-left:30px;">
                             <div class="box-content" style="flex: 1; padding: 20px;">
                                 <div class="card-box"
-                                    style="background-color: #E10A0A; padding: 20px; border-radius: 10px;">
+                                    style="background-color: #9E1915; padding: 20px; border-radius: 10px;">
                                     <h5 class="fade-item fade-item-1 text-white ">THE FUTURE OF FASHION CONSULTING
                                     </h5>
 
@@ -292,12 +334,7 @@
                                         Fashion
                                         Stylist, Wholesale Market Access, and Quality Assurance, All in One Place.
                                     </p>
-                                    <!-- <div class="fade-item fade-item-3">
-                                        <a href="#" class="tf-btn btn-outline-light btn-xl radius-3">
-                                            <span>Shop collection</span>
-                                            <i class="icon icon-arrow-right"></i>
-                                        </a>
-                                    </div> -->
+
                                 </div>
                             </div>
                             <div style="flex: 1; display: flex; justify-content: flex-end;margin-right:55px">
@@ -314,7 +351,7 @@
                             <div class="box-content"
                                 style="flex: 1; padding: 20px; max-width: 50%; box-sizing: border-box;">
                                 <div class="card-box"
-                                    style="background-color: #E10A0A; padding: 20px; border-radius: 10px;">
+                                    style="background-color: #9E1915; padding: 20px; border-radius: 10px;">
                                     <h5 class="fade-item fade-item-1 text-white ">EXCLUSIVE LAUNCH DEAL
                                     </h5>
 
@@ -323,11 +360,11 @@
                                         - Your Friends, Your Rewards: Refer and Earn 10% Off.
                                     </p>
                                     <!-- <div class="fade-item fade-item-3">
-                                        <a href="#" class="tf-btn btn-outline-light btn-xl radius-3">
-                                            <span>Shop collection</span>
-                                            <i class="icon icon-arrow-right"></i>
-                                        </a>
-                                    </div> -->
+                                                                                                                        <a href="#" class="tf-btn btn-outline-light btn-xl radius-3">
+                                                                                                                            <span>Shop collection</span>
+                                                                                                                            <i class="icon icon-arrow-right"></i>
+                                                                                                                        </a>
+                                                                                                                    </div> -->
                                 </div>
                             </div>
                             <div
@@ -345,7 +382,7 @@
                             <div class="box-content"
                                 style="flex: 1; padding: 20px; max-width: 50%; box-sizing: border-box;">
                                 <div class="card-box"
-                                    style="background-color: #E10A0A; padding: 20px; border-radius: 10px;">
+                                    style="background-color: #9E1915; padding: 20px; border-radius: 10px;">
                                     <h5 class="fade-item fade-item-1 text-white ">FASHION WITH A MISSION
                                     </h5>
 
@@ -355,11 +392,7 @@
                                         positive change.
                                     </p>
                                     <!-- <div class="fade-item fade-item-3">
-                                        <a href="#" class="tf-btn btn-outline-light btn-xl radius-3">
-                                            <span>Shop collection</span>
-                                            <i class="icon icon-arrow-right"></i>
-                                        </a>
-                                    </div> -->
+                                                                            </div> -->
                                 </div>
                             </div>
                             <div
@@ -379,10 +412,6 @@
 
             </div>
         </div>
-
-
-
-
 
         <!-- Marquee -->
         <div class="tf-marquee marquee-sm bg_dark">
@@ -501,92 +530,116 @@
                     <div class="flat-title lg">
                         <span class="title fw-5">ABOUT SHOPERTS</span>
                         <div>
-                            <p class="sub-title text_black-2" style="font-size: 18px">At Shoperts, we are dedicated to
-                                being your ultimate consultancy platform for all your traditional Pakistani clothing
-                                needs. Whether you're searching for the perfect outfit for a special occasion, seeking
-                                bespoke tailoring, or looking to source and secure a diverse range of ready-made
-                                garments, Shoperts is here to assist you every step of the way. </p>
+                            <p class="sub-title text_black-2"
+                                style="font-size: 18px; line-height: 1.6; text-align: justify;">
+                                At Shoperts, we are dedicated to being your ultimate consultancy platform for all your
+                                traditional
+                                Pakistani clothing needs. Whether you're searching for the perfect outfit for a special
+                                occasion,
+                                seeking bespoke tailoring, or looking to source and secure a diverse range of ready-made
+                                garments,
+                                Shoperts is here to assist you every step of the way.
+                            </p>
                         </div>
-                        <div class=" flat-title lg" style="margin-top:40px;">
-                            <span class="title fw-5">WHY BUY VIA US</span>
+                        <div class="flat-title lg" style="margin-top: 40px;">
+                            <span class="title fw-5">WHY BUY VIA SHOPERTS</span>
                         </div>
                         <div class="flat-iconbox-v3 lg">
                             <div class="wrap-carousel wrap-mobile">
                                 <div class="swiper tf-sw-mobile" data-preview="1" data-space="15">
-                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px; justify-items: center; align-items: center;"
-                                        class="swiper-wrapper wrap-iconbox lg">
+                                    <div class="swiper-wrapper wrap-iconbox lg"
+                                        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px;">
+                                        <!-- Slide 1 -->
                                         <div class="swiper-slide">
                                             <div class="tf-icon-box text-center">
                                                 <div class="icon"
-                                                    style="background-color: #E10A0A; border-radius: 50%; padding: 10px; border-color: transparent;">
-                                                    <i class="fas fa-handshake" style="color: white;"></i>
+                                                    style="background-color: #9E1915; border-radius: 50%; padding: 10px;border-color: transparent;">
+                                                    <i class="fas fa-handshake"
+                                                        style="color: white; font-size: 24px;"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <div class="title">Personalized Experience</div>
-                                                    <p class="text_black-2">Our dedicated team of fashion experts, known
-                                                        as "Fashion Consultants," are here to guide you through your
-                                                        shopping journey. They'll help you with the perfect outfit for
-                                                        any occasion, from casual wear to formal attire.
+                                                    <div class="title" style="font-size: 18px; margin-top: 10px;">
+                                                        Personalized Experience</div>
+                                                    <p class="text_black-2"
+                                                        style="font-size: 16px; line-height: 1.6; text-align: justify;">
+                                                        Our dedicated team of fashion experts, known as "Fashion
+                                                        Consultants," are here to guide you through your shopping
+                                                        journey. They'll help you with the perfect outfit for any
+                                                        occasion, from casual wear to formal attire.
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- Slide 2 -->
                                         <div class="swiper-slide">
                                             <div class="tf-icon-box text-center">
                                                 <div class="icon"
-                                                    style="background-color: #E10A0A; border-radius: 50%; padding: 10px;border-color: transparent;">
-                                                    <i class="fas fa-store" style="color: white;"></i>
+                                                    style="background-color: #9E1915; border-radius: 50%; padding: 10px;border-color: transparent;">
+                                                    <i class="fas fa-store" style="color: white; font-size: 24px;"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <div class="title">Market Access</div>
-                                                    <p class="text_black-2">We work with with top Pakistani brands to
-                                                        bring you the latest trends and exclusive offers, and offer
-                                                        wholesale market access to a vast array of Pakistani fashion
-                                                        products at competitive prices.
+                                                    <div class="title" style="font-size: 18px; margin-top: 10px;">Market
+                                                        Access</div>
+                                                    <p class="text_black-2"
+                                                        style="font-size: 16px; line-height: 1.6; text-align: justify;">
+                                                        We work with top Pakistani brands to bring you the latest trends
+                                                        and exclusive offers, and offer wholesale market access to a
+                                                        vast array of Pakistani fashion products at competitive prices.
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- Slide 3 -->
                                         <div class="swiper-slide">
                                             <div class="tf-icon-box text-center">
                                                 <div class="icon"
-                                                    style="background-color: #E10A0A; border-radius: 50%; padding: 10px;border-color: transparent;">
-                                                    <i class="fas fa-check-circle" style="color: white;"></i>
+                                                    style="background-color: #9E1915; border-radius: 50%; padding: 10px;border-color: transparent;">
+                                                    <i class="fas fa-check-circle"
+                                                        style="color: white; font-size: 24px;"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <div class="title">Quality Assurance</div>
-                                                    <p class="text_black-2">Our agents meticulously inspect every order
-                                                        to ensure quality and quantity meet your expectations. This goes
-                                                        from the garment to stitching to sizing. When you receive your
-                                                        order, our win is in 100% satisfaction!
+                                                    <div class="title" style="font-size: 18px; margin-top: 10px;">
+                                                        Quality Assurance</div>
+                                                    <p class="text_black-2"
+                                                        style="font-size: 16px; line-height: 1.6; text-align: justify;">
+                                                        Our agents meticulously inspect every order to ensure quality
+                                                        and quantity meet your expectations. This goes from the garment
+                                                        to stitching to sizing. When you receive your order, our win is
+                                                        in 100% satisfaction!
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide align-items-center">
+                                        <!-- Slide 4 -->
+                                        <div class="swiper-slide">
                                             <div class="tf-icon-box text-center">
                                                 <div class="icon"
-                                                    style="background-color: #E10A0A; border-radius: 50%; padding: 10px;border-color: transparent;">
-                                                    <i class="fas fa-shipping-fast" style="color: white;"></i>
+                                                    style="background-color: #9E1915; border-radius: 50%; padding: 10px; border-color: transparent;">
+                                                    <i class="fas fa-shipping-fast"
+                                                        style="color: white; font-size: 24px;"></i>
                                                 </div>
-                                                <div class="content align-items-center">
-                                                    <div class="title">Consolidated Shipping</div>
-                                                    <p class="text_black-2">Shop for a season or an event, buy from one
-                                                        brand or many. We will organise all your orders and save on
-                                                        shipping costs by combining all your orders into one convenient
-                                                        package.
+                                                <div class="content">
+                                                    <div class="title" style="font-size: 18px; margin-top: 10px;">
+                                                        Consolidated Shipping</div>
+                                                    <p class="text_black-2"
+                                                        style="font-size: 16px; line-height: 1.6; text-align: justify;">
+                                                        Shop for a season or an event, buy from one brand or many. We
+                                                        will organize all your orders and save on shipping costs by
+                                                        combining all your orders into one convenient package.
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="sw-dots style-2 sw-pagination-mb justify-content-center"></div>
                             </div>
                         </div>
+
                     </div>
                 </div>
+            </div>
         </section>
+
 
 
 
@@ -594,99 +647,98 @@
 
         <!-- Summer Essentials -->
         <!-- <section class="flat-spacing-8">
-            <div class="container">
-                <div class="flat-title wow fadeInUp" data-wow-delay="0s">
-                    <span class="title">Discover By Categories</span>
-                    <p class="sub-title text_black-2">Beat the Heat in Style: It's time to stock up on summer
-                        essentials!</p>
-                </div>
-                <div class="hover-sw-nav hover-sw-2">
-                    <div class="swiper tf-sw-product-sell wrap-sw-over" data-preview="4" data-tablet="3" data-mobile="2"
-                        data-space-lg="30" data-space-md="15" data-pagination="2" data-pagination-md="3"
-                        data-pagination-lg="3">
-                        <div class="swiper-wrapper" style="display: flex; justify-content: space-between; gap: 15px;">
-
-
-
-                            <div class="swiper-slide" style="flex: 1 1 calc(32.323% - 13px); ">
-                                <div class="card-product">
-                                    <div class="card-product-wrapper">
-                                        <a href="#" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/products/Men-1.png"
-                                                src="images/products/Men-1.png" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/products/Men-2.png"
-                                                src="images/products/Men-2.png" alt="image-product">
-                                        </a>
-                                        <div class="size-list">
-                                            <span>Men's</span>
-                                        </div>
-                                        <div class="list-product-btn">
-                                            <a href="#" data-bs-toggle="modal"
-                                                class="box-icon bg_white quick-add  tf-btn-loading">
-                                                <span class="icon icon-bag"></span>
-                                                <span class="tooltip">Go To Shop</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-                            <div class="swiper-slide" style="flex: 1 1 calc(30.463% - 17px); ">
-                                <div class="card-product" style="background-color: #E10A0A;">
-                                    <div class="card-product-wrapper">
-                                        <a href="#" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/products/Women-1.png"
-                                                src="images/products/Women-1.png" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/products/Women-2.png"
-                                                src="images/products/Women-2.png" alt="image-product">
-                                        </a>
-                                        <div class="size-list">
-                                            <span>Women's</span>
-                                        </div>
-                                        <div class="list-product-btn">
-                                            <a href="#" data-bs-toggle="modal"
-                                                class="box-icon bg_white quick-add tf-btn-loading">
-                                                <span class="icon icon-bag"></span>
-                                                <span class="tooltip">Go To Shop</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="swiper-slide" style="flex: 1 1 calc(35% - 10px);">
-                                <div class="card-product">
-                                    <div class="card-product-wrapper">
-                                        <a href="#" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/products/Kid-1.jfif"
-                                                src="images/products/Kid-1.jfif" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/products/Kid-2.png"
-                                                src="images/products/Kid-2.png" alt="image-product">
-                                        </a>
-                                        <div class="size-list">
-                                            <span>Kid's</span>
-                                        </div>
-                                        <div class="list-product-btn">
-                                            <a href="#" data-bs-toggle="modal"
-                                                class="box-icon bg_white quick-add tf-btn-loading">
-                                                <span class="icon icon-bag"></span>
-                                                <span class="tooltip">Go To Shop</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+                                                            <div class="container">
+                                                                <div class="flat-title wow fadeInUp" data-wow-delay="0s">
+                                                                    <span class="title">Discover By Categories</span>
+                                                                    <p class="sub-title text_black-2">Beat the Heat in Style: It's time to stock up on summer
+                                                                        essentials!</p>
+                                                                </div>
+                                                                <div class="hover-sw-nav hover-sw-2">
+                                                                    <div class="swiper tf-sw-product-sell wrap-sw-over" data-preview="4" data-tablet="3" data-mobile="2"
+                                                                        data-space-lg="30" data-space-md="15" data-pagination="2" data-pagination-md="3" data-pagination-lg="3">
+                                                                        <div class="swiper-wrapper" style="display: flex; justify-content: space-between; gap: 15px;">
+                                                        
+                                                        
+                                                        
+                                                                            <div class="swiper-slide" style="flex: 1 1 calc(32.323% - 13px); ">
+                                                                                <div class="card-product">
+                                                                                    <div class="card-product-wrapper">
+                                                                                        <a href="#" class="product-img">
+                                                                                            <img class="lazyload img-product" data-src="images/products/Men-1.png"
+                                                                                                src="images/products/Men-1.png" alt="image-product">
+                                                                                            <img class="lazyload img-hover" data-src="images/products/Men-2.png"
+                                                                                                src="images/products/Men-2.png" alt="image-product">
+                                                                                        </a>
+                                                                                        <div class="size-list">
+                                                                                            <span>Men's</span>
+                                                                                        </div>
+                                                                                        <div class="list-product-btn">
+                                                                                            <a href="#" data-bs-toggle="modal"
+                                                                                                class="box-icon bg_white quick-add  tf-btn-loading">
+                                                                                                <span class="icon icon-bag"></span>
+                                                                                                <span class="tooltip">Go To Shop</span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                                            <div class="swiper-slide" style="flex: 1 1 calc(30.463% - 17px); ">
+                                                                                <div class="card-product" style="background-color: #9E1915;">
+                                                                                    <div class="card-product-wrapper">
+                                                                                        <a href="#" class="product-img">
+                                                                                            <img class="lazyload img-product" data-src="images/products/Women-1.png"
+                                                                                                src="images/products/Women-1.png" alt="image-product">
+                                                                                            <img class="lazyload img-hover" data-src="images/products/Women-2.png"
+                                                                                                src="images/products/Women-2.png" alt="image-product">
+                                                                                        </a>
+                                                                                        <div class="size-list">
+                                                                                            <span>Women's</span>
+                                                                                        </div>
+                                                                                        <div class="list-product-btn">
+                                                                                            <a href="#" data-bs-toggle="modal"
+                                                                                                class="box-icon bg_white quick-add tf-btn-loading">
+                                                                                                <span class="icon icon-bag"></span>
+                                                                                                <span class="tooltip">Go To Shop</span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                        
+                                                        
+                                                        
+                                                                            <div class="swiper-slide" style="flex: 1 1 calc(35% - 10px);">
+                                                                                <div class="card-product">
+                                                                                    <div class="card-product-wrapper">
+                                                                                        <a href="#" class="product-img">
+                                                                                            <img class="lazyload img-product" data-src="images/products/Kid-1.jfif"
+                                                                                                src="images/products/Kid-1.jfif" alt="image-product">
+                                                                                            <img class="lazyload img-hover" data-src="images/products/Kid-2.png"
+                                                                                                src="images/products/Kid-2.png" alt="image-product">
+                                                                                        </a>
+                                                                                        <div class="size-list">
+                                                                                            <span>Kid's</span>
+                                                                                        </div>
+                                                                                        <div class="list-product-btn">
+                                                                                            <a href="#" data-bs-toggle="modal"
+                                                                                                class="box-icon bg_white quick-add tf-btn-loading">
+                                                                                                <span class="icon icon-bag"></span>
+                                                                                                <span class="tooltip">Go To Shop</span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </section> -->
 
 
         <!-- /Summer Essentials -->
@@ -859,7 +911,7 @@
                                                     <div class="article-label">
                                                         <a href="shop-collection-list.html"
                                                             class="tf-btn style-2 btn-fill radius-3 animate-hover-btn"
-                                                            style="background-color:#E10A0A;color:white; border-color: transparent;">Shop
+                                                            style="background-color:#9E1915;color:white; border-color: transparent;">Shop
                                                             collection</a>
                                                     </div>
                                                 </div>
@@ -883,7 +935,7 @@
                                                     </a>
                                                     <div class="article-label">
                                                         <a href="#" class="tf-btn style-2 btn-fill radius-3 animate-hover-btn"
-                                                            style="background-color:#E10A0A;color:white; border-color: transparent;">Shop
+                                                            style="background-color:#9E1915;color:white; border-color: transparent;">Shop
                                                             collection</a>
                                                     </div>
                                                 </div>
@@ -906,179 +958,123 @@
         <!-- /Banner Collection -->
 
         <!-- footer -->
-        <footer id="footer" class="footer">
+        <footer id="footer" class="footer bg-light">
             <div class="footer-wrap">
-                <div class="footer-body">
+                <div class="footer-body py-5">
                     <div class="container">
-                        <div class="row">
+                        <div class="row gy-4">
+                            <!-- Footer Info -->
                             <div class="col-xl-3 col-md-6 col-12">
                                 <div class="footer-infor">
-                                    <div class="footer-logo">
+                                    <div class="footer-logo mb-3">
                                         <a href="index.html">
-                                            <img src="images/logo/shopperTsLogo.jpeg" alt="">
+                                            <img src="images/logo/logo.png" alt="ShopperTS Logo" class="img-fluid"
+                                                style="width: 150px;">
                                         </a>
                                     </div>
-                                    <ul>
-
+                                    <ul class="list-unstyled mb-4">
                                         <li>
                                             <p>Email: <a
                                                     href="mailto:info@shopperts.ca?subject=Hello&body=I%20want%20to%20contact%20you">
                                                     info@shopperts.ca
-                                                </a></p>
+                                                </a>
+                                            </p>
                                         </li>
                                         <li>
-                                            <p>Phone: <a href="https://wa.me/#" target="_blank">
-                                                    Phone Number
-                                                </a></p>
+                                            <p>Phone: <a href="https://wa.me/#" target="_blank">Phone Number</a></p>
                                         </li>
                                     </ul>
-
-                                    <ul class="tf-social-icon d-flex gap-10">
-                                        <li><a href="#" class="box-icon w_34 round social-facebook border-line-black"><i
-                                                    class="icon fs-14 icon-fb"></i></a></li>
-
-                                        <li><a href="#"
-                                                class="box-icon w_34 round social-instagram border-line-black"><i
-                                                    class="icon fs-14 icon-instagram"></i></a></li>
-                                        <li><a href="#" class="box-icon w_34 round social-tiktok border-line-black"><i
-                                                    class="icon fs-14 icon-tiktok"></i></a></li>
-
+                                    <ul class="tf-social-icon d-flex gap-2">
+                                        <li>
+                                            <a href="#" class="text-dark"><i class="bi bi-facebook fs-4"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-dark"><i class="bi bi-instagram fs-4"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-dark"><i class="bi bi-tiktok fs-4"></i></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-xl-2 col-md-4 col-4 footer-col-block">
 
-                                <div class="footer-heading footer-heading-desktop" style="margin-left: 40px;">
-                                    <h6>Our Stories</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content" style="margin-left: 40px;">
-                                    <li>
-                                        <a href="Ourstory.html" class="footer-menu_item">Our Story</a>
-                                    </li>
-                                    <li>
-                                        <a href="Consultant.html" class="footer-menu_item">Know your consultant</a>
-                                    </li>
-                                    <!-- <li>
-                                        <a href="#" class="footer-menu_item">Ovur Vision</a>
-                                    </li> -->
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Teams</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-list.html" class="footer-menu_item">blogs</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="col-xl-2 col-md-4 col-8 footer-col-block">
-
-
-                                <div class="footer-heading footer-heading-desktop">
-                                    <h6>Policies</h6>
-                                </div>
-                                <div class="footer-heading footer-heading-moblie">
-                                    <h6>Policies</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content">
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Term of Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Privacy Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Shipping Policy</a>
-                                    </li>
-
+                            <!-- Our Stories Section -->
+                            <div class="col-xl-2 col-md-4 col-6">
+                                <h6 class="footer-heading">Our Stories</h6>
+                                <ul class="list-unstyled">
+                                    <li><a href="Ourstory.html" class="text-dark">Our Story</a></li>
+                                    <li><a href="Consultant.html" class="text-dark">Know Your Consultant</a></li>
+                                    <li><a href="#" class="text-dark">Teams</a></li>
+                                    <li><a href="blog-list.html" class="text-dark">Blogs</a></li>
                                 </ul>
                             </div>
 
-                            <div class="col-xl-2 col-md-4 col-8 footer-col-block">
-
-
-                                <div class="footer-heading footer-heading-desktop">
-                                    <h6>Help Center</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content">
-                                    <li>
-                                        <a href="#" class="footer-menu_item">FAQs</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">How To order guide</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Size Chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="footer-menu_item">Tracking Order</a>
-                                    </li>
-
+                            <!-- Policies Section -->
+                            <div class="col-xl-2 col-md-4 col-6">
+                                <h6 class="footer-heading">Policies</h6>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-dark">Terms of Policy</a></li>
+                                    <li><a href="#" class="text-dark">Privacy Policy</a></li>
+                                    <li><a href="#" class="text-dark">Shipping Policy</a></li>
                                 </ul>
                             </div>
 
-                            <div class="col-xl-3 col-md-4 col-10 " style="justify-content:flex-end;">
-                                <div class="footer-newsletter footer-col-block" style="justify-content:flex-end;">
-                                    <div class="footer-heading footer-heading-desktop"
-                                        style="justify-content:flex-end;">
-                                        <h6>Sign Up for Email</h6>
-                                    </div>
-                                    <div class="footer-heading footer-heading-moblie" style="justify-content:flex-end;">
-                                        <h6>Sign Up for Email</h6>
-                                    </div>
-                                    <div class="tf-collapse-content" style="justify-content:flex-end;">
-                                        <div class="footer-menu_item">Sign up to get first dibs on new arrivals, sales,
-                                            exclusive content, events and more!</div>
-                                        <form class="form-newsletter" id="subscribe-form"
-                                            action="product-style-07.html#" method="post" accept-charset="utf-8"
-                                            data-mailchimp="true">
-                                            <div id="subscribe-content">
-                                                <fieldset class="email">
-                                                    <input type="email" name="email-form" id="subscribe-email"
-                                                        placeholder="Enter your email...." tabindex="0"
-                                                        aria-required="true">
-                                                </fieldset>
-                                                <div class="button-submit">
-                                                    <button id="subscribe-button"
-                                                        class="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn"
-                                                        style="background-color:#E10A0A;color:white; border-color: transparent;"
-                                                        type="button">Subscribe<i
-                                                            class="icon icon-arrow1-top-left"></i></button>
-                                                </div>
-                                            </div>
-                                            <div id="subscribe-msg"></div>
-                                        </form>
+                            <!-- Help Center Section -->
+                            <div class="col-xl-2 col-md-4 col-6">
+                                <h6 class="footer-heading">Help Center</h6>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-dark">FAQs</a></li>
+                                    <li><a href="#" class="text-dark">How to Order Guide</a></li>
+                                    <li><a href="#" class="text-dark">Size Chart</a></li>
+                                    <li><a href="#" class="text-dark">Tracking Order</a></li>
+                                </ul>
+                            </div>
 
-
+                            <!-- Newsletter Section -->
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <h6 class="footer-heading">Sign Up for Email</h6>
+                                <p>Sign up to get first dibs on new arrivals, sales, exclusive content, events, and
+                                    more!</p>
+                                <form class="form-newsletter">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" placeholder="Enter your email..."
+                                            aria-label="Email">
+                                        <button class="btn btn-danger text-white" type="submit">Subscribe</button>
                                     </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom py-3">
+                    <div class="container">
+                        <div class="row text-center text-md-start align-items-center">
+                            <div class="col-md-6 text-black mb-2 mb-md-0">
+                                © 2024 ShoperTS. All Rights Reserved.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex justify-content-center justify-content-md-end gap-2">
+                                    <img src="images/payments/visa.png" alt="Visa" class="img-fluid"
+                                        style="height: 30px;">
+                                    <img src="images/payments/img-1.png" alt="Payment 1" class="img-fluid"
+                                        style="height: 30px;">
+                                    <img src="images/payments/img-2.png" alt="Payment 2" class="img-fluid"
+                                        style="height: 30px;">
+                                    <img src="images/payments/img-3.png" alt="Payment 3" class="img-fluid"
+                                        style="height: 30px;">
+                                    <img src="images/payments/img-4.png" alt="Payment 4" class="img-fluid"
+                                        style="height: 30px;">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div
-                                class="footer-bottom-wrap d-flex gap-20 flex-wrap justify-content-between align-items-center">
-                                <div class="footer-menu_item">© 2024 ShopperTs. All Rights Reserved</div>
-                                <div class="tf-payment">
-                                    <img src="images/payments/visa.png" alt="">
-                                    <img src="images/payments/img-1.png" alt="">
-                                    <img src="images/payments/img-2.png" alt="">
-                                    <img src="images/payments/img-3.png" alt="">
-                                    <img src="images/payments/img-4.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    </footer>
-    <!-- /footer -->
+        </footer>
 
+        <!-- /footer -->
 
     </div>
 
@@ -1124,7 +1120,7 @@
                             <div class="w-100">
                                 <button type="submit"
                                     class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"
-                                    style="background-color: #E10A0A;border-color: transparent;"><span>Log
+                                    style="background-color: #9E1915;border-color: transparent;"><span>Log
                                         in</span></button>
                             </div>
                             <div class="w-100">
@@ -1200,7 +1196,7 @@
                             <div class="w-100">
                                 <a href="register.html"
                                     class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"
-                                    style="background-color: #E10A0A;border-color: transparent;"><span>Register</span></a>
+                                    style="background-color: #9E1915;border-color: transparent;"><span>Register</span></a>
                             </div>
                             <div class="w-100">
                                 <a href="home-07.html#login" data-bs-toggle="modal" class="btn-link fw-6 w-100 link">
@@ -1237,7 +1233,7 @@
                             <div class="button-submited">
                                 <button id="subscribe-button"
                                     class="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn"
-                                    style="background-color:#E10A0A;color:white; border-color: transparent;"
+                                    style="background-color:#9E1915;color:white; border-color: transparent;"
                                     type="button">Subscribe<i class="icon icon-arrow1-top-left"></i></button>
                             </div>
                         </div>
