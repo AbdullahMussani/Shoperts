@@ -255,149 +255,149 @@
 
 
         <!-- TABLE SECTION -->
-        <section style="padding: 20px; background-color: #f5f5f5; ">
-
-            <div class="tabs" style="margin-bottom:30px; ">
-                <button class="tab-button active" onclick="showTab('current')">Volunteer</button>
-                <button class="tab-button" onclick="showTab('future')">Paid in Canada and Pakistan</button>
-            </div>
-
-
-            <div style="max-width: 1200px; margin: 0 auto; padding: 30px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
-                id="current" class="tab-content active">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>REF. NUMBER</th>
-                            <th>POSITION</th>
-                            <th>DEPARTMENT / DIVISION</th>
-                            <th>JOB TYPE</th>
-                            <th>LOCATION</th>
-                            <th>POSTING DATE</th>
-                            <th>CLOSING DATE</th>
-                            <th>APPLY NOW</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2025 LAP</td>
-                            <td class="highlight">2025 Legal Associate Program<br><span style="font-size: 12px;">Minimum
-                                    2 years of experience</span></td>
-                            <td>Legal Department</td>
-                            <td>Global Recruitment</td>
-                            <td>Beijing</td>
-                            <td>Nov 1, 2024</td>
-                            <td class="highlight">Feb 16, 2025</td>
-                            <td> <a href="#" style="text-decoration: none;">
-                                    <button style="
-                                    background-color: #9E1915; 
-                                    color: #fff; 
-                                    border: none; 
-                                    padding: 8px 12px; 
-                                    border-radius: 5px; 
-                                    cursor: pointer;
-                                    font-size: 14px;
-                                    font-weight: bold;
-                                    transition: background-color 0.3s ease;">
-                                        Apply Now
-                                    </button>
-                                </a></td>
-                        </tr>
-                        <tr>
-                            <td>24248</td>
-                            <td>Treasury Officer, Portfolio Valuation<br><span style="font-size: 12px; color: red;">(Due
-                                    to close)</span></td>
-                            <td>Office of the Treasurer</td>
-                            <td>Global Recruitment</td>
-                            <td>Beijing</td>
-                            <td>Nov 18, 2024</td>
-                            <td class="highlight">Dec 16, 2024</td>
-                            <td> <a href="#" style="text-decoration: none;">
-                                    <button style="
-                                    background-color: #9E1915; 
-                                    color: #fff; 
-                                    border: none; 
-                                    padding: 8px 12px; 
-                                    border-radius: 5px; 
-                                    cursor: pointer;
-                                    font-size: 14px;
-                                    font-weight: bold;
-                                    transition: background-color 0.3s ease;">
-                                        Apply Now
-                                    </button>
-                                </a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-
-            <div style="max-width: 1200px; margin: 0 auto; padding: 30px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
-                id="future" class="tab-content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>REF. NUMBER</th>
-                            <th>POSITION</th>
-                            <th>DEPARTMENT / DIVISION</th>
-                            <th>JOB TYPE</th>
-                            <th>LOCATION</th>
-                            <th>POSTING DATE</th>
-                            <th>OPENING DATE</th>
-                            <th>APPLY NOW</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>30100</td>
-                            <td>Senior Project Manager</td>
-                            <td>Project Management Office</td>
-                            <td>Global Recruitment</td>
-                            <td>Singapore</td>
-                            <td>Jan 10, 2025</td>
-                            <td class="highlight">Mar 1, 2025</td>
-                            <td> <a href="#" style="text-decoration: none;">
-                                    <button style="
-                                background-color: #9E1915; 
-                                color: #fff; 
-                                border: none; 
-                                padding: 8px 12px; 
-                                border-radius: 5px; 
-                                cursor: pointer;
-                                font-size: 14px;
-                                font-weight: bold;
-                                transition: background-color 0.3s ease;">
-                                        Apply Now
-                                    </button>
-                                </a></td>
-                        </tr>
-                        <tr>
-                            <td>30101</td>
-                            <td>IT Infrastructure Lead</td>
-                            <td>Information Technology</td>
-                            <td>Global Recruitment</td>
-                            <td>Hong Kong</td>
-                            <td>Feb 5, 2025</td>
-                            <td class="highlight">Apr 10, 2025</td>
-                            <td> <a href="#" style="text-decoration: none;">
-                                    <button style="
-                                background-color: #9E1915; 
-                                color: #fff; 
-                                border: none; 
-                                padding: 8px 12px; 
-                                border-radius: 5px; 
-                                cursor: pointer;
-                                font-size: 14px;
-                                font-weight: bold;
-                                transition: background-color 0.3s ease;">
-                                        Apply Now
-                                    </button>
-                                </a></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section class="py-4" style="background-color: #f5f5f5;">
+            <div class="container">
+                <!-- Tabs -->
+                <div class="tabs" style="margin-bottom:30px; ">
+                    <button class="tab-button active" onclick="showTab('current')">Volunteer</button>
+                    <button class="tab-button" onclick="showTab('future')">Paid in Canada and Pakistan</button>
+                </div>
+                <!-- Tab Content -->
+                <div id="current" class="tab-content active">
+                    <div class="bg-white p-4 rounded shadow">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>REF. NUMBER</th>
+                                        <th>POSITION</th>
+                                        <th>DEPARTMENT / DIVISION</th>
+                                        <th>JOB TYPE</th>
+                                        <th>LOCATION</th>
+                                        <th>POSTING DATE</th>
+                                        <th>CLOSING DATE</th>
+                                        <th>APPLY NOW</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2025 LAP</td>
+                                        <td>
+                                            2025 Legal Associate Program<br>
+                                            <span class="text-muted" style="font-size: 12px;">Minimum 2 years of experience</span>
+                                        </td>
+                                        <td>Legal Department</td>
+                                        <td>Global Recruitment</td>
+                                        <td>Beijing</td>
+                                        <td>Nov 1, 2024</td>
+                                        <td class="text-danger">Feb 16, 2025</td>
+                                        <td>
+                                            <a href="#" class="btn btn-danger btn-sm">Apply Now</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>24248</td>
+                                        <td>
+                                            Treasury Officer, Portfolio Valuation<br>
+                                            <span class="text-danger" style="font-size: 12px;">(Due to close)</span>
+                                        </td>
+                                        <td>Office of the Treasurer</td>
+                                        <td>Global Recruitment</td>
+                                        <td>Beijing</td>
+                                        <td>Nov 18, 2024</td>
+                                        <td class="text-danger">Dec 16, 2024</td>
+                                        <td>
+                                            <a href="#" class="btn btn-danger btn-sm">Apply Now</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="future" class="tab-content ">
+                    <div class="bg-white p-4 rounded shadow">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>REF. NUMBER</th>
+                                        <th>POSITION</th>
+                                        <th>DEPARTMENT / DIVISION</th>
+                                        <th>JOB TYPE</th>
+                                        <th>LOCATION</th>
+                                        <th>POSTING DATE</th>
+                                        <th>OPENING DATE</th>
+                                        <th>APPLY NOW</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>30100</td>
+                                        <td>Senior Project Manager</td>
+                                        <td>Project Management Office</td>
+                                        <td>Global Recruitment</td>
+                                        <td>Singapore</td>
+                                        <td>Jan 10, 2025</td>
+                                        <td class="text-success">Mar 1, 2025</td>
+                                        <td>
+                                            <a href="#" class="btn btn-danger btn-sm">Apply Now</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>30101</td>
+                                        <td>IT Infrastructure Lead</td>
+                                        <td>Information Technology</td>
+                                        <td>Global Recruitment</td>
+                                        <td>Hong Kong</td>
+                                        <td>Feb 5, 2025</td>
+                                        <td class="text-success">Apr 10, 2025</td>
+                                        <td>
+                                            <a href="#" class="btn btn-danger btn-sm">Apply Now</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        
+        <script>
+            function showTab(tabId) {
+                // Hide all tab contents
+                const tabs = document.querySelectorAll('.tab-content');
+                tabs.forEach(tab => tab.classList.add('d-none'));
+        
+                // Show the selected tab content
+                const selectedTab = document.getElementById(tabId);
+                if (selectedTab) {
+                    selectedTab.classList.remove('d-none');
+                }
+        
+                // Remove active class from all buttons
+                const buttons = document.querySelectorAll('.btn');
+                buttons.forEach(button => button.classList.remove('active'));
+        
+                // Add active class to the clicked button
+                const clickedButton = document.querySelector(`button[onclick="showTab('${tabId}')"]`);
+                if (clickedButton) {
+                    clickedButton.classList.add('active');
+                }
+            }
+        
+            // Default tab initialization on page load
+            document.addEventListener('DOMContentLoaded', () => {
+                const defaultTab = document.querySelector('.btn.active') || document.querySelector('.btn');
+                if (defaultTab) {
+                    const defaultTabId = defaultTab.getAttribute('onclick').match(/'(.*?)'/)[1];
+                    showTab(defaultTabId);
+                }
+            });
+        </script>
+        
 
 
         <!-- footer -->
