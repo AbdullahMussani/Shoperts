@@ -29,6 +29,34 @@
 </head>
 
 <style>
+
+
+/* Ensure modal is centered and does not scroll on small screens */
+@media (max-width: 576px) {
+    .modal-dialog {
+        max-width: 90%; /* Adjust modal width on small screens */
+        margin: 0 auto; /* Center the modal */
+    }
+
+    /* Adjust the size of images on small screens */
+    .img-product {
+        width: 20%; /* Make images scale to their container size */
+        height: auto; /* Keep the aspect ratio intact */
+    }
+    
+    /* Adjust modal body padding for small screens */
+    .modal-body {
+        padding: 0; /* Remove extra padding for small screens */
+    }
+}
+
+/* Make sure modal is fully centered on larger screens */
+@media (min-width: 577px) {
+    .modal-dialog {
+        max-width: 800px; /* Larger modal for medium to large screens */
+    }
+}
+
     .step {
         display: none;
     }
@@ -194,651 +222,450 @@
 
         <!-- /page-title -->
         <div style="display: flex; justify-content: space-between; margin-top: 100px;  margin-bottom: 100px;">
-            <div class="col-lg-3" style="width: 25%; padding: 10px;">
-                <ul class="my-account-nav">
-                    <li><a href="my-account.html" class="my-account-nav-item">Dashboard</a></li>
-                    <li><span class="my-account-nav-item active"> New Orders</span></li>
-                    <li><a href="my-account-orders.html" class="my-account-nav-item">Order History</a></li>
-                    <li><a href="my-account.html" class="my-account-nav-item">Profile</a></li>
-                    <li><span class="my-account-nav-item">Agent Message</span></li>
-                    <li><a href="login.html" class="my-account-nav-item">Notification</a></li>
-                </ul>
-            </div>
-
-
-
-            <div style="width: 75%; padding: 10px;">
-                <h3 style="text-align: center;" id="orderNameDisplay"></h3>
-                <p
-                    style="text-align: center;  background-color: black; color: white; width: 12%; margin-left: 870px; font-size: 10px;">
-                    24-nov-2024</p>
-
-                <div style="margin-bottom: 20px; margin-top: 40px;">
-                    <nav>
-                        <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; gap: 20px;">
-                            <li>
-                                <a href="javascript:void(0)" id="step1" class="nav-item">
-                                    <button class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                        style="background-color: #9E1915; border-color: transparent;">Products</button>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" id="step2" class="nav-item">
-                                    <button class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                        style="background-color: #9E1915;border-color: transparent;">Shipping</button>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" id="step3" class="nav-item">
-                                    <button class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                        style="background-color: #9E1915;border-color: transparent;">Payment
-                                        Details</button>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" id="step4" class="nav-item">
-                                    <button class="tf-btn btn-fill animate-hover-btn rounded-0" style="background-color:
-                                        #9E1915;border-color: transparent;">Reviews</button>
-                                </a>
-                            </li>
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <!-- Navigation Menu -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                        <ul class="my-account-nav list-unstyled">
+                            <li><a href="my-account.html" class="my-account-nav-item d-block py-2">Dashboard</a></li>
+                            <li><span class="my-account-nav-item active d-block py-2">New Orders</span></li>
+                            <li><a href="my-account-orders.html" class="my-account-nav-item d-block py-2">Order History</a></li>
+                            <li><a href="my-account.html" class="my-account-nav-item d-block py-2">Profile</a></li>
+                            <li><span class="my-account-nav-item d-block py-2">Agent Message</span></li>
+                            <li><a href="login.html" class="my-account-nav-item d-block py-2">Notification</a></li>
                         </ul>
-                    </nav>
-                </div>
-
-
-
-                <div id="stepper" style="height: auto; border: 1px solid #ccc; padding: 20px; position: relative;">
-
-                    <!-- STEP 1 category -->
-
-                    <div class="step active" id="step1">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                            <!-- Left Side: Product Details -->
-                            <div
-                                style="width: 75%; display: flex; flex-direction: column; justify-content: space-between;">
-                                <!-- Product Info -->
-                                <div style="display: flex; align-items: center;">
-                                    <img src="images/products/Women-1.png" alt="Product Image"
-                                        style="width: 100px; height: auto; margin-right: 10px;">
-                                    <div>
-                                        <h5 style="margin: 0; margin-bottom: 5px;">Product Name</h5>
-                                        <p style="margin: 0; margin-bottom: 15px;">$100.00</p>
-
-                                        <!-- Quantity Control -->
-                                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                                            <button id="decreaseBtn" onclick="decreaseQuantity()"
-                                                style="padding: 5px 10px; background-color: #0a0a0a; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">-</button>
-                                            <input id="quantity" value="1" readonly
-                                                style="width: 60px; text-align: center; border: 1px solid #ddd; border-radius: 5px; margin: 0 5px; font-size: 12px; color: black;">
-                                            <button id="increaseBtn" onclick="increaseQuantity()"
-                                                style="padding: 5px 10px; background-color: #0a0a0a; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Add Product Button -->
-
-
-                                <!-- List Section -->
-                                <div style="margin-top: 30px;">
-                                    <div style="display: flex; justify-content: space-between; gap: 20px;">
-                                        <!-- Left Column -->
-                                        <div style="width: 48%;">
-                                            <ul style="list-style: none; padding: 0; margin: 0;">
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 1</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 2</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 3</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 4</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 5</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <!-- Right Column -->
-                                        <div style="width: 48%;">
-                                            <ul style="list-style: none; padding: 0; margin: 0;">
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 6</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 7</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 8</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 9</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                                <li
-                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                                    <span>Item 10</span>
-                                                    <i class="arrow-icon"
-                                                        style="font-size: 16px; transform: rotate(90deg);">↓</i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button
-                                    style="padding: 15px 30px; margin-top: 20px; border: none; background-color: #4CAF50; color: white; cursor: pointer; font-size: 18px; border-radius: 5px;"
-                                    data-bs-toggle="modal" data-bs-target="#categoryModal">
-                                    Add Product
-                                </button>
-                            </div>
-
-
-
-
-                            <!-- Price Summary -->
-                            <div
-                                style="width: 20%; height: 70%; border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; text-align: center;">
-                                <h5 style="margin: 0; margin-bottom: 10px; font-size: 16px; font-weight: bold;">Price
-                                    Summary</h5>
-                                <p style="margin: 0; font-size: 12px;">Subtotal: $100.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Tax: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Shipping:Rush</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">rush Caharges: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Addon charges: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold;">Total: $105.00</p>
-
-                            </div>
-                        </div>
-                        <!-- Navigation buttons (Back & Next) -->
-                        <div style="margin-top: 20px; display: flex; justify-content: flex-end; align-items:right;">
-
-                            <button type="button" id="next1" class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #9E1915;border-color: transparent; ">
-                                Next
-                            </button>
-                        </div>
-
                     </div>
-
-
-
-
-
+            
+                    <!-- Main Content -->
+                    <div class="col-lg-9 col-md-8 col-sm-12">
+                        <div class="row">
+                            <!-- Order Title and Date -->
+                            <div class="col-12 text-center mb-4">
+                                <h3 id="orderNameDisplay" class="mb-3">Order Name</h3>
+                                <p class="bg-dark text-white d-inline-block px-3 py-1 small rounded">
+                                    24-nov-2024
+                                </p>
+                            </div>
+                            
+                        </div>
+            
+                        <!-- Step Navigation -->
+                        <div class="col-12 mb-3">
+                            <nav>
+                                <ul class="nav justify-content-center flex-wrap gap-3 gap-md-4">
+                                    <li class="nav-item">
+                                        <button class="btn btn-danger rounded-0 px-4 py-2">Products</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="btn btn-danger rounded-0 px-4 py-2">Shipping</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="btn btn-danger rounded-0 px-4 py-2">Payment Details</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="btn btn-danger rounded-0 px-4 py-2">Reviews</button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        
+                        <!-- STEP 1 -->
+            
+                        <div class="row mt-4 step active border rounded p-3" id="step1">
+                            <!-- Wrapper for both sections: Left and Right -->
+                            <div class="d-flex flex-wrap">
+                                <!-- Left Side: Product Details -->
+                                <div class="col-lg-8 col-md-7 mb-4">
+                                    <div class="card p-3">
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <!-- Product Info -->
+                                            <img src="images/products/Women-1.png" alt="Product Image" class="img-fluid" style="width: 100px;">
+                                            <div>
+                                                <h5>Product Name</h5>
+                                                <p>$100.00</p>
+                                                <!-- Quantity Control -->
+                                                <div class="d-flex align-items-center">
+                                                    <button id="decreaseBtn" onclick="decreaseQuantity()" class="btn btn-dark btn-sm">-</button>
+                                                    <input id="quantity" value="1" readonly class="form-control mx-2 text-center" style="width: 60px;">
+                                                    <button id="increaseBtn" onclick="increaseQuantity()" class="btn btn-dark btn-sm">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- List Section -->
+                                        <div class="row mt-4">
+                                            <div class="col-md-6">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Item 1 <i class="bi bi-chevron-right"></i>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Item 2 <i class="bi bi-chevron-right"></i>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Item 3 <i class="bi bi-chevron-right"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Item 4 <i class="bi bi-chevron-right"></i>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Item 5 <i class="bi bi-chevron-right"></i>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Item 6 <i class="bi bi-chevron-right"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                        
+                                        <button class="btn btn-success mt-4" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                                            Add Product
+                                        </button>
+                                    </div>
+                                </div>
+                        
+                                <!-- Right Side: Price Summary -->
+                                <div class="col-lg-4 col-md-5 mb-4">
+                                    <div class="card p-3 text-center">
+                                        <h5 class="mb-3">Price Summary</h5>
+                                        <p>Subtotal: $100.00</p>
+                                        <p>Tax: $5.00</p>
+                                        <p>Shipping: Rush</p>
+                                        <p>Rush Charges: $5.00</p>
+                                        <p>Add-on Charges: $5.00</p>
+                                        <h6 class="fw-bold">Total: $115.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Navigation Buttons -->
+                            <div class="row mt-4">
+                                <div class="col-12 text-end">
+                                    <button class="btn btn-danger rounded-0" id="next1">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
                     <!-- STEP 2 shipping -->
-
-                    <div class="step" id="step2">
+                    <div class="step border rounded p-4" id="step2">
                         <h5>Shipping Details</h5>
                         <p>Select your preferred production method and shipping address.</p>
-
+                    
                         <!-- Content for Left and Right -->
-                        <div style="display: flex; justify-content: space-between; gap: 20px;">
-                            <div style="flex: 1;">
+                        <div class="row g-4">
+                            <!-- Left Section -->
+                            <div class="col-lg-8">
                                 <h6>Production Method</h6>
-                                <div>
-                                    <label
-                                        style="display: block; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                                <div class="mb-3">
+                                    <label class="border rounded p-3 d-block mb-2">
                                         <input type="radio" name="production_method" value="manual"> Standard Production
-                                        <span>(3-4 weeks)</span>
-
+                                        <span class="text-muted">(3-4 weeks)</span>
                                     </label>
-                                    <label
-                                        style="display: block; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
-                                        <input type="radio" name="production_method" value="automated"> Rush
-                                        Production <span>(2 weeks)</sapn>
+                                    <label class="border rounded p-3 d-block">
+                                        <input type="radio" name="production_method" value="automated"> Rush Production
+                                        <span class="text-muted">(2 weeks)</span>
                                     </label>
                                 </div>
-
-                                <div
-                                    style="border: 1px solid #ddd; padding: 15px; margin-top: 30px; border-radius: 5px; display: flex; flex-direction: column; align-items: flex-start;">
-                                    <h6 style="margin-bottom: 10px;">Shipping Details</h6>
-                                    <p style="margin-bottom: 10px;">Your shipping information will appear here...</p>
-
-                                    <!-- Button aligned to the right within the div -->
-                                    <div style="align-self: flex-end;">
-                                        <button class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                            onclick="openShippingModal()"
-                                            style="padding: 8px 15px;  border: none; border-radius: 5px; background-color: #9E1915;">
-                                            Add Shipping Info
-                                        </button>
+                    
+                                <!-- Shipping Details -->
+                                <div class="border rounded p-3 mb-4">
+                                    <h6 class="mb-3">Shipping Details</h6>
+                                    <p>Your shipping information will appear here...</p>
+                                    <div class="text-end">
+                                        <button class="btn btn-danger btn-sm" onclick="openShippingModal()">Add Shipping Info</button>
                                     </div>
                                 </div>
-
-
-
-                                <div
-                                    style="border: 1px solid #ddd; padding: 15px; margin-top: 30px; border-radius: 5px; display: flex; flex-direction: column; align-items: flex-start;">
-                                    <h6 style="margin-bottom: 10px;">Billing Details</h6>
-                                    <p style="margin-bottom: 10px;">Your Billing information will appear here...</p>
-
-                                    <!-- Button aligned to the right within the div -->
-                                    <div style="align-self: flex-end;">
-                                        <button class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                            onclick="openShippingModal()"
-                                            style="padding: 8px 15px;  border: none; border-radius: 5px; background-color: #9E1915;">
-                                            Add Billing Info
-                                        </button>
+                    
+                                <!-- Billing Details -->
+                                <div class="border rounded p-3">
+                                    <h6 class="mb-3">Billing Details</h6>
+                                    <p>Your Billing information will appear here...</p>
+                                    <div class="text-end">
+                                        <button class="btn btn-danger btn-sm" onclick="openShippingModal()">Add Billing Info</button>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Price Summary -->
-                            <div
-                                style="width: 25%; border: 1px solid #ddd; padding: 15px; background-color: #f9f9f9; text-align: center;">
-                                <h5>Price Summary</h5>
-                                <p>Subtotal: $100.00</p>
-                                <p>Tax: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Shipping:Rush</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">rush Caharges: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Addon charges: $5.00</p>
-                                <p><strong>Total: $105.00</strong></p>
+                    
+                            <!-- Right Section: Price Summary -->
+                            <div class="col-lg-4">
+                                <div class="border rounded p-3 bg-light text-center">
+                                    <h5 class="mb-3">Price Summary</h5>
+                                    <p>Subtotal: $100.00</p>
+                                    <p>Tax: $5.00</p>
+                                    <p class="mb-1">Shipping: Rush</p>
+                                    <p class="mb-1">Rush Charges: $5.00</p>
+                                    <p class="mb-1">Addon Charges: $5.00</p>
+                                    <p><strong>Total: $115.00</strong></p>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Navigation buttons (Back & Next) -->
-                        <div
-                            style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-                            <button type="button" id="back2" class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                style="padding: 10px 20px; font-size: 16px; cursor: pointer;   color: #fff;background-color: #9E1915;border-color: transparent;">
-                                Back
-                            </button>
-                            <button type="button" id="next2" class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                style="padding: 10px 20px; font-size: 16px; cursor: pointer;background-color:#9E1915;border-color: transparent;    ">
-                                Next
-                            </button>
+                    
+                        <!-- Navigation Buttons -->
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <button type="button" id="back2" class="btn btn-danger">Back</button>
+                            <button type="button" id="next2" class="btn btn-danger">Next</button>
                         </div>
-
                     </div>
-
-
+                    
+                    
                     <!-- Modal -->
-                    <!-- Modal Overlay -->
-                    <div id="shipping-modal-overlay"
-                        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000;"
-                        onclick="closeShippingModal()"></div>
-
-                    <!-- Modal Form -->
-                    <div id="shipping-modal-form"
-                        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 400px; background: white; padding: 20px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 1001;">
+                    <div id="shipping-modal-overlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50" onclick="closeShippingModal()" style="z-index: 1000;"></div>
+                    <div id="shipping-modal-form" class="d-none position-fixed top-50 start-50 translate-middle w-100" style="max-width: 400px; z-index: 1001; background: white; padding: 20px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
                         <h6>Add Shipping Information</h6>
                         <form id="shipping-info-form">
                             <!-- Input Fields -->
-                            <div style="margin-bottom: 15px;">
-                                <input type="text" placeholder="Address" required style="width: 100%; padding: 10px;">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Address" required>
                             </div>
-                            <div style="margin-bottom: 15px;">
-                                <input type="text" placeholder="City" required style="width: 100%; padding: 10px;">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="City" required>
                             </div>
-                            <div style="margin-bottom: 15px;">
-                                <input type="text" placeholder="ZIP Code" required style="width: 100%; padding: 10px;">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="ZIP Code" required>
                             </div>
-
+                    
                             <!-- Done Button -->
-                            <div style="text-align: right; margin-top: 20px;">
-                                <button type="button" class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                    onclick="closeShippingModal()"
-                                    style="background-color:  #9E1915;border-color: transparent;">Done</button>
+                            <div class="text-end">
+                                <button type="button" class="btn btn-danger" onclick="closeShippingModal()">Done</button>
                             </div>
                         </form>
                     </div>
-
+                    
 
 
                     <!-- STEP 2 Shipping End -->
 
 
                     <!-- STEP 3 Payment -->
-                    <div class="step" id="step3">
+                    <div class="step" id="step3" style="border: 1px solid #ddd; padding: 20px; border-radius: 5px;">
                         <h5>Payment Details</h5>
                         <p>Select your preferred production method and shipping address.</p>
-
+                    
                         <!-- Container for Left and Right Content -->
-                        <div style="display: flex; justify-content: space-between; gap: 20px;">
-
+                        <div class="row">
                             <!-- Left Side: Payment Form -->
-                            <div style="flex: 1;">
-
-                                <!-- Initial Deposit or Invoice Payment Section -->
-                                <div style="margin-top: 20px; display: flex; align-items: center; gap: 20px;">
-                                    <!-- Left: Initial Deposit or Invoice Payment -->
-                                    <div style="flex: 1;">
-                                        <p>Enter initial deposit or invoice payment</p>
-                                        <input type="number" placeholder="Enter amount"
-                                            style="padding: 10px; width: 100%; margin-bottom: 10px;">
-                                    </div>
-
-                                    <!-- Right: Pay in Full and Partial Payment Checkboxes -->
-                                    <div style="display: flex; gap: 20px;">
-                                        <div
-                                            style="display: flex; align-items: center; gap: 10px; padding: 10px; font-size: 13px;">
-                                            <label for="full-payment">Pay in Full</label>
-                                            <input type="checkbox" id="full-payment">
+                            <div class="col-lg-8 col-md-7 mb-4">
+                                <div class="card p-3" style="border: 1px solid #ddd; padding: 20px; border-radius: 5px;">
+                    
+                                    <!-- Initial Deposit or Invoice Payment Section -->
+                                    <div style="margin-top: 20px; display: flex; align-items: center; gap: 20px;">
+                                        <div style="flex: 1;">
+                                            <p>Enter initial deposit or invoice payment</p>
+                                            <input type="number" placeholder="Enter amount" class="form-control" style="margin-bottom: 10px;">
                                         </div>
-
-                                        <div
-                                            style="display: flex; align-items: center; gap: 10px; padding: 10px; font-size: 13px;">
-                                            <label for="partial-payment">Partial Payment</label>
-                                            <input type="checkbox" id="partial-payment">
+                                        <div style="display: flex; gap: 20px;">
+                                            <div style="display: flex; align-items: center; gap: 10px; font-size: 13px;">
+                                                <label for="full-payment">Pay in Full</label>
+                                                <input type="checkbox" id="full-payment">
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 10px; font-size: 13px;">
+                                                <label for="partial-payment">Partial Payment</label>
+                                                <input type="checkbox" id="partial-payment">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <!-- Select Payment Method Section -->
-                                <div style="margin-top: 20px;">
-                                    <h5>Select Payment Method</h5>
-
-                                    <!-- Payment Method Options -->
-                                    <div style="display: flex; gap: 20px; font-size: 12px; margin-top: 30px;">
-                                        <!-- Bank Transfer Option -->
-                                        <div
-                                            style="display: flex; align-items: center; gap: 10px; border: 1px solid gray; padding: 10px;">
-                                            <i class="fa fa-university" aria-hidden="true" style="font-size: 18px;"></i>
-                                            <!-- Bank Icon -->
-                                            <label for="bank-transfer">Bank Transfer</label>
-                                            <input type="radio" name="payment-method" id="bank-transfer">
+                    
+                                    <!-- Select Payment Method Section -->
+                                    <div style="margin-top: 20px;">
+                                        <h5>Select Payment Method</h5>
+                    
+                                        <!-- Payment Method Options -->
+                                        <div class="d-flex gap-3" style="font-size: 12px; margin-top: 30px;">
+                                            <!-- Bank Transfer Option -->
+                                            <div class="d-flex align-items-center gap-2 border p-2">
+                                                <i class="fa fa-university" aria-hidden="true" style="font-size: 18px;"></i>
+                                                <label for="bank-transfer">Bank Transfer</label>
+                                                <input type="radio" name="payment-method" id="bank-transfer">
+                                            </div>
+                    
+                                            <!-- Credit Card Option -->
+                                            <div class="d-flex align-items-center gap-2 border p-2">
+                                                <i class="fa fa-credit-card" aria-hidden="true" style="font-size: 18px;"></i>
+                                                <label for="credit-card">Credit Card</label>
+                                                <input type="radio" name="payment-method" id="credit-card" onclick="openCreditCardModal()">
+                                            </div>
                                         </div>
-
-                                        <!-- Credit Card Option -->
-                                        <div
-                                            style="display: flex; align-items: center; gap: 10px; border: 1px solid gray; padding: 10px;">
-                                            <i class="fa fa-credit-card" aria-hidden="true"
-                                                style="font-size: 18px;"></i>
-                                            <!-- Credit Card Icon -->
-                                            <label for="credit-card">Credit Card</label>
-                                            <input type="radio" name="payment-method" id="credit-card"
-                                                onclick="openCreditCardModal()">
+                    
+                                        <!-- Modal for Credit Card Payment -->
+                                        <div id="creditCardModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 500px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
+                                            <h6>Credit Card Payment</h6>
+                                            <form id="creditCardForm">
+                                                <div class="mb-3">
+                                                    <label for="cardNumber">Card Number</label>
+                                                    <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" class="form-control">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="expiryDate">Expiry Date</label>
+                                                    <input type="text" id="expiryDate" name="expiryDate" required placeholder="MM/YY" class="form-control">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="cvv">CVV</label>
+                                                    <input type="text" id="cvv" name="cvv" required placeholder="Enter CVV" class="form-control">
+                                                </div>
+                                                <div class="d-flex justify-content-center gap-3">
+                                                    <button type="button" class="btn btn-danger" onclick="closeModal()">Pay Now</button>
+                                                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
+                                                </div>
+                                            </form>
                                         </div>
+                    
+                                        <!-- Modal Overlay -->
+                                        <div id="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;" onclick="closeModal()"></div>
+                    
                                     </div>
-
-                                    <!-- Modal for Credit Card Payment -->
-                                    <div id="creditCardModal"
-                                        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 500px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
-                                        <h6>Credit Card Payment</h6>
-                                        <form id="creditCardForm">
-                                            <!-- Card Number -->
-                                            <div style="margin-bottom: 10px;">
-                                                <label for="cardNumber">Card Number</label><br>
-                                                <input type="text" id="cardNumber" name="cardNumber"
-                                                    placeholder="Enter card number" style="width: 100%; padding: 10px;">
-                                            </div>
-
-                                            <!-- Expiry Date -->
-                                            <div style="margin-bottom: 10px;">
-                                                <label for="expiryDate">Expiry Date</label><br>
-                                                <input type="text" id="expiryDate" name="expiryDate" required
-                                                    placeholder="MM/YY" style="width: 100%; padding: 10px;">
-                                            </div>
-
-                                            <!-- CVV -->
-                                            <div style="margin-bottom: 10px;">
-                                                <label for="cvv">CVV</label><br>
-                                                <input type="text" id="cvv" name="cvv" required placeholder="Enter CVV"
-                                                    style="width: 100%; padding: 10px;">
-                                            </div>
-
-                                            <!-- Submit Button -->
-                                            <div style="display: flex; justify-content: center; gap: 10px;">
-                                                <button type="button"
-                                                    class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                                    onclick="closeModal()"
-                                                    style="background-color:  #9E1915;border-color: transparent;"> Pay
-                                                    Now</button>
-                                                <button type="button"
-                                                    class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                                    onclick="closeModal()"
-                                                    style="background-color:  #9E1915;border-color: transparent;">
-                                                    Close</button>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                    <!-- Modal Overlay -->
-                                    <div id="modal-overlay"
-                                        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;"
-                                        onclick="closeModal()"></div>
-
                                 </div>
                             </div>
-
+                    
                             <!-- Right Side: Price Summary -->
-                            <div
-                                style="width: 25%; border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; text-align: center;">
-                                <h5 style="margin: 0; margin-bottom: 10px; font-size: 16px; font-weight: bold;">
-                                    Price
-                                    Summary</h5>
-                                <p style="margin: 0; font-size: 12px;">Subtotal: $100.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Tax: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Shipping:Rush</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">rush Caharges: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Addon charges: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold;">Total: $105.00
-                                </p>
+                            <div class="col-lg-4 col-md-5 mb-4">
+                                <div class="card p-3 text-center" style="border: 1px solid #ddd; padding: 20px; background-color: #f9f9f9; border-radius: 5px;">
+                                    <h5 style="font-size: 16px; font-weight: bold;">Price Summary</h5>
+                                    <p>Subtotal: $100.00</p>
+                                    <p>Tax: $5.00</p>
+                                    <p>Shipping: Rush</p>
+                                    <p>Rush Charges: $5.00</p>
+                                    <p>Add-on Charges: $5.00</p>
+                                    <h6 style="font-weight: bold;">Total: $105.00</h6>
+                                </div>
                             </div>
                         </div>
-
-
+                    
                         <!-- Navigation buttons (Back & Next) -->
-                        <div
-                            style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-                            <button type="button" id="back3" class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                style="padding: 10px 20px; font-size: 16px; cursor: pointer;   color: #fff; background-color: #9E1915;border-color: transparent;"">
-                                Back
-                            </button>
-                            <button type=" button" id="next3" class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #9E1915;border-color: transparent;">
-                                Next
-                            </button>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="button" id="back3" class="btn btn-danger" style="padding: 10px 20px;">Back</button>
+                            <button type="button" id="next3" class="btn btn-danger" style="padding: 10px 20px;">Next</button>
                         </div>
-
                     </div>
-
+                    
                     <!-- STEP 3 payment End -->
 
                     <!-- STEP 4 Review -->
-
-                    <div class=" step" id="step4">
+                    <div class="container step" id="step4" style="padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
                         <h5>Order Review</h5>
-                        <p>Check Your Order Detaisls</p>
-
-                        <div style="display: flex; justify-content: space-between; gap: 20px;">
+                        <p>Check Your Order Details</p>
+                    
+                        <div class="row">
                             <!-- Left Side: Tables Section -->
-                            <div style="flex: 0.75; display: flex; flex-direction: column; gap: 20px;">
-                                <!-- First Div with Table -->
-                                <div
-                                    style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9;">
-                                    <h5 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">
-                                        Products
-                                    </h5>
-                                    <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9;">
+                            <div class="col-lg-8 col-md-8 col-sm-12">
+                                <!-- First Div with Table (Products) -->
+                                <div class="border p-3 mb-3 bg-light">
+                                    <h5 class="h6 font-weight-bold mb-3">Products</h5>
+                                    <table class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                    Product </th>
-                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                    Qunatity</th>
-                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                    Iteam total</th>
+                                                <th>Product</th>
+                                                <th>Quantity</th>
+                                                <th>Item Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                                    <img src="images/products/Men-1.png" alt="Product 1"
-                                                        style="width: 50px; height: auto;">
+                                                <td class="text-center">
+                                                    <img src="images/products/Men-1.png" alt="Product 1" style="width: 50px; height: auto;">
                                                 </td>
-                                                <td style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                <td style="border: 1px solid #ddd; padding: 8px;">1</td>
+                                                <td>1</td>
+                                                <td>$100.00</td>
                                             </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
-
-
-                                <div
-                                    style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9;">
-                                    <h5 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Design
-                                    </h5>
-                                    <table style="width: 100%; border-collapse: collapse;">
+                    
+                                <!-- Second Div with Table (Design) -->
+                                <div class="border p-3 mb-3 bg-light">
+                                    <h5 class="h6 font-weight-bold mb-3">Design</h5>
+                                    <table class="table table-bordered">
                                         <thead>
                                             <tr>
-
-                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                    Product</th>
-                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                    Design Completed</th>
+                                                <th>Product</th>
+                                                <th>Design Completed</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                                    <img src="images/products/Men-1.png" alt="Product 1"
-                                                        style="width: 50px; height: auto;">
+                                                <td class="text-center">
+                                                    <img src="images/products/Men-1.png" alt="Product 1" style="width: 50px; height: auto;">
                                                 </td>
-                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                                    <span style="font-size: 20px; color: green;">✔</span>
-                                                    <!-- Right mark icon -->
-                                                </td>
+                                                <td class="text-center"><span class="text-success" style="font-size: 20px;">✔</span></td>
                                             </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
-
-                                <!-- Second Div with Table -->
-                                <div style="display: flex; gap: 20px;">
-                                    <!-- First Div -->
-                                    <div
-                                        style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; flex: 1;">
-                                        <h5 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">
-                                            Shippping
-                                            Details</h5>
-                                        <table style="width: 100%; border-collapse: collapse;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                        Shipping Adress</th>
-                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                        Billing Adress</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Karachi
-                                                        Pakistan
-                                                        <br>00544
-                                                        <br>Sindh
-                                                    </td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Karachi
-                                                        Pakistan
-                                                        <br>00544
-                                                        <br>Sindh
-                                                    </td>
-
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                    
+                                <!-- Shipping and Payment Details Section -->
+                                <div class="row">
+                                    <!-- Shipping Details -->
+                                    <div class="col-md-6">
+                                        <div class="border p-3 mb-3 bg-light">
+                                            <h5 class="h6 font-weight-bold mb-3">Shipping Details</h5>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Shipping Address</th>
+                                                        <th>Billing Address</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Karachi, Pakistan<br>00544<br>Sindh</td>
+                                                        <td>Karachi, Pakistan<br>00544<br>Sindh</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-
-                                    <!-- Second Div -->
-                                    <div
-                                        style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; flex: 1;">
-                                        <h5 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">
-                                            Payment
-                                            Method</h5>
-                                        <table style="width: 100%; border-collapse: collapse;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                        Production Method</th>
-                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                        Payment Method</th>
-                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">
-                                                        Payment Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Fast
-                                                        services
-                                                    </td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Credit
-                                                        Card
-                                                    </td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">
-                                                        Paid
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                    
+                                    <!-- Payment Details -->
+                                    <div class="col-md-6">
+                                        <div class="border p-3 mb-3 bg-light">
+                                            <h5 class="h6 font-weight-bold mb-3">Payment Method</h5>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Production Method</th>
+                                                        <th>Payment Method</th>
+                                                        <th>Payment Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Fast Services</td>
+                                                        <td>Credit Card</td>
+                                                        <td>Paid</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
-
+                    
                             <!-- Right Side: Price Summary Section -->
-                            <div
-                                style="flex: 0.25; border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9; text-align: center;">
-                                <h5 style="margin: 0; margin-bottom: 10px; font-size: 16px; font-weight: bold;">
-                                    Price
-                                    Summary</h5>
-                                <p style="margin: 0; font-size: 12px;">Subtotal: $100.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Tax: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Shipping:Rush</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">rush Caharges: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px;">Addon charges: $5.00</p>
-                                <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold;">Total: $105.00
-                                </p>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="border p-3 bg-light text-center">
+                                    <h5 class="h6 font-weight-bold mb-3">Price Summary</h5>
+                                    <p class="mb-0">Subtotal: $100.00</p>
+                                    <p class="mb-0">Tax: $5.00</p>
+                                    <p class="mb-0">Shipping: Rush</p>
+                                    <p class="mb-0">Rush Charges: $5.00</p>
+                                    <p class="mb-0">Addon Charges: $5.00</p>
+                                    <p class="mb-0 font-weight-bold">Total: $105.00</p>
+                                </div>
                             </div>
                         </div>
-
-
-
-                        <!-- Navigation buttons (Back & Next) -->
-                        <div
-                            style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-                            <button type="button" id="back4" class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                style="padding: 10px 20px; font-size: 16px; cursor: pointer;   color: #ffffff; background-color: #9E1915;border-color: transparent;">
-                                Back
-                            </button>
-                            <button type="button" class="tf-btn btn-fill animate-hover-btn rounded-0"
-                                style="padding: 10px 20px; font-size: 16px; cursor: pointer; ">
-                                Submit
-                            </button>
+                    
+                        <!-- Navigation buttons (Back & Submit) -->
+                        <div class="mt-4 d-flex justify-content-between align-items-center">
+                            <button type="button" id="back4" class="btn btn-danger px-4 py-2" style="font-size: 16px;">Back</button>
+                            <button type="button" class="btn btn-primary px-4 py-2" style="font-size: 16px;">Submit</button>
                         </div>
-
                     </div>
-
+                    
+                    
                     <!-- Steps End -->
 
 
@@ -847,88 +674,85 @@
                     <!-- Step 1 MODAL SECTION -->
 
                     <!-- Category MODAL -->
-
                     <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="categoryModalLabel">Select Category</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div
-                                        style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;">
-                                        <!-- Women's Category -->
-                                        <div class="Categories" style="flex: 1 1 calc(30% - 12px); max-width: 30%;">
-                                            <div class="card-product">
-                                                <div class="card-product-wrapper" style="text-align: center;">
-                                                    <!-- Image with modal trigger -->
-                                                    <img class="lazyload img-product"
-                                                        data-src="images/products/Women-1.png"
-                                                        src="images/products/Women-1.png" alt="image-product"
-                                                        style="width: 100%; height: auto; border-radius: 5px; cursor: pointer;"
-                                                        data-bs-toggle="modal" data-bs-target="#newproductModal1">
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="categoryModalLabel">Select Category</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div
+                                    style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;">
+                                    <!-- Women's Category -->
+                                    <div class="Categories" style="flex: 1 1 calc(30% - 12px); max-width: 30%;">
+                                        <div class="card-product">
+                                            <div class="card-product-wrapper" style="text-align: center;">
+                                                <!-- Image with modal trigger -->
+                                                <img class="lazyload img-product"
+                                                    data-src="images/products/Women-1.png"
+                                                    src="images/products/Women-1.png" alt="image-product"
+                                                    style="width: 100%; height: auto; border-radius: 5px; cursor: pointer;"
+                                                    data-bs-toggle="modal" data-bs-target="#newproductModal1">
 
-                                                    <div class="size-list">
-                                                        <span style="font-size: 12px; font-weight: bold;">Women's</span>
-                                                    </div>
+                                                <div class="size-list">
+                                                    <span style="font-size: 12px; font-weight: bold;">Women's</span>
                                                 </div>
                                             </div>
                                         </div>
-
-
-                                        <!-- Kid's Category -->
-                                        <div class="Categories" style="flex: 1 1 calc(34% - 16px); max-width: 30%;">
-                                            <div class="card-product">
-                                                <div class="card-product-wrapper" style="text-align: center;">
-                                                    <!-- Image with modal trigger -->
-                                                    <img class="lazyload img-product"
-                                                        data-src="images/products/Kid-1.jfif"
-                                                        src="images/products/Kid-1.jfif" alt="image-product"
-                                                        style="width: 100%; height: auto; border-radius: 5px; cursor: pointer;"
-                                                        data-bs-toggle="modal" data-bs-target="#newproductModal1">
-
-                                                    <div class="size-list">
-                                                        <span style="font-size: 12px; font-weight: bold;">Kid's</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- Men's Category -->
-                                        <div class="Categories" style="flex: 1 1 calc(30% - 12px); max-width: 30%;">
-                                            <div class="card-product">
-                                                <div class="card-product-wrapper" style="text-align: center;">
-                                                    <!-- Image with modal trigger -->
-                                                    <img class="lazyload img-product"
-                                                        data-src="images/products/Men-1.png"
-                                                        src="images/products/Men-1.png" alt="image-product"
-                                                        style="width: 100%; height: auto; border-radius: 5px; cursor: pointer;"
-                                                        data-bs-toggle="modal" data-bs-target="#newproductModal1">
-
-                                                    <div class="size-list">
-                                                        <span style="font-size: 12px; font-weight: bold;">Men's</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
                                     </div>
+
+
+                                    <!-- Kid's Category -->
+                                    <div class="Categories" style="flex: 1 1 calc(34% - 16px); max-width: 30%;">
+                                        <div class="card-product">
+                                            <div class="card-product-wrapper" style="text-align: center;">
+                                                <!-- Image with modal trigger -->
+                                                <img class="lazyload img-product"
+                                                    data-src="images/products/Kid-1.jfif"
+                                                    src="images/products/Kid-1.jfif" alt="image-product"
+                                                    style="width: 100%; height: auto; border-radius: 5px; cursor: pointer;"
+                                                    data-bs-toggle="modal" data-bs-target="#newproductModal1">
+
+                                                <div class="size-list">
+                                                    <span style="font-size: 12px; font-weight: bold;">Kid's</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Men's Category -->
+                                    <div class="Categories" style="flex: 1 1 calc(30% - 12px); max-width: 30%;">
+                                        <div class="card-product">
+                                            <div class="card-product-wrapper" style="text-align: center;">
+                                                <!-- Image with modal trigger -->
+                                                <img class="lazyload img-product"
+                                                    data-src="images/products/Men-1.png"
+                                                    src="images/products/Men-1.png" alt="image-product"
+                                                    style="width: 100%; height: auto; border-radius: 5px; cursor: pointer;"
+                                                    data-bs-toggle="modal" data-bs-target="#newproductModal1">
+
+                                                <div class="size-list">
+                                                    <span style="font-size: 12px; font-weight: bold;">Men's</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
 
 
 
-
-
-
+                    
 
                     <!-- Products -->
                     <div class="modal fade" id="newproductModal1" aria-labelledby="productModalLabel"
@@ -1135,78 +959,67 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="container">
-                                    <!-- Heading "Occasion" -->
-                                    <div
-                                        style="background-color: #fff; padding: 10px 20px; border-radius: 8px; margin-top: 40px;">
-                                        <h5
-                                            style="font-family: 'Arial', sans-serif; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 5px;">
-                                            Occassion
-                                        </h5>
+                                 <!-- Heading "Occasion" -->
+<div class="bg-white p-3 rounded-3 mt-4">
+    <h5 class="font-family-arial mb-3" style="font-size: 18px; font-weight: 600; color: #333;">Occasion</h5>
+</div>
 
-                                    </div>
-                                    <div class="modal-body" style="padding: 30px;">
+<div class="modal-body p-4">
+    <div class="row align-items-center">
+        <!-- Radio Buttons -->
+        <div class="col-12">
+            <div class="d-flex flex-wrap justify-content-start">
+                <!-- Radio Button 1 -->
+                <div class="form-check mb-3 me-4">
+                    <input class="form-check-input" type="radio" name="occasion" id="occasion1" value="Wedding">
+                    <label class="form-check-label" for="occasion1">
+                        Wedding
+                    </label>
+                </div>
 
-                                        <div class="row align-items-center">
+                <!-- Radio Button 2 -->
+                <div class="form-check mb-3 me-4">
+                    <input class="form-check-input" type="radio" name="occasion" id="occasion2" value="Birthday">
+                    <label class="form-check-label" for="occasion2">
+                        Birthday
+                    </label>
+                </div>
 
+                <!-- Radio Button 3 -->
+                <div class="form-check mb-3 me-4">
+                    <input class="form-check-input" type="radio" name="occasion" id="occasion3" value="Anniversary">
+                    <label class="form-check-label" for="occasion3">
+                        Anniversary
+                    </label>
+                </div>
 
+                <!-- Radio Button 4 -->
+                <div class="form-check mb-3 me-4">
+                    <input class="form-check-input" type="radio" name="occasion" id="occasion4" value="Party">
+                    <label class="form-check-label" for="occasion4">
+                        Party
+                    </label>
+                </div>
 
+                <!-- Radio Button 5 -->
+                <div class="form-check mb-3 me-4">
+                    <input class="form-check-input" type="radio" name="occasion" id="occasion5" value="Casual">
+                    <label class="form-check-label" for="occasion5">
+                        Casual
+                    </label>
+                </div>
 
-                                            <!-- Radio Buttons -->
-                                            <div class="col">
-                                                <div class="d-flex justify-content-start">
-                                                    <!-- Radio Button 1 -->
-                                                    <div class="form-check mr-4" style="margin-left:20px; ">
-                                                        <input class=" form-check-input" type="radio" name="occasion"
-                                                            id="occasion1" value="Wedding">
-                                                        <label class="form-check-label" for="occasion1">
-                                                            Wedding
-                                                        </label>
-                                                    </div>
-                                                    <!-- Radio Button 2 -->
-                                                    <div class="form-check mr-4" style="margin-left:40px;">
-                                                        <input class=" form-check-input" type="radio" name="occasion"
-                                                            id="occasion2" value="Birthday">
-                                                        <label class="form-check-label" for="occasion2">
-                                                            Birthday
-                                                        </label>
-                                                    </div>
-                                                    <!-- Radio Button 3 -->
-                                                    <div class="form-check mr-4" style="margin-left:40px;">
-                                                        <input class=" form-check-input" type="radio" name="occasion"
-                                                            id="occasion3" value="Anniversary">
-                                                        <label class="form-check-label" for="occasion3">
-                                                            Anniversary
-                                                        </label>
-                                                    </div>
-                                                    <!-- Radio Button 4 -->
-                                                    <div class="form-check mr-4" style="margin-left:40px;">
-                                                        <input class="form-check-input" type="radio" name="occasion"
-                                                            id="occasion4" value="Party">
-                                                        <label class="form-check-label" for="occasion4">
-                                                            Party
-                                                        </label>
-                                                    </div>
-                                                    <!-- Radio Button 5 -->
-                                                    <div class="form-check mr-4" style="margin-left:40px;">
-                                                        <input class="form-check-input" type="radio" name="occasion"
-                                                            id="occasion5" value="Casual">
-                                                        <label class="form-check-label" for="occasion5">
-                                                            Casual
-                                                        </label>
-                                                    </div>
-                                                    <!-- Radio Button 6 -->
-                                                    <div class="form-check" style="margin-left:40px;">
-                                                        <input class="form-check-input" type="radio" name="occasion"
-                                                            id="occasion6" value="Formal">
-                                                        <label class="form-check-label" for="occasion6">
-                                                            Formal
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                <!-- Radio Button 6 -->
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="occasion" id="occasion6" value="Formal">
+                    <label class="form-check-label" for="occasion6">
+                        Formal
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                                     <div
                                         style="background-color: #f5f5f5; padding: 10px 20px; border-radius: 8px; margin-top: 40px;">
@@ -1217,135 +1030,90 @@
                                         <p
                                             style="font-size: 16px; color: #555; line-height: 1.6; font-family: 'Arial', sans-serif; margin: 0;">
                                             Select/upload your design you want..
-                                        </p>
-
-
-                                        <div class="container" style="background-color: #f5f5f5;">
-                                            <div class="row mt-3">
-                                                <!-- Card 1 -->
-                                                <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                                    <label for="product1"
-                                                        style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
-                                                        <input type="checkbox" id="product1" name="product"
-                                                            value="product1" style="display: none;">
-                                                        <div class="card-product-wrapper"
-                                                            style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
-                                                            <img class="lazyload img-product"
-                                                                data-src="images/products/Women-1.png"
-                                                                src="images/products/Women-1.png" alt="image-product"
-                                                                style="width: 100%; height: auto;">
-                                                        </div>
-                                                    </label>
-                                                </div>
-
-                                                <!-- Card 2 -->
-                                                <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                                    <label for="product2"
-                                                        style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
-                                                        <input type="checkbox" id="product2" name="product"
-                                                            value="product2" style="display: none;">
-                                                        <div class="card-product-wrapper"
-                                                            style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
-                                                            <img class="lazyload img-product"
-                                                                data-src="images/products/Women-1.png"
-                                                                src="images/products/Women-1.png" alt="image-product"
-                                                                style="width: 100%; height: auto;">
-                                                        </div>
-                                                    </label>
-                                                </div>
-
-                                                <!-- Card 3 -->
-                                                <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                                    <label for="product3"
-                                                        style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
-                                                        <input type="checkbox" id="product3" name="product"
-                                                            value="product3" style="display: none;">
-                                                        <div class="card-product-wrapper"
-                                                            style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
-                                                            <img class="lazyload img-product"
-                                                                data-src="images/products/Women-1.png"
-                                                                src="images/products/Women-1.png" alt="image-product"
-                                                                style="width: 100%; height: auto;">
-                                                        </div>
-                                                    </label>
-                                                </div>
+                                    </p>
+                                    <div class="container" style="background-color: #f5f5f5;">
+                                        <div class="row mt-3">
+                                            <!-- Card 1 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product1" style="cursor: pointer; display: block; text-align: center;">
+                                                    <input type="checkbox" id="product1" name="product" value="product1" style="display: none;">
+                                                    <div class="card-product-wrapper" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 100%; margin: 0 auto;">
+                                                        <img class="lazyload img-product" data-src="images/products/Women-1.png" src="images/products/Women-1.png" alt="image-product" style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
                                             </div>
-
-                                            <div class="row mt-3">
-                                                <!-- Card 4 -->
-                                                <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                                    <label for="product4"
-                                                        style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
-                                                        <input type="checkbox" id="product4" name="product"
-                                                            value="product4" style="display: none;">
-                                                        <div class="card-product-wrapper"
-                                                            style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
-                                                            <img class="lazyload img-product"
-                                                                data-src="images/products/Women-1.png"
-                                                                src="images/products/Women-1.png" alt="image-product"
-                                                                style="width: 100%; height: auto;">
-                                                        </div>
-                                                    </label>
-                                                </div>
-
-                                                <!-- Card 5 -->
-                                                <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                                    <label for="product5"
-                                                        style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
-                                                        <input type="checkbox" id="product5" name="product"
-                                                            value="product5" style="display: none;">
-                                                        <div class="card-product-wrapper"
-                                                            style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
-                                                            <img class="lazyload img-product"
-                                                                data-src="images/products/Women-1.png"
-                                                                src="images/products/Women-1.png" alt="image-product"
-                                                                style="width: 100%; height: auto;">
-                                                        </div>
-                                                    </label>
-                                                </div>
-
-                                                <!-- Card 6 -->
-                                                <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                                    <label for="product6"
-                                                        style="cursor: pointer; display: block; max-width: 100%; text-align: center;">
-                                                        <input type="checkbox" id="product6" name="product"
-                                                            value="product6" style="display: none;">
-                                                        <div class="card-product-wrapper"
-                                                            style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 120px; margin: 0 auto;">
-                                                            <img class="lazyload img-product"
-                                                                data-src="images/products/Women-1.png"
-                                                                src="images/products/Women-1.png" alt="image-product"
-                                                                style="width: 100%; height: auto;">
-                                                        </div>
-                                                </div>
+                                    
+                                            <!-- Card 2 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product2" style="cursor: pointer; display: block; text-align: center;">
+                                                    <input type="checkbox" id="product2" name="product" value="product2" style="display: none;">
+                                                    <div class="card-product-wrapper" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 100%; margin: 0 auto;">
+                                                        <img class="lazyload img-product" data-src="images/products/Women-1.png" src="images/products/Women-1.png" alt="image-product" style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                    
+                                            <!-- Card 3 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product3" style="cursor: pointer; display: block; text-align: center;">
+                                                    <input type="checkbox" id="product3" name="product" value="product3" style="display: none;">
+                                                    <div class="card-product-wrapper" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 100%; margin: 0 auto;">
+                                                        <img class="lazyload img-product" data-src="images/products/Women-1.png" src="images/products/Women-1.png" alt="image-product" style="width: 100%; height: auto;">
+                                                    </div>
                                                 </label>
                                             </div>
                                         </div>
-
-
-
-                                        <!-- STYLE SECTION -->
-                                        <div id="upload-section"
-                                            style="margin-bottom: 30px; border: 1px solid #ddd; padding: 20px; display: flex; align-items: center; border-radius: 8px; background-color: #fafafa; margin-top: 10px;">
-                                            <!-- Placeholder Image -->
-                                            <img id="uploaded-image" src="images/products/Women-1.png" alt="Lahenga"
-                                                style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
-
-                                            <!-- Placeholder Text -->
-                                            <h6 id="uploaded-name"
-                                                style="margin: 0; color: #333; font-size: 18px; font-weight: 600;">
-                                                Lahenga
-                                            </h6>
-
-                                            <!-- Upload Button -->
-                                            <label for="image-upload"
-                                                style="display: inline-block; background-color: #9E1915; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: auto;">
-                                                Upload Images
-                                            </label>
-                                            <input type="file" id="image-upload" accept="image/*" style="display: none;"
-                                                onchange="updateImageAndName(event)">
+                                    
+                                        <div class="row mt-3">
+                                            <!-- Card 4 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product4" style="cursor: pointer; display: block; text-align: center;">
+                                                    <input type="checkbox" id="product4" name="product" value="product4" style="display: none;">
+                                                    <div class="card-product-wrapper" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 100%; margin: 0 auto;">
+                                                        <img class="lazyload img-product" data-src="images/products/Women-1.png" src="images/products/Women-1.png" alt="image-product" style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                    
+                                            <!-- Card 5 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product5" style="cursor: pointer; display: block; text-align: center;">
+                                                    <input type="checkbox" id="product5" name="product" value="product5" style="display: none;">
+                                                    <div class="card-product-wrapper" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 100%; margin: 0 auto;">
+                                                        <img class="lazyload img-product" data-src="images/products/Women-1.png" src="images/products/Women-1.png" alt="image-product" style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                    
+                                            <!-- Card 6 -->
+                                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                                <label for="product6" style="cursor: pointer; display: block; text-align: center;">
+                                                    <input type="checkbox" id="product6" name="product" value="product6" style="display: none;">
+                                                    <div class="card-product-wrapper" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: all 0.3s; max-width: 100%; margin: 0 auto;">
+                                                        <img class="lazyload img-product" data-src="images/products/Women-1.png" src="images/products/Women-1.png" alt="image-product" style="width: 100%; height: auto;">
+                                                    </div>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
+                                    
+                                        <!-- STYLE SECTION -->
+                                        <div id="upload-section" class="d-flex align-items-center border p-3 rounded-3 bg-light mb-3 mt-2" style="border: 1px solid #ddd;">
+                                            <!-- Placeholder Image -->
+                                            <img id="uploaded-image" src="images/products/Women-1.png" alt="Lahenga" class="img-fluid" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
+                                        
+                                            <!-- Placeholder Text -->
+                                            <h6 id="uploaded-name" class="mb-0 text-dark" style="font-size: 18px; font-weight: 600;">
+                                                Lahenga
+                                            </h6>
+                                        
+                                            <!-- Upload Button -->
+                                            <label for="image-upload" class="btn btn-danger ms-auto">
+                                                Upload Images
+                                            </label>
+                                            <input type="file" id="image-upload" accept="image/*" class="d-none" onchange="updateImageAndName(event)">
+                                        </div>
+                                    </div>                                        
 
                                     <div style="display: flex; justify-content: space-between; margin-top: 20px;">
                                         <!-- Left Side Inputs -->
@@ -1390,232 +1158,141 @@
                                         </div>
                                     </div>
 
-                                    <div style="display: flex;  margin-top: 20px;margin-left:-20px;">
-                                        <!-- Left Side Div (30% Width) -->
-                                        <div
-                                            style="width: 35%; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
-                                            <!-- Blouse Measurements Section -->
-                                            <div
-                                                style="background-color: #fafafa; width: 100%; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                                                <h6
-                                                    style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
-                                                    Blouse Measurements
-                                                </h6>
-
-                                                <!-- Measurement Fields -->
-                                                <div style="display: flex; flex-direction: column; gap: 20px;">
-                                                    <!-- First Row -->
-                                                    <div style="display: flex; gap: 20px;">
-                                                        <div style="flex: 1;">
-                                                            <label for="neckToShoulder"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Neck
-                                                                to Shoulder</label>
-                                                            <input type="text" id="neckToShoulder" name="neckToShoulder"
-                                                                placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                    <div class="container mt-4">
+                                        <div class="row">
+                                    
+                                            <!-- Left Side Div (35% Width on Larger Screens, Full Width on Smaller) -->
+                                            <div class="col-12 col-lg-5 mb-4">
+                                                <div class="d-flex flex-column gap-4">
+                                    
+                                                    <!-- Blouse Measurements Section -->
+                                                    <div class="p-4 bg-light shadow-sm rounded-3">
+                                                        <h6 class="text-center fw-bold text-dark mb-4">Blouse Measurements</h6>
+                                    
+                                                        <div class="row g-4">
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="neckToShoulder" class="form-label">Neck to Shoulder</label>
+                                                                <input type="text" id="neckToShoulder" name="neckToShoulder" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="blouseLength" class="form-label">Blouse Length</label>
+                                                                <input type="text" id="blouseLength" name="blouseLength" class="form-control" placeholder="Enter value">
+                                                            </div>
                                                         </div>
-                                                        <div style="flex: 1;">
-                                                            <label for="blouseLength"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Blouse
-                                                                Length</label>
-                                                            <input type="text" id="blouseLength" name="blouseLength"
-                                                                placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                    
+                                                        <div class="row g-4 mt-3">
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="sleeveLength" class="form-label">Sleeve Length</label>
+                                                                <input type="text" id="sleeveLength" name="sleeveLength" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="chestCircumference" class="form-label">Around Chest</label>
+                                                                <input type="text" id="chestCircumference" name="chestCircumference" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                        </div>
+                                    
+                                                        <div class="row g-4 mt-3">
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="bottomCircumference" class="form-label">Around Bottom of Blouse</label>
+                                                                <input type="text" id="bottomCircumference" name="bottomCircumference" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="armHoleCircumference" class="form-label">Arm Hole Circumference</label>
+                                                                <input type="text" id="armHoleCircumference" name="armHoleCircumference" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                        </div>
+                                    
+                                                        <div class="row g-4 mt-3">
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="frontNeckDepth" class="form-label">Front Neck Depth</label>
+                                                                <input type="text" id="frontNeckDepth" name="frontNeckDepth" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="backNeckDepth" class="form-label">Back Neck Depth</label>
+                                                                <input type="text" id="backNeckDepth" name="backNeckDepth" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                        </div>
+                                    
+                                                        <div class="row g-4 mt-3">
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="aroundArm" class="form-label">Around Arm</label>
+                                                                <input type="text" id="aroundArm" name="aroundArm" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="shoulder" class="form-label">Shoulder</label>
+                                                                <input type="text" id="shoulder" name="shoulder" class="form-control" placeholder="Enter value">
+                                                            </div>
                                                         </div>
                                                     </div>
-
-                                                    <!-- Second Row -->
-                                                    <div style="display: flex; gap: 20px;">
-                                                        <div style="flex: 1;">
-                                                            <label for="sleeveLength"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Sleeve
-                                                                Length</label>
-                                                            <input type="text" id="sleeveLength" name="sleeveLength"
-                                                                placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                    
+                                                    <!-- Lehenga Measurements Section -->
+                                                    <div class="p-4 bg-light shadow-sm rounded-3">
+                                                        <h6 class="text-center fw-bold text-dark mb-4">Lehenga Measurements</h6>
+                                    
+                                                        <div class="row g-4">
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="neckToShoulder" class="form-label">Neck to Shoulder</label>
+                                                                <input type="text" id="neckToShoulder" name="neckToShoulder" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="blouseLength" class="form-label">Blouse Length</label>
+                                                                <input type="text" id="blouseLength" name="blouseLength" class="form-control" placeholder="Enter value">
+                                                            </div>
                                                         </div>
-                                                        <div style="flex: 1;">
-                                                            <label for="chestCircumference"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Around
-                                                                Chest</label>
-                                                            <input type="text" id="chestCircumference"
-                                                                name="chestCircumference" placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                    
+                                                        <div class="row g-4 mt-3">
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="sleeveLength" class="form-label">Sleeve Length</label>
+                                                                <input type="text" id="sleeveLength" name="sleeveLength" class="form-control" placeholder="Enter value">
+                                                            </div>
                                                         </div>
                                                     </div>
-
-                                                    <!-- Third Row -->
-                                                    <div style="display: flex; gap: 20px;">
-                                                        <div style="flex: 1;">
-                                                            <label for="bottomCircumference"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Around
-                                                                Bottom of Blouse</label>
-                                                            <input type="text" id="bottomCircumference"
-                                                                name="bottomCircumference" placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+                                    
+                                                    <!-- Height Section -->
+                                                    <div class="p-4 bg-light shadow-sm rounded-3">
+                                                        <h6 class="text-center fw-bold text-dark mb-4">Height</h6>
+                                    
+                                                        <div class="row g-4">
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="neckToShoulder" class="form-label">Neck to Shoulder</label>
+                                                                <input type="text" id="neckToShoulder" name="neckToShoulder" class="form-control" placeholder="Enter value">
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <label for="blouseLength" class="form-label">Blouse Length</label>
+                                                                <input type="text" id="blouseLength" name="blouseLength" class="form-control" placeholder="Enter value">
+                                                            </div>
                                                         </div>
-                                                        <div style="flex: 1;">
-                                                            <label for="armHoleCircumference"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Arm
-                                                                Hole Circumference</label>
-                                                            <input type="text" id="armHoleCircumference"
-                                                                name="armHoleCircumference" placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                        </div>
-
                                                     </div>
-
-                                                    <!-- Fourth Row -->
-                                                    <div style="display: flex; gap: 20px;">
-                                                        <div style="flex: 1;">
-                                                            <label for="frontNeckDepth"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Front
-                                                                Neck Depth</label>
-                                                            <input type="text" id="frontNeckDepth" name="frontNeckDepth"
-                                                                placeholder="Enter value"
-                                                                style="width:80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                        </div>
-
-                                                        <div style="flex: 1;">
-                                                            <label for="backNeckDepth"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Back
-                                                                Neck Depth</label>
-                                                            <input type="text" id="backNeckDepth" name="backNeckDepth"
-                                                                placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                        </div>
-
-
-                                                    </div>
-
-                                                    <!-- Fifth Row -->
-                                                    <div style="display: flex; gap: 20px;">
-
-                                                        <div style="flex: 1;">
-                                                            <label for="aroundArm"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Around
-                                                                Arm</label>
-                                                            <input type="text" id="aroundArm" name="aroundArm"
-                                                                placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                        </div>
-                                                        <div style="flex: 1;">
-                                                            <label for="shoulder"
-                                                                style="font-size:12px; font-weight: normal; color: #555;">Shoulder</label>
-                                                            <input type="text" id="shoulder" name="shoulder"
-                                                                placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                        </div>
-
-                                                    </div>
+                                    
                                                 </div>
                                             </div>
-
-                                            <!-- Lehnga Measurements Section -->
-                                            <div
-                                                style="background-color: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                                                <h6
-                                                    style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
-                                                    Lehenga Measurements
-                                                </h6>
-
-                                                <!-- Measurement Fields -->
-                                                <div style="display: flex; flex-direction: column; gap: 20px;">
-                                                    <!-- First Row -->
-                                                    <div style="display: flex; gap: 20px;">
-                                                        <div style="flex: 1;">
-                                                            <label for="neckToShoulder"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Neck
-                                                                to Shoulder</label>
-                                                            <input type="text" id="neckToShoulder" name="neckToShoulder"
-                                                                placeholder="Enter value" style="width: 80px; padding: 5px; font-size: 12px; border:
-                                                            1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                        </div>
-                                                        <div style="flex: 1;">
-                                                            <label for="blouseLength"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Blouse
-                                                                Length</label>
-                                                            <input type="text" id="blouseLength" name="blouseLength"
-                                                                placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                        </div>
+                                    
+                                            <!-- Right Side Div (Video and Image) -->
+                                            <div class="col-12 col-lg-7 mb-4">
+                                                <div class="d-flex flex-column gap-4">
+                                    
+                                                    <!-- YouTube Video Embed -->
+                                                    <div class="flex-grow-1">
+                                                        <iframe class="w-100" height="1200"
+                                                            src="https://www.youtube.com/embed/yC00CujnJ_I?si=R1VuKHGKaeXpicIS"
+                                                            title="YouTube video player" frameborder="0"
+                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                            referrerpolicy="strict-origin-when-cross-origin"
+                                                            allowfullscreen></iframe>
                                                     </div>
-
-                                                    <!-- Second Row -->
-                                                    <div style="display: flex; gap: 20px;">
-                                                        <div style="flex: 1;">
-                                                            <label for="sleeveLength"
-                                                                style="font-size: 12px; font-weight: normal; color: #555;">Sleeve
-                                                                Length</label>
-                                                            <input type="text" id="sleeveLength" name="sleeveLength"
-                                                                placeholder="Enter value"
-                                                                style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                        </div>
+                                    
+                                                    <!-- Display Image -->
+                                                    <div class="flex-grow-1">
+                                                        <img src="images/products/measurment.png" alt="Image"
+                                                            class="img-fluid rounded-3">
                                                     </div>
+                                    
                                                 </div>
                                             </div>
-
-                                            <div
-                                                style="background-color: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                                                <h6
-                                                    style="text-align: center; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
-                                                    Height
-                                                </h6>
-
-                                                <!-- Measurement Fields -->
-                                                <div style="display: flex; gap: 20px; justify-content: space-between;">
-                                                    <!-- First Column: Neck to Shoulder -->
-                                                    <div style="flex: 1;">
-                                                        <label for="neckToShoulder"
-                                                            style="font-size: 12px; font-weight: normal; color: #555;">Neck
-                                                            to Shoulder</label>
-                                                        <input type="text" id="neckToShoulder" name="neckToShoulder"
-                                                            placeholder="Enter value"
-                                                            style="width: 80px; padding: 5px; font-size: 12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                    </div>
-
-                                                    <!-- Second Column: Blouse Length -->
-                                                    <div style="flex: 1;">
-                                                        <label for="blouseLength"
-                                                            style="font-size: 12px; font-weight: normal; color: #555;">Blouse
-                                                            Length</label>
-                                                        <input type="text" id="blouseLength" name="blouseLength"
-                                                            placeholder="Enter value"
-                                                            style="width: 80px; padding: 5px; font-size:12px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                    
                                         </div>
-
-
-
-
-
-                                        <!-- Right Side Div (Containing Two Divs) -->
-                                        <div style="width: 55%; display: flex; flex-direction: column; gap: 20px;">
-                                            <!-- YouTube Video Embed -->
-                                            <div style="flex-grow: 1;">
-
-                                                <iframe width="100%" height="600"
-                                                    src="https://www.youtube.com/embed/yC00CujnJ_I?si=R1VuKHGKaeXpicIS"
-                                                    title="YouTube video player" frameborder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                    referrerpolicy="strict-origin-when-cross-origin"
-                                                    allowfullscreen></iframe>
-                                            </div>
-
-                                            <!-- Display Image (instead of upload input) -->
-                                            <div style="flex-grow: 1;height: 70%;">
-
-                                                <img src="images/products/measurment.png" alt="Image"
-                                                    style="width: 100%; height: 100%; object-fit: contain; border-radius: 5px;">
-                                                <!-- Increased height -->
-                                            </div>
-                                        </div>
-
-
                                     </div>
+                                    
 
                                     <div style="margin-top: 20px;">
                                         <label for="Text">Note For Agent</label>
@@ -1778,6 +1455,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
 
+
+
         let currentStep = 1; // Current step counter
 
         // Show the step based on the current step number
@@ -1897,30 +1576,18 @@
         // SHIPPING MODAL FUNCTION
 
 
-        // Function to open the modal
         function openShippingModal() {
-            const overlay = document.getElementById('shipping-modal-overlay');
-            const modal = document.getElementById('shipping-modal-form');
+    // Remove `d-none` class to make modal and overlay visible
+    document.getElementById('shipping-modal-overlay').classList.remove('d-none');
+    document.getElementById('shipping-modal-form').classList.remove('d-none');
+}
 
-            if (overlay && modal) {
-                overlay.style.display = 'block'; // Show the overlay
-                modal.style.display = 'block';  // Show the modal
-            } else {
-                console.error("Modal elements not found!");
-            }
-        }
+function closeShippingModal() {
+    // Add `d-none` class to hide modal and overlay
+    document.getElementById('shipping-modal-overlay').classList.add('d-none');
+    document.getElementById('shipping-modal-form').classList.add('d-none');
+}
 
-        function closeShippingModal() {
-            const overlay = document.getElementById('shipping-modal-overlay');
-            const modal = document.getElementById('shipping-modal-form');
-
-            if (overlay && modal) {
-                overlay.style.display = 'none'; // Hide the overlay
-                modal.style.display = 'none';  // Hide the modal
-            } else {
-                console.error("Modal elements not found!");
-            }
-        }
 
 
         // Open the modal when "Credit Card" is selected
