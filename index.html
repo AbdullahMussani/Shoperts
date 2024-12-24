@@ -18,16 +18,46 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 
     <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="images/logo/logo.png">
+    <link rel="shortcut icon" href="images/logo/logo1.jpeg">
     <link rel="apple-touch-icon-precomposed" href="images/logo/favicon.png">
 
     <style>
         @media (max-width: 991px) {
+
             /* Remove the margin for screens smaller than 992px */
             .col-12 {
                 margin-left: 0 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tab-content .tab-pane a {
+                display: flex;
+                /* Use flexbox to center the content */
+                justify-content: center;
+                /* Horizontally center */
+                align-items: center;
+                /* Vertically center */
+            }
+
+            .tab-content .tab-pane a img {
+                max-width: 100%;
+                /* Ensure the image fits the screen */
+                height: auto;
+                /* Maintain aspect ratio */
+                object-fit: contain;
+                /* Center the content within the container */
+            }
+
+            .tab-content {
+                margin-left: 0;
+                /* Remove any left margin for smaller screens */
+                max-width: 100%;
+                /* Full width on smaller devices */
             }
         }
     </style>
@@ -44,75 +74,87 @@
     </div>
     <!-- /preload -->
     <div id="wrapper">
-       <!-- Header -->
-     <!-- Header -->
-     <header id="header" class="header-default header-style-3" style="padding:0;">
-        <div class="container-full px-2">
-            <div class="row wrapper-header align-items-center">
-                <!-- Logo Section -->
-                <div class="col-auto">
-                    <a href="index.html" class="logo-header">
-                        <img src="images/logo/logo1.jpeg" alt="logo" class="logo" >
-                    </a>
-                </div>
-    
-                <!-- Navigation Section -->
-                <div class="col text-center">
-                    <nav class="box-navigation">
-                        <ul class="nav justify-content-center">
-                            <li class="nav-item">
-                                <a href="index.html" class="nav-link text-black">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="Services.html" class="nav-link text-black">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="career.html" class="nav-link text-black">Careers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="contact.html" class="nav-link text-black">Contact Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="about-us.html" class="nav-link text-black">About Us</a>
-                            </li>
+
+        <!-- Header -->
+        <header id="header" class="header-default header-style-3">
+            <div class="container-full px_15 lg-px_40">
+                <div class="row wrapper-header align-items-center">
+                    <div class="col-md-4 col-3 tf-lg-hidden">
+                        <a href="index.html#mobileMenu" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16"
+                                fill="none">
+                                <path
+                                    d="M2.00056 2.28571H16.8577C17.1608 2.28571 17.4515 2.16531 17.6658 1.95098C17.8802 1.73665 18.0006 1.44596 18.0006 1.14286C18.0006 0.839753 17.8802 0.549063 17.6658 0.334735C17.4515 0.120408 17.1608 0 16.8577 0H2.00056C1.69745 0 1.40676 0.120408 1.19244 0.334735C0.978109 0.549063 0.857702 0.839753 0.857702 1.14286C0.857702 1.44596 0.978109 1.73665 1.19244 1.95098C1.40676 2.16531 1.69745 2.28571 2.00056 2.28571ZM0.857702 8C0.857702 7.6969 0.978109 7.40621 1.19244 7.19188C1.40676 6.97755 1.69745 6.85714 2.00056 6.85714H22.572C22.8751 6.85714 23.1658 6.97755 23.3801 7.19188C23.5944 7.40621 23.7148 7.6969 23.7148 8C23.7148 8.30311 23.5944 8.59379 23.3801 8.80812C23.1658 9.02245 22.8751 9.14286 22.572 9.14286H2.00056C1.69745 9.14286 1.40676 9.02245 1.19244 8.80812C0.978109 8.59379 0.857702 8.30311 0.857702 8ZM0.857702 14.8571C0.857702 14.554 0.978109 14.2633 1.19244 14.049C1.40676 13.8347 1.69745 13.7143 2.00056 13.7143H12.2863C12.5894 13.7143 12.8801 13.8347 13.0944 14.049C13.3087 14.2633 13.4291 14.554 13.4291 14.8571C13.4291 15.1602 13.3087 15.4509 13.0944 15.6653C12.8801 15.8796 12.5894 16 12.2863 16H2.00056C1.69745 16 1.40676 15.8796 1.19244 15.6653C0.978109 15.4509 0.857702 15.1602 0.857702 14.8571Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-xl-9 col-md-4 col-6">
+                        <div class="wrap-header-left">
+                            <a href="index.html" class="logo-header">
+                                <img src="images/logo/logo1.jpeg" alt="logo" class="logo">
+                            </a>
+                            <nav class="box-navigation text-right" style="margin-left: 240px;">
+                                <ul class="box-nav-ul d-flex align-items-center justify-content-end gap-30">
+                                    <li class="menu-item">
+                                        <a href="index.html" class="item-link">Home</a>
+
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="Services.html" class="item-link">Services</a>
+
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="career.html" class="item-link">Careers</a>
+
+                                    </li>
+                                    <li class="menu-item position-relative">
+                                        <a href="contact.html" class="item-link">Contact Us</a>
+
+                                    </li>
+                                    <li class="menu-item position-relative">
+                                        <a href="about-us.html" class="item-link">About Us</a>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-4 col-3">
+                        <ul class="nav-icon d-flex justify-content-end align-items-center gap-20">
+                            <li class="nav-account"><a href="home-07.html#login" data-bs-toggle="modal"
+                                    class="nav-icon-item"><i class="fa fa-user"></i></a></li>
+                            <li class="nav-account"><a href="home-07.html#login" data-bs-toggle="modal"
+                                    class="nav-icon-item"><i class="fa fa-shopping-cart"></i>
+                                </a></li>
                         </ul>
-                    </nav>
+                    </div>
                 </div>
-    
-                <!-- Icon Section -->
-                <div class="col-auto d-flex gap-3">
-                    <!-- Account Icon -->
-                    <a href="home-07.html#login" data-bs-toggle="modal" class="nav-icon-item">
-                        <i class="fas fa-user fs-6"></i>
-                    </a>
-                
-                    <!-- Add to Cart Icon -->
-                    <a href="index.html#view-cart.html" data-bs-toggle="modal" class="nav-icon-item">
-                        <i class="fas fa-shopping-cart fs-6"></i>
-                    </a>
-                </div>
-                
             </div>
-        </div>
-    </header>
-    
+        </header>
+        <!-- /Header -->
+        <div style="width: 100%; height: 3px; background-color: #ccc; margin: 0 0;"></div>
+
         <!-- Slider -->
         <div class="tf-slideshow slider-home-4 slider-effect-fade position-relative">
             <div class="swiper tf-sw-slideshow" data-preview="1" data-tablet="1" data-mobile="1" data-centered="false"
-                 data-space="0" data-loop="true" data-auto-play="true" data-delay="3000" data-speed="1000">
+                data-space="0" data-loop="true" data-auto-play="true" data-delay="3000" data-speed="1000">
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide" lazy="true">
                         <div class="wrap-slider">
-                            <img class="lazyload" data-src="images/slider/testing.jpeg" src="images/slider/testing.jpeg" alt="fashion-slideshow">
+                            <img class="lazyload" data-src="images/slider/testing.jpeg" src="images/slider/testing.jpeg"
+                                alt="fashion-slideshow">
                             <div class="box-content">
                                 <div class="container">
                                     <div class="row justify-content-end">
                                         <div class="col-12 col-md-8 col-lg-5">
                                             <div class="card-box custom-card">
-                                                <h3 class="fade-item fade-item-2 text-white heading mb-3">Fashion Consulting</h3>
+                                                <h3 class="fade-item fade-item-2 text-white heading mb-3">Fashion
+                                                    Consulting</h3>
                                                 <p class="fade-item fade-item-1 text-white subheading fw-7">
-                                                    Your Personal Fashion Stylist, Wholesale Market Access, and Quality Assurance, All in One Place.
+                                                    Your Personal Fashion Stylist, Wholesale Market Access, and Quality
+                                                    Assurance, All in One Place.
                                                 </p>
                                             </div>
                                         </div>
@@ -121,18 +163,22 @@
                             </div>
                         </div>
                     </div>
-        
+
                     <!-- Slide 2 -->
                     <div class="swiper-slide" lazy="true">
                         <div class="wrap-slider">
-                            <img class="lazyload" data-src="images/slider/WhatsApp Image 2024-12-23 at 5.41.07 PM.jpeg" src="images/slider/WhatsApp Image 2024-12-23 at 5.41.07 PM.jpeg" alt="fashion-slideshow-02">
+                            <img class="lazyload" data-src="images/slider/WhatsApp Image 2024-12-23 at 5.41.07 PM.jpeg"
+                                src="images/slider/WhatsApp Image 2024-12-23 at 5.41.07 PM.jpeg"
+                                alt="fashion-slideshow-02">
                             <div class="box-content">
                                 <div class="container">
                                     <div class="row justify-content-end">
                                         <div class="col-12 col-md-8 col-lg-5">
                                             <div class="card-box custom-card">
-                                                <h3 class="fade-item fade-item-2 text-white heading mb-3">Time To Get Ready For Ramdan</h3>
-                                                <p class="fade-item fade-item-1 text-white subheading fw-7" style="margin-bottom:200px; margin-right:200px;">
+                                                <h3 class="fade-item fade-item-2 text-white heading mb-3"> Get Ready For
+                                                    Ramdan</h3>
+                                                <p class="fade-item fade-item-1 text-white subheading fw-7"
+                                                    style="margin-bottom:200px; margin-right:200px;">
                                                     Ramdan Sale Upto 50% off on your order.
                                                 </p>
                                             </div>
@@ -142,36 +188,39 @@
                             </div>
                         </div>
                     </div>
-        
+
                     <!-- Slide 3 -->
                     <div class="swiper-slide" lazy="true">
                         <div class="wrap-slider">
-                            <img class="lazyload" data-src="images/slider/testing 3.jpeg" src="images/slider/testing 3.jpeg" alt="fashion-slideshow-03">
+                            <img class="lazyload" data-src="images/slider/testing 3.jpeg"
+                                src="images/slider/testing 3.jpeg" alt="fashion-slideshow-03">
                             <div class="box-content">
                                 <div class="container">
                                     <div class="row justify-content-start">
                                         <div class="col-12 col-md-8 col-lg-4" style="margin-left: 60%;">
                                             <div class="card-box custom-card">
-                                                <h3 class="fade-item fade-item-2 text-white heading mb-3">Fashion With A Mission</h3>
+                                                <h3 class="fade-item fade-item-2 text-white heading mb-3">Fashion With A
+                                                    Mission</h3>
                                                 <p class="fade-item fade-item-1 text-white mb-3">
-                                                    Your Style, Your Impact. Every purchase directly benefits local communities in Canada and Pakistan.
+                                                    Your Style, Your Impact. Every purchase directly benefits local
+                                                    communities in Canada and Pakistan.
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        
+
             <!-- Pagination -->
             <div class="wrap-pagination sw-absolute-3">
                 <div class="sw-dots style-2 sw-pagination-slider"></div>
             </div>
         </div>
-        
+
         <!-- /Slider -->
 
         <!-- Marquee -->
@@ -306,65 +355,77 @@
                             <!-- Feature 1 -->
                             <div class="col-md-6">
                                 <div class="tf-icon-box text-center">
-                                    <div class="icon" style="background-color: #9E1915; border-radius: 50%; padding: 10px;">
+                                    <div class="icon"
+                                        style="background-color: #9E1915; border-radius: 50%; padding: 10px;">
                                         <i class="fas fa-handshake" style="color: white;"></i>
                                     </div>
                                     <div class="content">
                                         <div class="title">Personalized Experience</div>
                                         <p class="text_black-2">
-                                            Our dedicated team of fashion experts, known as "Fashion Consultants," are here to guide you through your shopping journey. They'll help you with the perfect outfit for any occasion, from casual wear to formal attire.
+                                            Our dedicated team of fashion experts, known as "Fashion Consultants," are
+                                            here to guide you through your shopping journey. They'll help you with the
+                                            perfect outfit for any occasion, from casual wear to formal attire.
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                    
+
                             <!-- Feature 2 -->
                             <div class="col-md-6">
                                 <div class="tf-icon-box text-center">
-                                    <div class="icon" style="background-color: #9E1915; border-radius: 50%; padding: 10px;">
+                                    <div class="icon"
+                                        style="background-color: #9E1915; border-radius: 50%; padding: 10px;">
                                         <i class="fas fa-store" style="color: white;"></i>
                                     </div>
                                     <div class="content">
                                         <div class="title">Market Access</div>
                                         <p class="text_black-2">
-                                            We work with top Pakistani brands to bring you the latest trends and exclusive offers, and offer wholesale market access to a vast array of Pakistani fashion products at competitive prices.
+                                            We work with top Pakistani brands to bring you the latest trends and
+                                            exclusive offers, and offer wholesale market access to a vast array of
+                                            Pakistani fashion products at competitive prices.
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                    
+
                             <!-- Feature 3 -->
                             <div class="col-md-6">
                                 <div class="tf-icon-box text-center">
-                                    <div class="icon" style="background-color: #9E1915; border-radius: 50%; padding: 10px;">
+                                    <div class="icon"
+                                        style="background-color: #9E1915; border-radius: 50%; padding: 10px;">
                                         <i class="fas fa-check-circle" style="color: white;"></i>
                                     </div>
                                     <div class="content">
                                         <div class="title">Quality Assurance</div>
                                         <p class="text_black-2">
-                                            Our agents meticulously inspect every order to ensure quality and quantity meet your expectations. From garments to stitching to sizing, our goal is your 100% satisfaction.
+                                            Our agents meticulously inspect every order to ensure quality and quantity
+                                            meet your expectations. From garments to stitching to sizing, our goal is
+                                            your 100% satisfaction.
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                    
+
                             <!-- Feature 4 -->
                             <div class="col-md-6">
                                 <div class="tf-icon-box text-center">
-                                    <div class="icon" style="background-color: #9E1915; border-radius: 50%; padding: 10px;">
+                                    <div class="icon"
+                                        style="background-color: #9E1915; border-radius: 50%; padding: 10px;">
                                         <i class="fas fa-shipping-fast" style="color: white;"></i>
                                     </div>
                                     <div class="content">
                                         <div class="title">Consolidated Shipping</div>
                                         <p class="text_black-2">
-                                            Shop for a season or an event, buy from one brand or many. We will organize all your orders and save on shipping costs by combining them into one convenient package.
+                                            Shop for a season or an event, buy from one brand or many. We will organize
+                                            all your orders and save on shipping costs by combining them into one
+                                            convenient package.
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -445,76 +506,78 @@
                     <div class="tab-content" style="margin-left: 200px;max-width: 65%;">
                         <div class="tab-pane active show" id="Trousers" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Trouser.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Trouser.jpg"
                                     src="images/collections/Trouser.jpg" alt="image-shop"
-                                    style="width: 100vh; height: 100%; object-fit: cover;">
+                                    style="width: 100%; height: auto; object-fit: cover;">
                             </a>
                         </div>
                         <div class="tab-pane" id="KurtaSet" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Kurta Set.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Kurta Set.jpg"
                                     src="images/collections/Kurta Set.jpg" alt="image-shop"
-                                    style="width: 100vh; height: 100%; object-fit: cover;"> </a>
+                                    style="width: 100%; height: auto; object-fit: cover;">
+                            </a>
                         </div>
                         <div class="tab-pane" id="Gharara" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Gharara.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Gharara.jpg"
                                     src="images/collections/Gharara.jpg" alt="image-shop"
-                                    style="width: 100vh; height: 100%; object-fit: cover;">
+                                    style="width: 100%; height: auto; object-fit: cover;">
                             </a>
                         </div>
                         <div class="tab-pane" id="Jacket" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Jacket.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Jacket.jpg"
                                     src="images/collections/Jacket.jpg" alt="image-shop">
                             </a>
                         </div>
-                        <div class="tab-pane" id="Gown" role=" tabpanel">
+                        <div class="tab-pane" id="Gown" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Gown.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Gown.jpg"
                                     src="images/collections/Gown.jpg" alt="image-shop"
-                                    style="width: 100vh; height: 100%; object-fit: cover;">
+                                    style="width: 100%; height: auto; object-fit: cover;">
                             </a>
                         </div>
                         <div class="tab-pane" id="Kaftan" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Kaftan.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Kaftan.jpg"
                                     src="images/collections/Kaftan.jpg" alt="image-shop"
-                                    style="width: 100vh; height: 100%; object-fit: cover;">
+                                    style="width: 100%; height: auto; object-fit: cover;">
                             </a>
                         </div>
                         <div class="tab-pane" id="Angrakha" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Angrakha.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Angrakha.jpg"
                                     src="images/collections/Angrakha.jpg" alt="image-shop"
-                                    style="width: 100vh; height: 100%; object-fit: cover;">
+                                    style="width: 100%; height: auto; object-fit: cover;">
                             </a>
                         </div>
                         <div class="tab-pane" id="Saree" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Saree.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Saree.jpg"
                                     src="images/collections/Saree.jpg" alt="image-shop"
-                                    style="width: 100vh; height: 100%; object-fit: cover;overflow: hidden;">
+                                    style="width: 100%; height: auto; object-fit: cover;">
                             </a>
                         </div>
                         <div class="tab-pane" id="Kurti" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Kurtii.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Kurtii.jpg"
                                     src="images/collections/Kurtii.jpg" alt="image-shop"
-                                    style="width: 100vh; height: 100%; object-fit: cover;">
+                                    style="width: 100%; height: auto; object-fit: cover;">
                             </a>
                         </div>
                         <div class="tab-pane" id="Anarkali" role="tabpanel">
                             <a href="#" class="fullwidth radius-10 o-hidden">
-                                <img class="lazyload" data-src="images/collections/Anarkali.jpg"
+                                <img class="lazyload img-fluid" data-src="images/collections/Anarkali.jpg"
                                     src="images/collections/Anarkali.jpg" alt="image-shop"
-                                    style="width: 100vh; height: 100%; object-fit: cover;">
+                                    style="width: 100%; height: auto; object-fit: cover;">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- /Categories -->
         <!-- Footer -->
         <footer id="footer" class="footer has-border has-border-full">
@@ -549,8 +612,8 @@
                                             </form>
                                             <div>
                                                 <p>Email: <a
-                                                    href="mailto:info@shoperts.com?subject=Hello&body=I%20want%20to%20contact%20you">info@shoperts.com</a>
-                                            </p>
+                                                        href="mailto:info@shoperts.com?subject=Hello&body=I%20want%20to%20contact%20you">info@shoperts.com</a>
+                                                </p>
                                             </div>
 
                                         </div>
@@ -671,32 +734,79 @@
         <div class="mb-canvas-content">
             <div class="mb-body">
                 <ul class="nav-ul-mb" id="wrapper-menu-navigation">
-                    <li class="nav-mb-item">
+                    <li class="nav-mb"> <br>
                         <a href="index.html" class="item-link">Home</a>
 
                     </li>
-                    <li class="nav-mb-item">
+                    <li class="nav-mb"><br>
                         <a href="Services.html" class="nav-link">Services</a>
                     </li>
-                    <li class="nav-mb-item">
+                    <li class="nav-mb"><br>
                         <a href="career.html" class="nav-link">Careers</a>
                     </li>
-                    <li class="nav-mb-item">
+                    <li class="nav-mb"><br>
                         <a href="contact.html" class="nav-link">Contact Us</a>
                     </li>
-                    <li class="nav-mb-item">
+                    <li class="nav-mb"><br>
                         <a href="about-us.html" class="nav-link">About Us</a>
                     </li>
                 </ul>
 
             </div>
             <div class="mb-bottom">
-                <a href="login.html" class="site-nav-icon"><i class="icon icon-account"></i>Login</a>
-
+                <a href="login.html" class="site-nav-icon"><i class="fa fa-user"></i>Login</a>
+                <a href="login.html" class="site-nav-icon"><i class="fa fa-shopping-cart"></i>Cart</a>
             </div>
         </div>
     </div>
     <!-- /mobile menu -->
+
+    <!-- toolbar-bottom -->
+    <div class="tf-toolbar-bottom type-1150">
+        <div class="toolbar-item active">
+            <a href="#">
+                <div class="toolbar-icon">
+                    <i class="icon-home"></i>
+                </div>
+                <div class="toolbar-label">Home</div>
+            </a>
+        </div>
+
+        <div class="toolbar-item">
+            <a href="Services.html">
+                <div class="toolbar-icon">
+                    <i class="fa fa-cogs"></i>
+                </div>
+                <div class="toolbar-label">Services</div>
+            </a>
+        </div>
+        <div class="toolbar-item">
+            <a href="career.html">
+                <div class="toolbar-icon">
+                    <i class="bi bi-person-badge"></i>
+                </div>
+                <div class="toolbar-label">Career</div>
+            </a>
+        </div>
+        <div class="toolbar-item">
+            <a href="contact.html">
+                <div class="toolbar-icon">
+                    <i class="fa fa-envelope"></i>
+
+                </div>
+                <div class="toolbar-label">Contact</div>
+            </a>
+        </div>
+        <div class="toolbar-item">
+            <a href="about-us.html">
+                <div class="toolbar-icon">
+                    <i class="fa fa-info-circle"></i>
+                </div>
+                <div class="toolbar-label">About</div>
+            </a>
+        </div>
+    </div>
+    <!-- /toolbar-bottom -->
 
 
 
