@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Shopper TS</title>
+    <title>SHOPERTS</title>
 
     <meta name="author" content="themesflat.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,10 +22,17 @@
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="images/logo/logo1.jpeg">
     <link rel="apple-touch-icon-precomposed" href="images/logo/favicon.png">
+
 </head>
 
 <body class="preload-wrapper">
-
+    <!-- preload -->
+    <div class="preload preload-container">
+        <div class="preload-logo">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- /preload -->
     <div id="wrapper">
         <!-- Header -->
         <header id="header" class="header-default header-style-3">
@@ -87,47 +94,85 @@
         <!-- /Header -->
 
         <!-- page-title -->
-        <div class="tf-page-title" style="background: linear-gradient(to right, red, white);">
-            <div class="container-full">
-                <div class="heading text-center">My Account</div>
+        <div class="tf-page-title style-1"
+            style="height: 60%; background: url('images/slider/Service page title.jpg') no-repeat center center/cover; background-size: cover;">
+            <div class="container-full"
+                style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                <div class="heading text-center"
+                    style="color: white; font-size: 2rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">
+                    What We Do?
+                </div>
             </div>
         </div>
+
+
+
         <!-- /page-title -->
 
-        <!-- page-cart -->
-        <section class="flat-spacing-11">
+        <!-- SECTION -->
+
+        <section style="padding: 20px; background-color: #f5f5f5;">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <ul class="my-account-nav">
-                            <li><a href="my-account.html" class="my-account-nav-item active">Dashboard</a></li>
-                            <li><span class="my-account-nav-item "> New Orders</span></li>
-                            <li><a href="my-account-orders.html" class="my-account-nav-item">Order History</a></li>
-                            <li><a href="#" class="my-account-nav-item">Profile</a></li>
-                            <li><a href="Message.html" class="my-account-nav-item">Agent Message</a></li>
-                            <li><a href="#" class="my-account-nav-item">Notification</a></li>
-                            <li><a href="#" class="my-account-nav-item">Logout</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-9">
-                        <div class="my-account-content account-dashboard">
-                            <div class="mb_60">
-                                <h5 class="fw-5 mb_20">HELLO SHOPERTS</h5>
-                                <p>
-                                    From your account dashboard you can view your <a class="text_primary"
-                                        href="my-account-orders.html">recent orders</a>, manage your <a
-                                        class="text_primary"
-                                        href="https://themesflat.co/html/ecomus/my-account-edit-address.html">shipping
-                                        and billing addresses</a>, and <a class="text_primary"
-                                        href="my-account-edit.html">edit your password and account details</a>.
+                <div
+                    style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <div class="row align-items-center">
+                        <!-- Left Column (Text Content) -->
+                        <div class="col-lg-7 col-md-12">
+                            <!-- Heading 1 with Paragraph -->
+                            <div style="margin-bottom: 20px;">
+                                <h2 style="font-size: 24px; color: #9E1915; margin-bottom: 10px;">
+                                    Our What we do
+                                </h2>
+                                <p style="font-size: 16px; color: #333;">
+                                    At Shoperts, we offer a variety of What we do to meet all your traditional Pakistani
+                                    clothing needs, ensuring a smooth and personalized shopping experience. With
+                                    Shoperts' extensive What we do, shopping for traditional Pakistani garments is
+                                    smooth and enjoyable
                                 </p>
                             </div>
+
+                            <div>
+
+                                <p> <span style="font-weight: bold;"> Ready-to-Wear |</span> browse top Pakistani brands
+                                    with high-quality, stylish garments, order via Shoperts to experience convenient
+                                    local sourcing <br><br>
+                                    <span style="font-weight: bold;">Bespoke Tailoring | </span> Bring your unique
+                                    fashion ideas to life with personalized garments, tailored to your exact
+                                    measurements and style and all while being supported from design to final fitting
+                                    with our expert consultants
+                                    <br><br>
+                                    <span style="font-weight: bold;">Accessories & Add-Ons | </span>
+                                    Complete your order with shoes, bags, accessories, and jewelry. Either choose from
+                                    online merchants or upload your inspirational pick for our consultants to locally
+                                    source the item!
+                                    <br><br>
+                                    <span style="font-weight: bold;">Consolidated Shipping | </span> Whether you're
+                                    shopping for a single event or updating your entire wardrobe, Shoperts makes
+                                    shipping easy and cost-effective. We organize all your orders and combine them into
+                                    one convenient package, saving you time and reducing shipping costs.
+                                    <br><br>
+
+                                </p>
+                            </div>
+
+
                         </div>
+
+                        <!-- Right Column (Image) -->
+                        <div class="col-lg-5 col-md-12 text-center mt-4 mt-lg-0">
+                            <img src="images/item/whatWeDo.jpg" alt="Shoperts" class="img-fluid rounded"
+                                style="max-width: 100%; height: auto; object-fit: fill; margin-bottom: 10%;">
+
+                            <img src="images/item/whatWeDo2.jpg" alt="Shoperts" class="img-fluid rounded"
+                                style="width: 120%; height: auto; ">
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
-        <!-- page-cart -->
+
+
 
         <!-- Footer -->
         <footer id="footer" class="footer has-border has-border-full">
@@ -263,7 +308,6 @@
             </div>
         </footer>
         <!-- /Footer -->
-
     </div>
 
     <!-- gotop -->
@@ -275,6 +319,8 @@
         </svg>
     </div>
     <!-- /gotop -->
+
+
 
     <!-- mobile menu -->
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
@@ -302,27 +348,138 @@
 
             </div>
             <div class="mb-bottom">
-                <a href="login.html" class="site-nav-icon"><i class="fa fa-user"></i>Login</a>
-                <a href="login.html" class="site-nav-icon"><i class="fa fa-shopping-cart"></i>Cart</a>
+                <a href="login.html" class="site-nav-icon"><i class="icon icon-account"></i>Login</a>
+                <a href="#" class="site-nav-icon"><i class="fa fa-shopping-cart"></i>Cart</a>
 
             </div>
         </div>
     </div>
     <!-- /mobile menu -->
 
-    <!-- font -->
-    <link rel="stylesheet" href="fonts/fonts.css">
-    <!-- Icons -->
-    <link rel="stylesheet" href="fonts/font-icons.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="images/logo/logo1.jpeg">
-    <link rel="apple-touch-icon-precomposed" href="images/logo/favicon.png">
+
+
+
+
+    <!-- modal login -->
+    <div class="modal modalCentered fade form-sign-in modal-part-content" id="login">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="header">
+                    <div class="demo-title">Log in</div>
+                    <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+                </div>
+                <div class="tf-login-form">
+                    <form class="" action="my-account.html" accept-charset="utf-8">
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="email" name="">
+                            <label class="tf-field-label" for="">Email *</label>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="password" name="">
+                            <label class="tf-field-label" for="">Password *</label>
+                        </div>
+                        <div>
+                            <a href="contact-1.html#forgotPassword" data-bs-toggle="modal" class="btn-link link">Forgot
+                                your password?</a>
+                        </div>
+                        <div class="bottom">
+                            <div class="w-100">
+                                <button type="submit"
+                                    class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Log
+                                        in</span></button>
+                            </div>
+                            <div class="w-100">
+                                <a href="contact-1.html#register" data-bs-toggle="modal"
+                                    class="btn-link fw-6 w-100 link">
+                                    New customer? Create your account
+                                    <i class="icon icon-arrow1-top-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modalCentered fade form-sign-in modal-part-content" id="forgotPassword">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="header">
+                    <div class="demo-title">Reset your password</div>
+                    <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+                </div>
+                <div class="tf-login-form">
+                    <form class="">
+                        <div>
+                            <p>Sign up for early Sale access plus tailored new arrivals, trends and promotions. To opt
+                                out, click unsubscribe in our emails</p>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="email" name="">
+                            <label class="tf-field-label" for="">Email *</label>
+                        </div>
+                        <div>
+                            <a href="contact-1.html#login" data-bs-toggle="modal" class="btn-link link">Cancel</a>
+                        </div>
+                        <div class="bottom">
+                            <div class="w-100">
+                                <button type="submit"
+                                    class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Reset
+                                        password</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modalCentered fade form-sign-in modal-part-content" id="register">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="header">
+                    <div class="demo-title">Register</div>
+                    <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+                </div>
+                <div class="tf-login-form">
+                    <form class="">
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="text" name="">
+                            <label class="tf-field-label" for="">First name</label>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="text" name="">
+                            <label class="tf-field-label" for="">Last name</label>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="email" name="">
+                            <label class="tf-field-label" for="">Email *</label>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="password" name="">
+                            <label class="tf-field-label" for="">Password *</label>
+                        </div>
+                        <div class="bottom">
+                            <div class="w-100">
+                                <a href="register.html"
+                                    class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Register</span></a>
+                            </div>
+                            <div class="w-100">
+                                <a href="contact-1.html#login" data-bs-toggle="modal" class="btn-link fw-6 w-100 link">
+                                    Already have an account? Log in here
+                                    <i class="icon icon-arrow1-top-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modal login -->
+
+
+
 
 
 
@@ -335,12 +492,11 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/carousel.js"></script>
-
     <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="js/lazysize.min.js"></script>
     <script type="text/javascript" src="js/count-down.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/jquery-validate.js"></script>
     <script type="text/javascript" src="js/multiple-modal.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

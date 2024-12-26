@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Shopper TS</title>
+    <title>SHOPERTS</title>
 
     <meta name="author" content="themesflat.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,6 +22,7 @@
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="images/logo/logo1.jpeg">
     <link rel="apple-touch-icon-precomposed" href="images/logo/favicon.png">
+
 </head>
 
 <body class="preload-wrapper">
@@ -75,7 +76,9 @@
                     <div class="col-xl-3 col-md-4 col-3">
                         <ul class="nav-icon d-flex justify-content-end align-items-center gap-20">
                             <li class="nav-account"><a href="home-07.html#login" data-bs-toggle="modal"
-                                    class="nav-icon-item"><i class="fa fa-user"></i></a></li>
+                                    class="nav-icon-item">
+                                    <i class="fa fa-user"></i>
+                                </a></li>
                             <li class="nav-account"><a href="home-07.html#login" data-bs-toggle="modal"
                                     class="nav-icon-item"><i class="fa fa-shopping-cart"></i>
                                 </a></li>
@@ -89,7 +92,7 @@
         <!-- page-title -->
         <div class="tf-page-title" style="background: linear-gradient(to right, red, white);">
             <div class="container-full">
-                <div class="heading text-center">My Account</div>
+                <div class="heading text-center">My Orders</div>
             </div>
         </div>
         <!-- /page-title -->
@@ -98,10 +101,11 @@
         <section class="flat-spacing-11">
             <div class="container">
                 <div class="row">
+                    <!-- Left Column (Navigation) -->
                     <div class="col-lg-3">
                         <ul class="my-account-nav">
                             <li><a href="my-account.html" class="my-account-nav-item active">Dashboard</a></li>
-                            <li><span class="my-account-nav-item "> New Orders</span></li>
+                            <li><span class="my-account-nav-item">New Orders</span></li>
                             <li><a href="my-account-orders.html" class="my-account-nav-item">Order History</a></li>
                             <li><a href="#" class="my-account-nav-item">Profile</a></li>
                             <li><a href="Message.html" class="my-account-nav-item">Agent Message</a></li>
@@ -109,25 +113,90 @@
                             <li><a href="#" class="my-account-nav-item">Logout</a></li>
                         </ul>
                     </div>
+
+                    <!-- Right Column (Content) -->
                     <div class="col-lg-9">
-                        <div class="my-account-content account-dashboard">
-                            <div class="mb_60">
-                                <h5 class="fw-5 mb_20">HELLO SHOPERTS</h5>
-                                <p>
-                                    From your account dashboard you can view your <a class="text_primary"
-                                        href="my-account-orders.html">recent orders</a>, manage your <a
-                                        class="text_primary"
-                                        href="https://themesflat.co/html/ecomus/my-account-edit-address.html">shipping
-                                        and billing addresses</a>, and <a class="text_primary"
-                                        href="my-account-edit.html">edit your password and account details</a>.
-                                </p>
+                        <div class="my-account-content account-order">
+                            <div class="chat">
+                                <div class="contact bar">
+
+                                    <div class="name">
+                                        Tony Stark
+                                    </div>
+
+                                </div>
+                                <div class="messages" id="chat">
+
+                                    <div class="message parker">
+                                        Hey, man! What's up, Mr Stark? 👋
+                                    </div>
+                                    <div class="message stark">
+                                        Kid, where'd you come from?
+                                    </div>
+                                    <div class="message parker">
+                                        Field trip! 🤣
+                                    </div>
+                                    <div class="message parker">
+                                        Uh, what is this guy's problem, Mr. Stark? 🤔
+                                    </div>
+                                    <div class="message stark">
+                                        Uh, he's from space, he came here to steal a necklace from a wizard.
+                                    </div>
+                                    <div class="message stark">
+                                        <div class="typing typing-1"></div>
+                                        <div class="typing typing-2"></div>
+                                        <div class="typing typing-3"></div>
+                                    </div>
+                                </div>
+                                <div class="input">
+                                    <i class="fas fa-camera"></i><i class="far fa-laugh-beam"></i><input
+                                        placeholder="Type your message here!" type="text" /><i
+                                        class="fas fa-microphone"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- page-cart -->
+
+
+        <!-- Modal -->
+        <!-- Modal Structure -->
+        <div id="newOrderModal" class="modal fade" tabindex="-1" aria-labelledby="newOrderModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 500px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newOrderModalLabel">New Order</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Initial Form -->
+                        <form id="initialForm">
+                            <div class="mb-3">
+                                <label for="orderName" class="form-label">Name:</label>
+                                <input type="text" class="form-control" id="orderName" name="orderName" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger rounded-3" id="saveButton" onclick="saveOrder()"
+                            disabled>Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal --->
+
+
+
+
+
 
         <!-- Footer -->
         <footer id="footer" class="footer has-border has-border-full">
@@ -264,6 +333,8 @@
         </footer>
         <!-- /Footer -->
 
+
+
     </div>
 
     <!-- gotop -->
@@ -275,6 +346,7 @@
         </svg>
     </div>
     <!-- /gotop -->
+
 
     <!-- mobile menu -->
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
@@ -303,32 +375,196 @@
             </div>
             <div class="mb-bottom">
                 <a href="login.html" class="site-nav-icon"><i class="fa fa-user"></i>Login</a>
-                <a href="login.html" class="site-nav-icon"><i class="fa fa-shopping-cart"></i>Cart</a>
-
+                <a href=" #" class="site-nav-icon"><i class="fa fa-shopping-cart"></i>Cart</a>
             </div>
         </div>
     </div>
     <!-- /mobile menu -->
 
-    <!-- font -->
-    <link rel="stylesheet" href="fonts/fonts.css">
-    <!-- Icons -->
-    <link rel="stylesheet" href="fonts/font-icons.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="images/logo/logo1.jpeg">
-    <link rel="apple-touch-icon-precomposed" href="images/logo/favicon.png">
 
 
+    <!-- modal login -->
+    <div class="modal modalCentered fade form-sign-in modal-part-content" id="login">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="header">
+                    <div class="demo-title">Log in</div>
+                    <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+                </div>
+                <div class="tf-login-form">
+                    <form class="" action="my-account.html" accept-charset="utf-8">
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="email" name="">
+                            <label class="tf-field-label" for="">Email *</label>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="password" name="">
+                            <label class="tf-field-label" for="">Password *</label>
+                        </div>
+                        <div>
+                            <a href="my-account-orders.html#forgotPassword" data-bs-toggle="modal"
+                                class="btn-link link">Forgot your password?</a>
+                        </div>
+                        <div class="bottom">
+                            <div class="w-100">
+                                <button type="submit"
+                                    class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Log
+                                        in</span></button>
+                            </div>
+                            <div class="w-100">
+                                <a href="my-account-orders.html#register" data-bs-toggle="modal"
+                                    class="btn-link fw-6 w-100 link">
+                                    New customer? Create your account
+                                    <i class="icon icon-arrow1-top-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modalCentered fade form-sign-in modal-part-content" id="forgotPassword">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="header">
+                    <div class="demo-title">Reset your password</div>
+                    <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+                </div>
+                <div class="tf-login-form">
+                    <form class="">
+                        <div>
+                            <p>Sign up for early Sale access plus tailored new arrivals, trends and promotions. To opt
+                                out, click unsubscribe in our emails</p>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="email" name="">
+                            <label class="tf-field-label" for="">Email *</label>
+                        </div>
+                        <div>
+                            <a href="my-account-orders.html#login" data-bs-toggle="modal"
+                                class="btn-link link">Cancel</a>
+                        </div>
+                        <div class="bottom">
+                            <div class="w-100">
+                                <button type="submit"
+                                    class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Reset
+                                        password</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modalCentered fade form-sign-in modal-part-content" id="register">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="header">
+                    <div class="demo-title">Register</div>
+                    <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+                </div>
+                <div class="tf-login-form">
+                    <form class="">
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="text" name="">
+                            <label class="tf-field-label" for="">First name</label>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="text" name="">
+                            <label class="tf-field-label" for="">Last name</label>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="email" name="">
+                            <label class="tf-field-label" for="">Email *</label>
+                        </div>
+                        <div class="tf-field style-1">
+                            <input class="tf-field-input tf-input" placeholder=" " type="password" name="">
+                            <label class="tf-field-label" for="">Password *</label>
+                        </div>
+                        <div class="bottom">
+                            <div class="w-100">
+                                <a href="register.html"
+                                    class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Register</span></a>
+                            </div>
+                            <div class="w-100">
+                                <a href="my-account-orders.html#login" data-bs-toggle="modal"
+                                    class="btn-link fw-6 w-100 link">
+                                    Already have an account? Log in here
+                                    <i class="icon icon-arrow1-top-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modal login -->
 
 
 
 
+
+
+    <script>
+        // Save the order and redirect to the stepper form page
+        function saveOrder(event) {
+            // Prevent form submission if the button is inside a form
+            if (event) {
+                event.preventDefault();
+            }
+
+            const orderName = document.getElementById("orderName").value.trim(); // Trim to avoid extra spaces
+            if (orderName) {
+                // Redirect to the stepper form page with the order name passed as a query parameter
+                window.location.href = `stepper-form.html?orderName=${encodeURIComponent(orderName)}`;
+            } else {
+                // Alert if the input is empty
+                alert("Please enter a name.");
+            }
+        }
+
+        const orderNameDisplay = document.getElementById('orderNameDisplay');
+
+        // Function to open the modal
+        function openModal() {
+            var modal = new bootstrap.Modal(document.getElementById('newOrderModal'));
+            modal.show();
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = new bootstrap.Modal(document.getElementById('newOrderModal'));
+            modal.hide();
+        }
+
+        // JavaScript to enable/disable the "Save" button based on input
+        const orderNameInput = document.getElementById('orderName');
+        const saveButton = document.getElementById('saveButton');
+
+        // Listen for input in the orderName field
+        orderNameInput.addEventListener('input', function () {
+            if (orderNameInput.value.trim() === '') {
+                saveButton.disabled = true;  // Disable Save button if input is empty
+            } else {
+                saveButton.disabled = false; // Enable Save button if input is filled
+            }
+        });
+
+
+        // Reset the modal (optional step, for resetting input fields and state)
+        function resetStepper() {
+            const orderNameInput = document.getElementById("orderName");
+            if (orderNameInput) {
+                orderNameInput.value = ""; // Clear the input field
+            }
+        }
+
+
+
+
+    </script>
 
     <!-- Javascript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>

@@ -26,7 +26,13 @@
 </head>
 
 <body class="preload-wrapper">
-
+    <!-- preload -->
+    <div class="preload preload-container">
+        <div class="preload-logo">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- /preload -->
     <div id="wrapper">
         <!-- Header -->
         <header id="header" class="header-default header-style-3">
@@ -76,9 +82,7 @@
                     <div class="col-xl-3 col-md-4 col-3">
                         <ul class="nav-icon d-flex justify-content-end align-items-center gap-20">
                             <li class="nav-account"><a href="home-07.html#login" data-bs-toggle="modal"
-                                    class="nav-icon-item">
-                                    <i class="fa fa-user"></i>
-                                </a></li>
+                                    class="nav-icon-item"><i class="fa fa-user"></i></a></li>
                             <li class="nav-account"><a href="home-07.html#login" data-bs-toggle="modal"
                                     class="nav-icon-item"><i class="fa fa-shopping-cart"></i>
                                 </a></li>
@@ -90,130 +94,188 @@
         <!-- /Header -->
 
         <!-- page-title -->
-        <div class="tf-page-title" style="background: linear-gradient(to right, red, white);">
-            <div class="container-full">
-                <div class="heading text-center">My Orders</div>
+        <div class="tf-page-title style-1"
+            style="height: 60%; background: url('images/slider/Service page title.jpg') no-repeat center center/cover; background-size: cover;">
+            <div class="container-full"
+                style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                <div class="heading text-center"
+                    style="color: white; font-size: 2rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">
+                    Who We Are?
+                </div>
             </div>
         </div>
+
+
+
         <!-- /page-title -->
 
-        <!-- page-cart -->
-        <section class="flat-spacing-11">
+        <!-- SECTION -->
+
+        <section style="padding: 20px; background-color: #f5f5f5;">
             <div class="container">
-                <div class="row">
-                    <!-- Left Column (Navigation) -->
-                    <div class="col-lg-3">
-                        <ul class="my-account-nav">
-                            <li><a href="my-account.html" class="my-account-nav-item active">Dashboard</a></li>
-                            <li><span class="my-account-nav-item">New Orders</span></li>
-                            <li><a href="my-account-orders.html" class="my-account-nav-item">Order History</a></li>
-                            <li><a href="#" class="my-account-nav-item">Profile</a></li>
-                            <li><a href="Message.html" class="my-account-nav-item">Agent Message</a></li>
-                            <li><a href="#" class="my-account-nav-item">Notification</a></li>
-                            <li><a href="#" class="my-account-nav-item">Logout</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Right Column (Content) -->
-                    <div class="col-lg-9">
-                        <div class="my-account-content account-order">
-                            <!-- New Order Button -->
-                            <div class="d-flex justify-content-end mt-3">
-                                <button onclick="openModal()" class="btn btn-danger rounded-0">
-                                    <span>+ New Order</span>
-                                </button>
+                <div
+                    style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <div class="row align-items-center">
+                        <!-- Left Column (Text Content) -->
+                        <div class="col-lg-7 col-md-12">
+                            <!-- Heading 1 with Paragraph -->
+                            <div style="margin-bottom: 20px;">
+                                <h2 style="font-size: 24px; color: #9E1915; margin-bottom: 10px;">Who we are</h2>
+                                <p style="font-size: 16px; color: #333;">
+                                    Welcome to Shoperts! We’re your go-to consulting platform for all things traditional
+                                    Pakistani clothing. Whether you need expert advice for the perfect outfit for a
+                                    special
+                                    event, custom tailoring, or a variety of ready-made clothes, Shoperts is here to
+                                    help
+                                    you every step of the way.
+                                </p>
                             </div>
 
-                            <!-- Order Table -->
-                            <div class="wrap-account-order mt-4">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th class="fw-6">Order</th>
-                                            <th class="fw-6">Date</th>
-                                            <th class="fw-6">Status</th>
-                                            <th class="fw-6">Total</th>
-                                            <th class="fw-6">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="tf-order-item">
-                                            <td>#123</td>
-                                            <td>August 1, 2024</td>
-                                            <td>On hold</td>
-                                            <td>$200.0 for 1 item</td>
-                                            <td>
-                                                <a href="my-account-orders.html#" class="btn btn-danger rounded-0">
-                                                    View
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="tf-order-item">
-                                            <td>#345</td>
-                                            <td>August 2, 2024</td>
-                                            <td>On hold</td>
-                                            <td>$300.0 for 1 item</td>
-                                            <td>
-                                                <a href="my-account-orders.html#" class="btn btn-danger rounded-0">
-                                                    View
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="tf-order-item">
-                                            <td>#567</td>
-                                            <td>August 3, 2024</td>
-                                            <td>On hold</td>
-                                            <td>$400.0 for 1 item</td>
-                                            <td>
-                                                <a href="my-account-orders.html#" class="btn btn-danger rounded-0">
-                                                    View
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <!-- Heading 2 with Paragraph -->
+                            <div style="margin-bottom: 20px;">
+                                <h2 style="font-size: 24px; color: #9E1915; margin-bottom: 10px;">Our Mission</h2>
+                                <p style="font-size: 16px; color: #333;">
+                                    We aim to support South Asian communities in Canada by providing expert consulting
+                                    and
+                                    making it easy and personal to shop for Pakistani fashion. We promise knowledgeable
+                                    guidance, high-quality products, and convenient delivery to ensure your shopping
+                                    experience is enjoyable from start to finish.
+                                </p>
                             </div>
+
+                            <!-- Heading 3 with Paragraph -->
+                            <div>
+                                <h2 style="font-size: 24px; color: #9E1915; margin-bottom: 10px;">Our Vision</h2>
+                                <p style="font-size: 16px; color: #333;">
+                                    We want to be the top consulting choice for connecting South Asian communities in
+                                    Canada
+                                    with the vibrant world of Pakistani fashion. Our goal is to offer a shopping
+                                    experience
+                                    that seamlessly blends tradition, quality, and ease like no other.
+                                </p>
+                            </div>
+
+                            <!-- Heading 4 with Paragraph -->
+                            <div>
+                                <h2 style="font-size: 24px; color: #9E1915; margin-bottom: 10px;">Join the Shoperts
+                                    Community</h2>
+                                <p style="font-size: 16px; color: #333;">
+                                    Experience the difference of personalized service, expert craftsmanship, and
+                                    unwavering
+                                    commitment to quality. <span style="color: blue; text-decoration: underline;">Get
+                                        started now</span> and let Shoperts transform your shopping experience.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h2 style="font-size: 24px; color: #9E1915; margin-bottom: 10px;">Meet Your Fashion
+                                    Consultants
+                                </h2>
+                                <p style="font-size: 16px; color: #333;">
+                                    At Shoperts, we believe that personalized service is key to a fulfilling shopping
+                                    experience. That’s why we’ve assembled a team of dedicated Fashion Consultants in
+                                    both Canada and Pakistan to guide you through your shopping journey. <br><br>
+
+                                    Canadian Fashion Consultant is your local expert, providing personalized advice and
+                                    ensuring a seamless shopping experience. They’ll help you navigate our website to
+                                    place an order, answer your questions, and assist with any concerns you may have.
+                                    <br><br>
+
+                                    Pakistani Fashion Consultant is your direct link to the vibrant world of Pakistani
+                                    fashion. They work closely with local artisans and designers to curate the best
+                                    products and ensure they meet your exact specifications. <br><br>
+
+                                    - Together, our team of Fashion Consultants provides you with: <br>
+                                    - Personalized shopping advice tailored to your style and needs. <br>
+                                    - Access to a wide range of Pakistani fashion products at competitive prices. <br>
+                                    - Careful inspection of every order to ensure quality and quantity. <br>
+                                    - Easy bulk ordering and delivery to your location in Canada. <br>
+
+                                </p>
+                            </div>
+
+                            <div>
+                                <h2 style="font-size: 24px; color: #9E1915; margin-bottom: 10px;">Why Choose Shoperts
+                                </h2>
+                                <p> <span style="font-weight: bold;"> Personalized Experience:</span> At Shoperts, we
+                                    believe that
+                                    every customer
+                                    is unique.
+                                    Our
+                                    dedicated team of Fashion Consultants is committed to guiding you through your
+                                    shopping journey. From casual wear to formal attire, we'll help you find the perfect
+                                    outfit that reflects your personal style and meets your specific needs. <br><br>
+                                    <span style="font-weight: bold;">Expert
+                                        Craftsmanship:</span> We partner with a vast network of reliable and skilled
+                                    tailors
+                                    who
+                                    uphold the highest standards of craftsmanship. Our Fashion Consultants work
+                                    closely
+                                    with these experts to ensure that every garment is crafted with precision, using
+                                    premium materials and meticulous attention to detail. <br><br>
+                                    <span style="font-weight: bold;">Cost Effective Shopping:</span>
+                                    Shop
+                                    authentic Pakistani styles at local prices with personalized help from our
+                                    experts <br><br>
+                                    <span style="font-weight: bold;">Seamless Process:</span> Our streamlined workflow
+                                    from design to delivery ensures a
+                                    hassle-free experience. From sourcing the finest raw materials to executing your
+                                    order, we handle everything efficiently to minimize delays and maximize your
+                                    satisfaction. <br><br>
+                                    <span style="font-weight: bold;">Centralized Shipment:</span> Think of Shoperts as
+                                    your
+                                    ecommerce central
+                                    command center. We unite all your online orders into one seamless hub and
+                                    package
+                                    all your orders into one box. This approach not only reduces the shipment
+                                    charges
+                                    significantly low, but also make the shipment fast and easy to track <br><br>
+                                    <span style="font-weight: bold;">Secured
+                                        Transactions:</span> Shoperts is a Canadian company, we take your data and
+                                    payment
+                                    security
+                                    seriously. We make sure your transactions are processed safely and personal
+                                    information is protected properly <br><br>
+                                    <span style="font-weight: bold;">Timely Delivery:</span> We always pay attention to
+                                    your
+                                    schedule to have your dresses ready precisely for those special occasions <br><br>
+                                    <span style="font-weight: bold;"> Complete
+                                        transparency:</span> We provide you complete
+                                    details of the costs associated with your
+                                    order. Whether it is cost of product, tailoring cost, travel cost or our
+                                    commission.
+                                    We will provide you each detail in the order.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h2 style="font-size: 24px; color: #9E1915; margin-bottom: 10px;">Our Commitment</h2>
+                                <p style="font-size: 16px; color: #333;">
+
+                                    At Shoperts, we are more than just a consultancy platform; we are your trusted
+                                    partner in fashion. By choosing us, you're not only investing in high-quality
+                                    traditional Pakistani clothing but also supporting initiatives that uplift
+                                    communities in Canada and Pakistan. We are committed to using our business to drive
+                                    positive change and empower individuals to reach their full potential.
+
+                                </p>
+                            </div>
+
                         </div>
+
+                        <!-- Right Column (Image) -->
+                        <div class="col-lg-5 col-md-12 text-center mt-4 mt-lg-0">
+                            <img src="images/item/whoWeAre.jpg" alt="Shoperts" class="img-fluid rounded"
+                                style="max-width: 100%; height: auto; object-fit: fill; margin-bottom: 30%;">
+
+                            <img src="images/item/whoWeAre.jpg" alt="Shoperts" class="img-fluid rounded"
+                                style="max-width: 100%; height: auto; object-fit: fill;">
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- page-cart -->
-
-
-        <!-- Modal -->
-        <!-- Modal Structure -->
-        <div id="newOrderModal" class="modal fade" tabindex="-1" aria-labelledby="newOrderModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" style="max-width: 500px;">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="newOrderModalLabel">New Order</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Initial Form -->
-                        <form id="initialForm">
-                            <div class="mb-3">
-                                <label for="orderName" class="form-label">Name:</label>
-                                <input type="text" class="form-control" id="orderName" name="orderName" required>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger rounded-3" id="saveButton" onclick="saveOrder()"
-                            disabled>Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal --->
-
-
-
 
 
 
@@ -351,9 +413,6 @@
             </div>
         </footer>
         <!-- /Footer -->
-
-
-
     </div>
 
     <!-- gotop -->
@@ -365,6 +424,7 @@
         </svg>
     </div>
     <!-- /gotop -->
+
 
 
     <!-- mobile menu -->
@@ -393,12 +453,16 @@
 
             </div>
             <div class="mb-bottom">
-                <a href="login.html" class="site-nav-icon"><i class="fa fa-user"></i>Login</a>
-                <a href=" #" class="site-nav-icon"><i class="fa fa-shopping-cart"></i>Cart</a>
+                <a href="login.html" class="site-nav-icon"><i class="icon icon-account"></i>Login</a>
+                <a href="#" class="site-nav-icon"><i class="fa fa-shopping-cart"></i>Cart</a>
+
             </div>
         </div>
     </div>
     <!-- /mobile menu -->
+
+
+
 
 
 
@@ -421,8 +485,8 @@
                             <label class="tf-field-label" for="">Password *</label>
                         </div>
                         <div>
-                            <a href="my-account-orders.html#forgotPassword" data-bs-toggle="modal"
-                                class="btn-link link">Forgot your password?</a>
+                            <a href="contact-1.html#forgotPassword" data-bs-toggle="modal" class="btn-link link">Forgot
+                                your password?</a>
                         </div>
                         <div class="bottom">
                             <div class="w-100">
@@ -431,7 +495,7 @@
                                         in</span></button>
                             </div>
                             <div class="w-100">
-                                <a href="my-account-orders.html#register" data-bs-toggle="modal"
+                                <a href="contact-1.html#register" data-bs-toggle="modal"
                                     class="btn-link fw-6 w-100 link">
                                     New customer? Create your account
                                     <i class="icon icon-arrow1-top-left"></i>
@@ -461,8 +525,7 @@
                             <label class="tf-field-label" for="">Email *</label>
                         </div>
                         <div>
-                            <a href="my-account-orders.html#login" data-bs-toggle="modal"
-                                class="btn-link link">Cancel</a>
+                            <a href="contact-1.html#login" data-bs-toggle="modal" class="btn-link link">Cancel</a>
                         </div>
                         <div class="bottom">
                             <div class="w-100">
@@ -507,8 +570,7 @@
                                     class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Register</span></a>
                             </div>
                             <div class="w-100">
-                                <a href="my-account-orders.html#login" data-bs-toggle="modal"
-                                    class="btn-link fw-6 w-100 link">
+                                <a href="contact-1.html#login" data-bs-toggle="modal" class="btn-link fw-6 w-100 link">
                                     Already have an account? Log in here
                                     <i class="icon icon-arrow1-top-left"></i>
                                 </a>
@@ -526,76 +588,20 @@
 
 
 
-    <script>
-        // Save the order and redirect to the stepper form page
-        function saveOrder(event) {
-            // Prevent form submission if the button is inside a form
-            if (event) {
-                event.preventDefault();
-            }
-
-            const orderName = document.getElementById("orderName").value.trim(); // Trim to avoid extra spaces
-            if (orderName) {
-                // Redirect to the stepper form page with the order name passed as a query parameter
-                window.location.href = `stepper-form.html?orderName=${encodeURIComponent(orderName)}`;
-            } else {
-                // Alert if the input is empty
-                alert("Please enter a name.");
-            }
-        }
-
-        const orderNameDisplay = document.getElementById('orderNameDisplay');
-
-        // Function to open the modal
-        function openModal() {
-            var modal = new bootstrap.Modal(document.getElementById('newOrderModal'));
-            modal.show();
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            var modal = new bootstrap.Modal(document.getElementById('newOrderModal'));
-            modal.hide();
-        }
-
-        // JavaScript to enable/disable the "Save" button based on input
-        const orderNameInput = document.getElementById('orderName');
-        const saveButton = document.getElementById('saveButton');
-
-        // Listen for input in the orderName field
-        orderNameInput.addEventListener('input', function () {
-            if (orderNameInput.value.trim() === '') {
-                saveButton.disabled = true;  // Disable Save button if input is empty
-            } else {
-                saveButton.disabled = false; // Enable Save button if input is filled
-            }
-        });
-
-
-        // Reset the modal (optional step, for resetting input fields and state)
-        function resetStepper() {
-            const orderNameInput = document.getElementById("orderName");
-            if (orderNameInput) {
-                orderNameInput.value = ""; // Clear the input field
-            }
-        }
 
 
 
-
-    </script>
 
     <!-- Javascript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/carousel.js"></script>
-
     <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="js/lazysize.min.js"></script>
     <script type="text/javascript" src="js/count-down.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/jquery-validate.js"></script>
     <script type="text/javascript" src="js/multiple-modal.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

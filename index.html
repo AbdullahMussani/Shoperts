@@ -79,6 +79,7 @@
         <header id="header" class="header-default header-style-3">
             <div class="container-full px_15 lg-px_40">
                 <div class="row wrapper-header align-items-center">
+                    <!-- Left Section (Mobile Menu Icon) -->
                     <div class="col-md-4 col-3 tf-lg-hidden">
                         <a href="index.html#mobileMenu" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16"
@@ -89,51 +90,60 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="col-xl-9 col-md-4 col-6">
-                        <div class="wrap-header-left">
+
+                    <!-- Center Section (Logo and Navigation) -->
+                    <div class="col-xl-9 col-md-8 col-8">
+                        <div class="wrap-header-left d-flex align-items-center">
                             <a href="index.html" class="logo-header">
                                 <img src="images/logo/logo1.jpeg" alt="logo" class="logo">
                             </a>
-                            <nav class="box-navigation text-right" style="margin-left: 240px;">
+                            <nav class="box-navigation text-right" style="margin-left: 40px;">
                                 <ul class="box-nav-ul d-flex align-items-center justify-content-end gap-30">
                                     <li class="menu-item">
                                         <a href="index.html" class="item-link">Home</a>
-
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="Services.html" class="item-link">Services</a>
-
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="career.html" class="item-link">Careers</a>
-
                                     </li>
                                     <li class="menu-item position-relative">
+                                        <a href="who-we-are.html" class="item-link">Who we are</a>
+                                    </li>
+                                    <li class="menu-item position-relative">
+                                        <a href="what-we-do.html" class="item-link">What we do?</a>
+                                    </li>
+                                    <li class=" menu-item">
+                                        <a href="Services.html" class="item-link">Services</a>
+                                    </li>
+                                    <li class=" menu-item">
+                                        <a href="career.html" class="item-link">Careers</a>
+                                    </li>
+                                    <li class=" menu-item position-relative">
                                         <a href="contact.html" class="item-link">Contact Us</a>
-
                                     </li>
                                     <li class="menu-item position-relative">
                                         <a href="about-us.html" class="item-link">About Us</a>
                                     </li>
-
                                 </ul>
                             </nav>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-3">
+
+                    <!-- Right Section (Icons) -->
+                    <div class="col-xl-3 col-md-4 col-4 text-end">
                         <ul class="nav-icon d-flex justify-content-end align-items-center gap-20">
-                            <li class="nav-account"><a href="home-07.html#login" data-bs-toggle="modal"
-                                    class="nav-icon-item"><i class="fa fa-user"></i></a></li>
-                            <li class="nav-account"><a href="home-07.html#login" data-bs-toggle="modal"
-                                    class="nav-icon-item"><i class="fa fa-shopping-cart"></i>
-                                </a></li>
+                            <li class="nav-account">
+                                <a href="#login" data-bs-toggle="modal" class="nav-icon-item"><i
+                                        class="fa fa-user"></i></a>
+                            </li>
+                            <li class="nav-account">
+                                <a href="#login" data-bs-toggle="modal" class="nav-icon-item"><i
+                                        class="fa fa-shopping-cart"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </header>
+
         <!-- /Header -->
-        <div style="width: 100%; height: 3px; background-color: #ccc; margin: 0 0;"></div>
+        <div style="width: 100%; height: 3px; background-color:  #131212; "></div>
 
         <!-- Slider -->
         <div class="tf-slideshow slider-home-4 slider-effect-fade position-relative">
@@ -579,6 +589,70 @@
         </section>
 
         <!-- /Categories -->
+
+        <!--How It Work?-->
+
+        <section style="padding: 20px; background-color: #f5f5f5;">
+            <div class="container">
+                <div class="bg_grey-2 radius-10 flat-wrap-iconbox p-4">
+                    <!-- About Section -->
+                    <div class="flat-title lg text-center">
+                        <h2 class="title fw-5">How It Works?</h2>
+                        <p style="font-weight: bold;">Your Seamless Shopping Journey with Shoperts:</p>
+                        <p class="sub-title text_black-2">
+                            Customers can place their orders in 3 simple steps:
+                        </p>
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div class="row align-items-center mb-4">
+                        <div class="col-lg-6 col-md-12">
+                            <h4 style="font-weight: bold;">Create Your Account</h4>
+                            <p>Sign up in minutes. Add your measurements and shipping address for a perfect fit and easy
+                                order tracking.</p>
+                        </div>
+                        <div class="col-lg-6 col-md-12 text-center">
+                            <img src="images/item/step01.jpg" alt="Create Account" class="img-fluid rounded"
+                                style="max-width: 100%; height: auto; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="row align-items-center mb-4 flex-row-reverse">
+                        <div class="col-lg-6 col-md-12">
+                            <h4 style="font-weight: bold;">Place Your Order</h4>
+                            <p>Add what you want online. Share your style preferences and upload any inspirational
+                                photos.</p>
+                        </div>
+                        <div class="col-lg-6 col-md-12 text-center">
+                            <img src="images/item/step1.jpg" alt="Place Order" class="img-fluid rounded"
+                                style="max-width: 100%; height: auto; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="row align-items-center mb-4">
+                        <div class="col-lg-6 col-md-12">
+                            <h4 style="font-weight: bold;">Finalize Your Order And Make Payment</h4>
+                            <p>
+                                Our Consultant will assess your order and provide you the options and prices for your
+                                order by
+                                sourcing the best possible prices and selecting items that align with your style and
+                                budget. Once
+                                you like the solutions, you securely pay for your order.
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-md-12 text-center">
+                            <img src="images/item/step3.jpg" alt="Finalize Order" class="img-fluid rounded"
+                                style="max-width: 100%; height: auto; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
         <!-- Footer -->
         <footer id="footer" class="footer has-border has-border-full">
             <div class="footer-wrap">
